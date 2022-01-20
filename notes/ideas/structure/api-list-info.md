@@ -18,3 +18,7 @@
 
   - example 2: isbn
   https://covers.openlibrary.org/b/isbn/1559586753-M.jpg
+
+  - if cover_id === null -> render a dummy img
+
+- to show bestsellers use edition count from the api

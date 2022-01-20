@@ -41,8 +41,8 @@
 
 2. Checkout which branches are on your pc and delete the old ones:
    ``` git branch ```
-   ``` git branch -D <branchname> ```
-   - e.g. ``` git branch -D createNavbarComponent ```
+   ``` git branch -d <branchname> ```
+   - e.g. ``` git branch -d createNavbarComponent ```
 
 ### Congratulation! You finished a task!
   *Now repeat with a new task* 

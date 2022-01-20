@@ -37,3 +37,4 @@
   - To suggest books to friends/ a friend
   - Where are the books available online/online shop
   - Share button for social media
+  - Side map button with img on the landing page

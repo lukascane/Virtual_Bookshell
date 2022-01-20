@@ -3,7 +3,7 @@
 ## 3 Schemas
 - user
 - book collections
-- comments
+- review
 
 ### User schema
 - username
@@ -14,11 +14,10 @@
 - created on (hidden)
 - comments (hidden? - subDocument)
 
-### Comments schema
+### Review schema
 - user_id (linked to username)
 - created on
-- rating
-- comments
+- review
 - book-key
 
 ### To read list/book collection
@@ -29,7 +28,7 @@
 - year
 - subject
 - description
-- comments (linked to comments (subDocument))
+- review (linked to comments (subDocument))
 - rating (?)
 - user_id 
 - reading status
