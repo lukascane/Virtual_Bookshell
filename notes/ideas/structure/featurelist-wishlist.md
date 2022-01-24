@@ -17,7 +17,8 @@
 - The reviews are attached to the books itself
 - Create a profile
 - Have a personal database and manage that (CRUD)
-- Have a demo mode/fake account to show the whole functionality without sign up 
+- Have a demo mode/fake account to show the whole functionality without sign up
+- Note for Search bar if there is not title (inside of Search bar component) 
 - To suggest books to friends/ a friend with a button -> send a mail
 - Share button for social media
 - Where are the books available online/online shop
