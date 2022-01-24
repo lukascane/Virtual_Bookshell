@@ -12,10 +12,10 @@
 - email
 - password
 - created on (hidden)
-- comments (hidden? - subDocument)
+
 
 ### Review schema
-- user_id (linked to username)
+- user_id (linked to username/showing reviews by searching by ID)
 - created on
 - review
 - book-key
