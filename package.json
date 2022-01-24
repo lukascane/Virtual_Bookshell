@@ -1,0 +1,23 @@
+{
+  "name": "virtual_bookshell",
+  "version": "1.0.0",
+  "description": "Final_Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukascane/Virtual_Bookshell.git"
+  },
+  "keywords": [
+    "BookShell"
+  ],
+  "author": "Peony Langner, Riccardo Limitti, Lukasz Trzcinski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukascane/Virtual_Bookshell/issues"
+  },
+  "homepage": "https://github.com/lukascane/Virtual_Bookshell#readme"
+}
