@@ -13,7 +13,6 @@
 - password
 - created on (hidden)
 
-
 ### Review schema
 - user_id (linked to username/showing reviews by searching by ID)
 - created on
@@ -28,6 +27,7 @@
 - year
 - subject
 - description
+ - publisher
 - review (linked to comments (subDocument))
 - rating (?)
 - user_id 
