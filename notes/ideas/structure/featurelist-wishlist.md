@@ -39,3 +39,4 @@
   - Where are the books available online/online shop
   - Share button for social media
   - Side map button with img on the landing page
+  - upload profile images/use avatars on the client side
