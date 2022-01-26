@@ -1,0 +1,66 @@
+#navB {
+    position:absolute;
+    top: 0px;
+    width: 100%;
+    background-color: #004D4D;
+    height: 80px;
+
+    .buttons {
+    color: white;
+    background-color: #008080;
+    font-weight: 900;
+    text-transform:uppercase;
+    width: 105px;
+    
+}
+ .togg, .navbar-toggler-icon {
+    color:whitesmoke;
+    border: solid 1px whitesmoke;
+    background-color: #008080;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px;
+} 
+button:hover {
+    background-color: darkmagenta;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+ .collM {
+  
+   max-width: 768px;
+   background-color: #004D4D;
+   opacity: 0.9;
+//    margin: 0 auto;
+ }
+ .nav-link {
+     display: flex;
+     justify-content: center;
+ }
+ .logoImg {
+     max-width: 280px;
+     height: 100%;
+ }
+
+}
+
+@media (max-width: 992px) {
+    .collM {
+        margin: 0 auto;
+    }
+     #navB {
+        a {
+            height: 200px;
+            // height: 100vh;
+            align-items: center; 
+        }
+        .buttons {
+    width: 40%;
+    height: 39px;
+    
+    }
+    } 
+ }
+@media (max-width: 399.98px) {
+    .logoImg {
+     width: 200px;
+     height: 100%;
+ }
+ }
