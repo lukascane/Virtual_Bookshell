@@ -3,14 +3,15 @@
 
 ## We are using the apis from openlibrary
 
-- For subject search(to show the list): https://openlibrary.org/dev/docs/api/subjects
+### For subject search(to show the list - subject Api):
+- https://openlibrary.org/dev/docs/api/subjects
 - Example with architecture: http://openlibrary.org/subjects/architecture.json?published_in=2000-2010&details=true
 
-- For title and author (Search API): 
+### For title and author (Search Api): 
 - Example: http://openlibrary.org/search.json?q=the+lord+of+the+rings
 - Example-2 with limit and pagination: http://openlibrary.org/search.json?q=the+lord+of+the+rings&page=2&limit=10
 
-- Cover - we need to use a valid number:
+### Cover - we need to use a valid number:
 - https://covers.openlibrary.org/b/$key/$value-$size.jpg
   
   - example 1: cover_i 
