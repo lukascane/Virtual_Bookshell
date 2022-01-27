@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SearchForm() {
 
-  return <div id='searchForm' >
+  return <div id='searchForm'>
 
         <div className='container formWrapper'>
 
@@ -17,7 +17,7 @@ export default function SearchForm() {
         </ul>
         </div>
 
-        <input type="text" id="inputSearchField" className="form-control w-50 mx-3" placeholder='Type your book here..' />
+        <input type="text" id="inputSearchField" className="form-control w-50 mx-3 text-light" placeholder='Type your book here..' />
         
         <button type="button" className="btn rounded-pill">search</button>
 
