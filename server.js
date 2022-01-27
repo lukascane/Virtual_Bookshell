@@ -29,14 +29,17 @@ mongoose
   });
 
 //? Import routes here
-// const productRoute = require('./routes/productRoutes');
-// const customerRoutes = require('./routes/customerRoutes');
+const userRoute = require('./Routes/userRoutes');
+const bookRoutes = require('./Routes/bookRoutes');
+const reviewRoutes = require('./Routes/reviewRoutes');
 
 //? Routes:
-// app.get('/', (req, res) => res.send('Hello World!'));
-// app.use('/api/product', productRoute);
-// app.use('/api/customer', customerRoutes);
+app.get('/', (req, res) => res.send('Hello World!'));
+app.use('/api/user', userRoute);
+app.use('/api/books', bookRoutes);
+app.use('/api/reviews', reviewRoutes);
 
+//************************** */
 app.all('*', (req, res) => {
   res.status(500);
   res.send('Invalid path');
