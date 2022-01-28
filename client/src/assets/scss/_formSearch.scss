@@ -15,9 +15,9 @@
     flex-direction: row;
     }
 
-     .form-text {
+     .vText {
         color: #DEDADA;
-
+        font-weight: 600;
     } 
 
     #inputSearchField {
@@ -40,6 +40,7 @@
         ul {
             
             background-color: #008080;
+            cursor: pointer;
 
             .dropdown-menu {
                 width: 70px;
@@ -70,6 +71,7 @@
         ul {
             
             background-color: #008080;
+            cursor: pointer;
 
             .dropdown-menu {
                 width: 70px;
