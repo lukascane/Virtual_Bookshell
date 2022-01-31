@@ -1,0 +1,290 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Franklin:wght@200;600&family=Montserrat:wght@300;500;600;700;900&family=Orbitron&display=swap");
+#footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+  color: whitesmoke;
+}
+#footer .logo {
+  color: whitesmoke;
+}
+#footer .createdBY {
+  color: #008080;
+  text-decoration: underline;
+}
+#footer a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+#footer a:hover {
+  color: #008080;
+}
+
+@media (max-width: 459px) {
+  #footer {
+    height: 120px;
+  }
+}
+@media (max-width: 339px) {
+  .createdBY {
+    display: none;
+  }
+}
+#navB {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  background-color: #004D4D;
+  height: 80px;
+}
+#navB .buttons {
+  color: white;
+  background-color: #008080;
+  font-weight: 900;
+  text-transform: uppercase;
+  width: 105px;
+}
+#navB .togg, #navB .navbar-toggler-icon {
+  color: whitesmoke;
+  border: solid 1px whitesmoke;
+  background-color: #008080;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px;
+}
+#navB button:hover {
+  background-color: darkmagenta;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+#navB .collM {
+  max-width: 768px;
+  background-color: #004D4D;
+  opacity: 0.9;
+}
+#navB .nav-link {
+  display: flex;
+  justify-content: center;
+}
+#navB .logoImg {
+  max-width: 280px;
+  height: 100%;
+}
+
+@media (max-width: 992px) {
+  .collM {
+    margin: 0 auto;
+  }
+
+  #navB a {
+    height: 200px;
+    align-items: center;
+  }
+  #navB .buttons {
+    width: 40%;
+    height: 39px;
+  }
+}
+@media (max-width: 399.98px) {
+  .logoImg {
+    width: 200px;
+    height: 100%;
+  }
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+#banner {
+  height: 100%;
+  background-color: #004D4D;
+}
+#banner .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#banner .card {
+  height: 100%;
+  width: 100%;
+}
+#banner .sep {
+  border: solid 3px #2c2c2c;
+}
+#banner .picWrapper {
+  height: 90vh;
+  width: 740px;
+  background-image: url(../images/tina-vanhove-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 95%;
+}
+#banner .hideImg {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../images/tina-vanhove-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 95%;
+}
+#banner .textWrapper {
+  background-color: whitesmoke;
+  box-shadow: rgba(93, 91, 92, 0.4) -5px 5px, rgba(56, 55, 56, 0.3) -10px 10px, rgba(17, 16, 16, 0.2) -15px 15px, rgba(29, 28, 29, 0.1) -20px 20px, rgba(12, 12, 12, 0.05) -25px 25px;
+  height: 50vh;
+  width: 430px;
+}
+#banner .logoMain {
+  height: 68px;
+  width: 88px;
+}
+#banner .homeBtn {
+  color: white;
+  background-color: #008080;
+  font-weight: 900;
+  width: 232.5px;
+}
+#banner .card-title {
+  font-weight: 900;
+  color: #2c2c2c;
+}
+#banner .homeBtn:hover {
+  background-color: darkmagenta;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+@media (max-width: 1400px) {
+  #banner .textWrapper {
+    height: 59vh;
+  }
+}
+@media (min-width: 992px) {
+  #banner .hideImg {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  #banner .container {
+    display: flex;
+    flex-direction: column;
+  }
+  #banner .picWrapper {
+    display: none;
+  }
+  #banner .textWrapper {
+    width: 100%;
+    margin-bottom: 30px;
+    max-height: 500px;
+  }
+}
+@media (max-width: 768px) {
+  #banner .textWrapper {
+    max-height: 500px;
+  }
+  #banner .hideImg {
+    max-height: 740px;
+  }
+}
+@media (max-width: 576px) {
+  #banner .textWrapper {
+    max-height: 600px;
+  }
+  #banner .hideImg {
+    max-height: 500px;
+  }
+}
+
+#bigCard {
+  height: 100%;
+  background-color: #004D4D;
+}
+#bigCard .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#bigCard .cardBtn {
+  margin: 15px;
+  color: white;
+  background-color: #008080;
+  font-weight: 900;
+  width: 232.5px;
+}
+#bigCard .homeBtn:hover {
+  background-color: darkmagenta;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+@media (max-width: 1400px) {
+  .textWrapper {
+    height: 59vh;
+  }
+}
+@media (min-width: 992px) {
+  .hideImg {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .picWrapper {
+    display: none;
+  }
+
+  .textWrapper {
+    width: 100%;
+    margin-bottom: 30px;
+    max-height: 500px;
+  }
+}
+#miniCard {
+  height: 100%;
+  background-color: #004D4D;
+}
+#miniCard .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#miniCard .cardBtn {
+  margin: 15px;
+  color: white;
+  background-color: #008080;
+  font-weight: 900;
+  width: 232.5px;
+}
+#miniCard .homeBtn:hover {
+  background-color: darkmagenta;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+@media (max-width: 1400px) {
+  .textWrapper {
+    height: 59vh;
+  }
+}
+@media (min-width: 992px) {
+  .hideImg {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .picWrapper {
+    display: none;
+  }
+
+  .textWrapper {
+    width: 100%;
+    margin-bottom: 30px;
+    max-height: 500px;
+  }
+}/*# sourceMappingURL=main.css.map */

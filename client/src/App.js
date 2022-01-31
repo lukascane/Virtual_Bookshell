@@ -6,16 +6,13 @@ import HomeBanner from './components/HomeBanner/HomeBanner';
 import SearchForm from './components/Form/SearchForm';
 import MiniCard from './components/Card/MiniCard';
 
-
 function App() {
   return (
     <div className="App">
-    
-    <SearchForm />
+      <SearchForm />
       {/* <Card /> */}
       <MiniCard />
       {/* <HomeBanner /> */}
-    
     </div>
   );
 }
