@@ -7,11 +7,13 @@ import SearchForm from './components/Form/SearchForm';
 import MiniCard from './components/Card/MiniCard';
 import BookModal from './components/Modals/BookModal';
 
-
 function App() {
   return (
     <div className="App">
-    <BookModal />
+      <SearchForm />
+      {/* <Card /> */}
+      <MiniCard />
+      {/* <HomeBanner /> */}
     </div>
   );
 }
