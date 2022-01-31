@@ -4,13 +4,15 @@ import NavBarLoggedIn from './components/Navbar/NavBarLoggedIn';
 import NavbarGuest from './components/Navbar/NavBarGuest';
 import HomeBanner from './components/HomeBanner/HomeBanner';
 import MiniCard from './components/Card/MiniCard';
+import ListCard2 from './components/Card/ListCard2';
 
 
 function App() {
   return (
     <div className="App">
       {/* <Card /> */}
-      <MiniCard />
+      {/* <MiniCard /> */}
+      <ListCard2 />
       {/* <HomeBanner /> */}
     
     </div>
