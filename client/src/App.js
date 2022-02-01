@@ -14,7 +14,8 @@ function App() {
       
       {/* <Card /> */}
       {/* <MiniCard /> */}
-     <ListCard />
+      <ListCard /> 
+      {/* < BookModal /> */}
       {/* <HomeBanner /> */}
     </div>
   );
