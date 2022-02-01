@@ -6,6 +6,7 @@ import HomeBanner from './components/HomeBanner/HomeBanner';
 import SearchForm from './components/Form/SearchForm';
 import MiniCard from './components/Card/MiniCard';
 import ListCard from './components/Card/ListCard2';
+import BookModal from './components/Modals/BookModal';
 
 function App() {
   return (
