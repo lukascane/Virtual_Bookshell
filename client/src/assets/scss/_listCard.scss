@@ -2,7 +2,7 @@
 
 #listcard {
    
-    width: 80%;
+   
     border: solid 12px #008080;
     margin-right: -45px;
     margin-top: -45px;
@@ -12,9 +12,7 @@
     margin: 200px auto;
     
     
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+   
    
     .image{
         padding: 10px;
@@ -55,7 +53,6 @@
         justify-content: space-between;
         width: 100%;
         
-      
         h1 {
             font-size: 30px;
             font-weight: 900;
@@ -67,15 +64,14 @@
 
     }
     
-
-    
-   
-   
     .vText {
         color: white;
         font-weight: 600;
     } 
+    .button-section {
+    padding: 5px 0;
 
+}
     .cardBtn {
         margin:15px;
         color: white;
@@ -106,7 +102,8 @@
            
             }
             .info{
-                margin: 0;
+                flex-flow: column;
+                width: 67%
     }
             }
           
