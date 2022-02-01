@@ -7,16 +7,12 @@ import SearchForm from './components/Form/SearchForm';
 import MiniCard from './components/Card/MiniCard';
 import ListCard from './components/Card/ListCard';
 import BookModal from './components/Modals/BookModal';
+import ReviewModal from './components/Modals/ReviewModal';
 
 function App() {
   return (
     <div className="App">
-      
-      {/* <Card /> */}
-      {/* <MiniCard /> */}
-      <ListCard /> 
-      {/* < BookModal /> */}
-      {/* <HomeBanner /> */}
+    <ReviewModal />
     </div>
   );
 }
