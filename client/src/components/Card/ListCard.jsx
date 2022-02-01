@@ -1,7 +1,7 @@
 import React from 'react';
 
-function ListCard2() {
-  return <div id="listcard" className="book-list">
+function ListCard() {
+  return <div id="listcard" className="h-25">
 <div className="info ">
 <section className="d-flex col">
     <div className="poster justify-content-center">
@@ -23,9 +23,9 @@ function ListCard2() {
       </span></p>
     </section>
     <section>
-      <div>
-        <h4>Plot</h4>
-        <p className="section">
+      <div className="section-list">
+        <p>Plot</p>
+        <p className="section scrolltext">
           "In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, The Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell, by chance, into the hands of the hobbit, Bilbo Baggins.
 
           From his fastness in the Dark Tower of Mordor, Sauron's power spread far and wide. He gathered all the Great Rings to him, but ever he searched far and wide for the One Ring that would complete his dominion."
@@ -50,4 +50,4 @@ function ListCard2() {
   </div>;
 }
 
-export default ListCard2;
+export default ListCard;
