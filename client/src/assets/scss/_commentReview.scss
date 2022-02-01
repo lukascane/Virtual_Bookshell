@@ -1,0 +1,27 @@
+#comment {
+    width: 90%;
+    margin: 0 10px;
+    color: #C4C4C4;
+    font-weight: 700;
+
+
+    .closeButton {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #008080;
+    font-weight: 900;
+    text-transform:uppercase;
+    color: #004D4D;
+    font-size: 1.2rem;
+    }
+
+    button:hover {
+    background-color: darkmagenta;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border: none 0px;
+    }
+    .userNameComment {
+        font-weight: 900;
+    }
+}
