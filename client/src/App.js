@@ -6,6 +6,9 @@ import HomeBanner from './components/HomeBanner/HomeBanner';
 import SearchForm from './components/Form/SearchForm';
 import MiniCard from './components/Card/MiniCard';
 import BookModal from './components/Modals/BookModal';
+import searchTitleAuthApi from './services/bookApi/searchTitleAuthApi';
+import sendBookInfoApi from './services/bookApi/sendBookInfoApi';
+import BooksProvider from './context/booksContextApi/BooksProvider';
 
 function App() {
   return (
@@ -14,6 +17,7 @@ function App() {
       {/* <Card /> */}
       <MiniCard />
       {/* <HomeBanner /> */}
+      <button onClick={searchTitleAuthApi}>click me</button>
     </div>
   );
 }
