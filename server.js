@@ -3,6 +3,8 @@ const app = express();
 const cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+const passport = require("passport");
 
 dotenv.config();
 app.set('port', process.env.PORT || 4000);
@@ -10,6 +12,13 @@ app.set('port', process.env.PORT || 4000);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+
+// read the cookie and add it to the request object under the prop "cookies"
+app.use(cookieParser());
+app.use(passport.initialize());
+
+const configureJwtStrategy = require("./passport-config");
+configureJwtStrategy(passport);
 
 const { DB_USER, DB_PASS, DB_HOST, DB_NAME } = process.env;
 
