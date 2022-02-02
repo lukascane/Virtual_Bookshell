@@ -5,17 +5,13 @@ import NavbarGuest from './components/Navbar/NavBarGuest';
 import HomeBanner from './components/HomeBanner/HomeBanner';
 import SearchForm from './components/Form/SearchForm';
 import MiniCard from './components/Card/MiniCard';
-
+import BookModal from './components/Modals/BookModal';
+import ReviewModal from './components/Modals/ReviewModal';
 
 function App() {
   return (
     <div className="App">
-    
-    <SearchForm />
-      {/* <Card /> */}
-      <MiniCard />
-      {/* <HomeBanner /> */}
-    
+    <ReviewModal />
     </div>
   );
 }

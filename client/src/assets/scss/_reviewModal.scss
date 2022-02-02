@@ -1,0 +1,87 @@
+#bookModalContainer2 {
+   max-width: 1166px;
+   width: 70vw;
+   max-height:100%;
+   margin: 0 auto;
+
+    .closeButton {
+        position: relative;
+        left: 100%;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background-color: #008080;
+        border: solid 12px #008080;
+        font-weight: 900;
+        text-transform:uppercase;
+        color: #2c2c2c;
+        font-size: 2.4rem;
+    }
+
+    button:hover {
+    background-color: darkmagenta;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border: none 0px;
+    }
+
+    #bookModal2 {
+    background-color: #004D4D;
+    max-height: 100%;
+    min-height: 70vh;
+    max-width: 1200px;
+    border: solid 12px #008080;
+    border-radius: 50px;
+    margin-right: -45px;
+    margin-top: -45px;
+    }
+
+    .btLink {
+        background-color: #C4C4C4;
+        text-transform:uppercase;
+        color: #008080;
+       font-weight: 900;
+       width: 290px;
+       height: 38px;
+       text-align: left;
+        border: 0px;
+
+    }
+    .btLink:hover {
+        background-color: darkmagenta;
+        color: #C4C4C4;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        border: 0px;
+    }
+
+    body {
+  position: relative;
+}
+
+
+    .textContainer {
+    color: #C4C4C4;
+    max-width: 90%;
+    min-width: 300px;
+    font-weight: 700;
+    max-height: 80vh;
+    min-height: 30vh;
+
+        h1 {
+            font-weight: 900;
+        }
+        hr {
+        color: #C4C4C4;
+        border: solid 2px ;
+        }
+    }
+
+    .textScroll {
+    background-color: rgba(196, 196, 196, 0.450);
+    color: #2c2c2c;
+    max-height: 50vh;
+    min-height: 20vh;
+    overflow: scroll;
+
+    }
+
+}

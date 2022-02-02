@@ -1,0 +1,134 @@
+#bookModalContainer {
+   max-width: 1166px;
+   width: 70vw;
+   max-height:100%;
+    margin: 0 auto;
+
+
+    .closeButton {
+        position: relative;
+        left: 100%;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background-color: #008080;
+        border: solid 12px #008080;
+        font-weight: 900;
+        text-transform:uppercase;
+        color: #2c2c2c;
+        font-size: 2.4rem;
+    }
+
+    button:hover {
+    background-color: darkmagenta;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border: none 0px;
+    }
+
+    #bookModal {
+    background-color: #004D4D;
+    max-height: 100%;
+    min-height: 70vh;
+    max-width: 1200px;
+    border: solid 12px #008080;
+    border-radius: 50px;
+    margin-right: -45px;
+    margin-top: -45px;
+    display: flex;
+    flex-direction: row;
+    }
+
+    .card {
+    background-color: #004d4d00;
+    border: 0px;
+    min-width: 270px;
+    max-width: 350px;
+
+    .btLink {
+        background-color: #C4C4C4;
+        text-transform:uppercase;
+        color: #008080;
+       font-weight: 900;
+       width: 260px;
+       height: 38px;
+       text-align: left;
+    }
+    .btLink:hover {
+        background-color: darkmagenta;
+        color: #C4C4C4;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        border: none 0px;
+    }
+
+    ul {
+            background-color: #004D4D;
+            cursor: pointer;
+            border: none 0px;
+            
+            li {
+            color: #DEDADA;
+            font-weight: 700;
+            }
+
+            li:hover {
+                background-color: darkmagenta;
+                box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            }
+        }
+
+    }
+
+    body {
+  position: relative;
+}
+
+
+    .textContainer {
+    color: #C4C4C4;
+    max-width: 835px;
+    min-width: 300px;
+    font-weight: 700;
+    max-height: 80vh;
+    min-height: 686px;
+    margin-right: 1.5rem;
+
+        h1 {
+            font-weight: 900;
+        }
+        hr {
+        color: #C4C4C4;
+        border: solid 2px ;
+        }
+    }
+    .silverSect {
+    background-color: #C4C4C4;
+    color: #2c2c2c;
+    min-width: 100%;
+
+    h5 {
+    font-weight: 700;
+    }
+    }
+    .textScroll {
+    background-color: rgba(196, 196, 196, 0.450);
+    color: #2c2c2c;
+    max-height: 44vh;
+    min-height: 20vh;
+    overflow: scroll;
+
+    }
+
+@media (max-width: 768px) {
+    #bookModal {
+        display: flex;
+        flex-direction: column;
+    }
+    .textContainer {
+        margin: 0;
+    }
+    .textWrap {
+        min-width: 300px;
+        margin-left: 20px;
+    }
+ }
+}
