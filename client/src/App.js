@@ -11,7 +11,7 @@ import ReviewModal from './components/Modals/ReviewModal';
 function App() {
   return (
     <div className="App">
-    <ReviewModal />
+    <BookModal />
     </div>
   );
 }
