@@ -2,10 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 
 
-export default function ListCard() {
+export default function ListCardToRead() {
     const [buttonText, setButtonText] = useState("SHARE"); 
     const changeText = (text) => setButtonText(text);
-
   return <div id='listCardElement' className='mt-5'>
 
   <div className='picBookCont me-4 ms-4'>
@@ -43,7 +42,7 @@ export default function ListCard() {
 
     <div className='commandWrap d-flex justify-content-around col align-items-center'>
         <div className="card-body d-flex row justify-content-center align-items-center">
-        <a href="#" className="btn btLink m-2">list to read</a>
+        <a href="#" className="btn btLink m-2">list read</a>
         <a href="#" className="btn btLink m-2 mb-3">review</a>
                 <div className="dropdown d-flex justify-content-center align-items-center mb-5">
         <button className="btn dropdown-toggle btLink" type="button" data-bs-toggle="dropdown" aria-expanded="false" >{buttonText}
