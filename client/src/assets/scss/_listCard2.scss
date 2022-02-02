@@ -1,0 +1,52 @@
+
+
+#listCardContainer2 {
+    margin: 2% auto;
+    width: 70%;
+    max-height:100%;
+    margin: 0 auto;
+
+}
+
+
+    #divContainer {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: #004D4D;
+        border-bottom: solid 1px #008080;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        
+        
+        .book-list-heading {
+        width: 80%;
+        
+        display: flex;
+        justify-content: space-between;
+    }
+
+    h2 {
+        font-size: 2rem;
+        }
+
+    .choose-btn {
+            
+                margin-left: auto;
+            }
+
+            .cardBtn {
+                margin:15px;
+                color: white;
+                background-color: #008080;
+                font-weight: 900;
+                width: 232.5px;
+            }
+        
+            .homeBtn:hover {
+                background-color: darkmagenta;
+                box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            }
+               
+    }

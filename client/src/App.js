@@ -8,11 +8,13 @@ import MiniCard from './components/Card/MiniCard';
 import ListCard from './components/Card/ListCard';
 import BookModal from './components/Modals/BookModal';
 import ReviewModal from './components/Modals/ReviewModal';
+import ListCard2 from './components/Card/ListCard2';
 
 function App() {
   return (
     <div className="App">
-    <ReviewModal />
+    <ListCard2 />
+    {/* <ReviewModal /> */}
     </div>
   );
 }
