@@ -9,8 +9,19 @@ function searchTitleAuthApi() {
   return searchAxiosInstance
     .get('/', config)
     .then((response) => {
-      console.log(response.data);
-      return response.data;
+      const data = response.data;
+
+      const showData = data.docs.map((item) => {
+        return {
+          title: item.title,
+          author: item.author_name,
+          cover_i: item.cover_i,
+          isbn: item.isbn,
+        };
+      });
+
+      console.log(showData);
+      return showData;
     })
     .catch((err) => {
       return { error: err };
