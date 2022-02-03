@@ -12,6 +12,8 @@ import {
 import Footer from '../components/Footer/Footer';
 import NavG from '../components/Navbar/NavBarGuest';
 import Landing from '../pages/Landing/Landing';
+import ParagraphInfo from '../components/ParagraphInfo/ParagraphInfo';
+
 
 function MainRouter() {
   return (
@@ -19,7 +21,7 @@ function MainRouter() {
       <BrowserRouter>
         <NavG />
         <main>
-          <Profile />
+
         </main>
         <Footer />
       </BrowserRouter>
