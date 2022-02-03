@@ -7,7 +7,7 @@ export default function Footer() {
 
   return <div id='footer' style={{background: '#2c2c2c'}}>
 
-        <nav className="navbar">
+        <nav className="navbar" style={{background: '#2c2c2c'}}>
         <div className="container-fluid d-flex justify-content-center">
         <span className="navbar-brand d-flex align-items-center" href="#">
         <img src={Logo2} alt="logo" width="48" height="42" className="d-inline-block align-text-top fs-5 p-1 logo" /> 
