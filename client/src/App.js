@@ -12,6 +12,9 @@ import SignUpForm from './components/Form/SignUpForm';
 import EditProfileForm from './components/ProfileComponents/EditProfileForm';
 import ProfileCard from './components/ProfileComponents/ProfileCard';
 import ErrorModal from './components/Modals/ErrorModal';
+import ListCard from './components/Card/ListCard';
+import ListCardToRead from './components/Card/ListCardToRead';
+
 function App() {
   return (
     <div className="App">

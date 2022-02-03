@@ -11,7 +11,7 @@ function Card() {
   </div>
     <div className="card-body text-left">
       <h5 className="card-title">Book Title</h5>
-      <p className="card-text">Some quick example </p>
+      <p className="card-text">Some quick example</p>
       </div>
       
       <div className="button">
