@@ -2,9 +2,9 @@ import React from 'react';
 import { useState, useContext } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
 
-export default function SearchForm(props) {
+export default function SearchForm() {
   const [buttonText, setButtonText] = useState('Title/Year');
-  const { onClickFetchData, bookInfos } = useContext(BookContext);
+  const { onClickFetchData } = useContext(BookContext);
   const changeText = (text) => setButtonText(text);
 
   return (

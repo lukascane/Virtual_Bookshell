@@ -8,8 +8,8 @@ export default function CardWrapper() {
 
   return (
     <div>
-      {bookInfos.map((item) => (
-        <Card item={item}></Card>
+      {bookInfos.map((item, index) => (
+        <Card item={item} id={index}></Card>
       ))}
     </div>
   );
