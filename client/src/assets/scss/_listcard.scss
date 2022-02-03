@@ -1,0 +1,139 @@
+#listCardElement {
+    max-width: 1400px;
+    width: 100%;
+    min-height: 200px;
+    max-height: 280px;
+    margin: 0 auto;
+    background-color: #004D4D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    .book-cover-thumb {
+        max-height: 220px;
+        display: block;
+    }
+    .dataBookCont {
+        background-color: rgba(196, 196, 196, 0.450);
+        min-height: 200px;
+        max-height: 280px;
+    }
+    .bookInfo, .bookInfo2 {
+        font-weight: 700;
+        color: #C4C4C4;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        line-height: 18px;
+    }
+    body {
+    position: relative;
+    }
+
+    .btLink {
+        color: #C4C4C4;
+        text-transform:uppercase;
+        background-color: #008080;
+       font-weight: 900;
+       width: 260px;
+       height: 38px;
+       text-align: left;
+       border: 0px;
+    }
+    .btLink:hover {
+        background-color: darkmagenta;
+        color: #C4C4C4;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        border: 0px;
+    }
+    ul {
+            background-color: #008080;
+            cursor: pointer;
+            border: 0px;
+            
+            li {
+            color: #DEDADA;
+            font-weight: 700;
+            }
+
+            li:hover {
+                background-color: darkmagenta;
+                box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            }
+        }
+    .commandWrap {
+        max-width: 300px;
+    }
+    
+    .silverSect {
+    background-color: #C4C4C4;
+    color: #2c2c2c;
+    min-width: 100%;
+
+    h5 {
+    font-weight: 700;
+    }
+    }
+    .textScroll {
+    background-color: rgba(196, 196, 196, 0.450);
+    color: #2c2c2c;
+    max-height: 200px;
+    min-height: 100px;
+    overflow: scroll;
+    max-width: 70vw;
+    min-width: 300px;
+    font-weight: 700;
+    }
+
+}
+@media (min-width: 992px) {
+    .bookInfo2 {
+        display: none !important;
+        .bigHide {
+            display: none;
+        }
+    }
+    
+.bookInfo, .bookInfo2 {
+    min-width: 200px;
+    max-width: 230px; 
+}
+}
+@media (max-width: 992px) {
+
+    #listCardElement {
+    margin: 0 auto;
+    display: flex !important;
+    flex-direction: column !important; 
+    justify-content: center !important;
+    align-items: center;
+    padding-bottom: 200px;
+    max-height: 100%;
+
+    .dataBookCont {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .bookInfo {
+        display: none;
+    }
+    .picBookCont {
+        display: flex;
+        flex-direction: row;
+        padding: 0px 0px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        min-width: 300px;
+    }
+    .description {
+        margin-top: 210px;
+    }
+    .bigHide, .bookInfo2 {
+        max-width: 170px;
+    }
+} 
+}
