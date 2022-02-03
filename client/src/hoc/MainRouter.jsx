@@ -1,18 +1,27 @@
 import React from 'react';
 import BooksProvider from '../context/booksContextApi/BooksProvider';
-import SearchForm from '../components/Form/SearchForm';
-import Card from '../components/Card/Card';
-import CardWrapper from '../components/Wrapper/CardWrapper';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  BrowserRouter,
+} from 'react-router-dom';
+import Footer from '../components/Footer/Footer';
+import NavG from '../components/Navbar/NavBarGuest';
+import Landing from '../pages/Landing/Landing';
 
 function MainRouter() {
   return (
     <BooksProvider>
-      <div>
-        <SearchForm />
-        <CardWrapper />
-      </div>
+      <BrowserRouter>
+        <NavG />
+        <main>
+          <Landing />
+        </main>
+        <Footer />
+      </BrowserRouter>
     </BooksProvider>
   );
 }
-
 export default MainRouter;
