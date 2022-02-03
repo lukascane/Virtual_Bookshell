@@ -11,6 +11,7 @@
 
     .card {
         height: 100%;
+        min-height: 485px;
         width: 100%;
     }
     .sep {
@@ -19,6 +20,7 @@
 
     .picWrapper {
         height: 90vh;
+        min-height: 900px;
         width: 740px;
         background-image: url(../images/tina-vanhove-unsplash.jpg);
         background-repeat: no-repeat;
