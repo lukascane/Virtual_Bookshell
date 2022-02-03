@@ -1,17 +1,32 @@
-import axios from 'axios';
+import searchAxiosInstance from '../../util/searchAxiosInstance';
 
-async function searchTitleAuthApi() {
-  try {
-    const response = await axios.get(
-      `http://openlibrary.org/search.json?q=the+lord+of+the+rings&page=2&limit=10`
-    );
+function searchTitleAuthApi() {
+  const config = {
+    params: {
+      q: 'the+lord+of+the+rings',
+      limit: 5,
+    },
+  };
+  return searchAxiosInstance
+    .get('/', config)
+    .then((response) => {
+      const data = response.data;
 
-    console.log(response.data);
-  } catch (error) {
-    console.log('Could not get data');
-  }
+      const showData = data.docs.map((item) => {
+        return {
+          title: item.title,
+          author: item.author_name,
+          cover_i: item.cover_i,
+          isbn: item.isbn,
+        };
+      });
 
-  return <div></div>;
+      console.log(showData);
+      return showData;
+    })
+    .catch((err) => {
+      return { error: err };
+    });
 }
 
 export default searchTitleAuthApi;

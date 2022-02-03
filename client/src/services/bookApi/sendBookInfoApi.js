@@ -24,8 +24,6 @@ async function sendBookInfoApi() {
   console.log(bookOne);
   const res = await axios.post('/api/books/create', bookInfoToSend);
   console.log(res.data);
-
-  return <div></div>;
 }
 
 export default sendBookInfoApi;
