@@ -1,5 +1,7 @@
 import React from 'react';
 import BooksProvider from '../context/booksContextApi/BooksProvider';
+import Profile from '../pages/Profile/Profile'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,7 +19,7 @@ function MainRouter() {
       <BrowserRouter>
         <NavG />
         <main>
-          <Landing />
+          <Profile />
         </main>
         <Footer />
       </BrowserRouter>
