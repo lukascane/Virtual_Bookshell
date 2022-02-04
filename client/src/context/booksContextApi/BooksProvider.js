@@ -1,18 +1,27 @@
+import React, { useState, useContext } from 'react';
 import BookContext from './BookContext';
 import searchTitleAuthApi from '../../services/bookApi/searchTitleAuthApi';
 
-function BooksProvider() {
-  const fetchData = async () => {
+export default function BooksProvider({ children }) {
+  const [bookInfos, setBookInfos] = useState([]);
+
+  const onClickFetchData = async () => {
     const data = await searchTitleAuthApi();
 
-    const isbn = data.docs[0].isbn.map((book) => {
-      return book;
-    });
-    console.log(isbn[0]);
-    return isbn[0];
+    setBookInfos(data);
+    console.log('I am from showData ', bookInfos);
+    return bookInfos;
   };
 
-  fetchData();
-}
+  // const newData = onClickFetchData();
+  // console.log(newData);
 
-export default BooksProvider;
+  const providedData = {
+    onClickFetchData,
+    bookInfos,
+  };
+
+  return (
+    <BookContext.Provider value={providedData}>{children}</BookContext.Provider>
+  );
+}
