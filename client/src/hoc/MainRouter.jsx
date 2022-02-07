@@ -17,17 +17,12 @@ import Landing from '../pages/Landing/Landing';
 import Registration from '../pages/Registration/Registration';
 
 
-
-
 function MainRouter() {
   return (
     <BooksProvider>
       <BrowserRouter>
         <NavG />
         <main>
-
-        <Registration/>
-
         </main>
         {/* <Footer />  */}
       </BrowserRouter>
