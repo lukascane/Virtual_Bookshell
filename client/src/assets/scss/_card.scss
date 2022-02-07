@@ -1,6 +1,5 @@
 #bigCard {
     height: 100%;
-    background-color: #004D4D;
 
     
     .container {
@@ -16,6 +15,8 @@
         background-color: #008080;
         font-weight: 900;
         width: 232.5px;
+        text-transform: uppercase;
+        text-align: left;
     }
 
     .homeBtn:hover {
