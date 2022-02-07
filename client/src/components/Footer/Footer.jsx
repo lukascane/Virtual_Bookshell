@@ -5,7 +5,7 @@ export default function Footer() {
 
      const today = new Date();
 
-  return <div id='footer' style={{background: '#2c2c2c'}}>
+  return <div id='footer' style={{background: '#2c2c2c', marginBottom:"0%"}}>
 
         <nav className="navbar" style={{background: '#2c2c2c'}}>
         <div className="container-fluid d-flex justify-content-center">
