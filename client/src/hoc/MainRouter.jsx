@@ -14,6 +14,7 @@ import {
 import Footer from '../components/Footer/Footer';
 import NavG from '../components/Navbar/NavBarGuest';
 import Landing from '../pages/Landing/Landing';
+import Registration from '../pages/Registration/Registration';
 
 
 
@@ -25,7 +26,7 @@ function MainRouter() {
         <NavG />
         <main>
 
-        <Login/>
+        <Registration/>
 
         </main>
         {/* <Footer />  */}
