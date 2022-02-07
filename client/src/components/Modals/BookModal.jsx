@@ -7,7 +7,8 @@ export default function BookModal() {
     const changeText = (text) => setButtonText(text);
 
   return (
-  <div id='bookModalContainer' className='mt-5 mb-5'>
+      <div id='mask'>
+  <div id='bookModalContainer' className='mb-5'>
      <button className='closeButton d-flex justify-content-center align-items-center fixed-top'>X</button>
 
      <div id='bookModal' className='justify-content-between align-items-center'>
@@ -54,7 +55,7 @@ export default function BookModal() {
             
             <hr />
             
-            <div className='silverSect p-1 d-flex justify-content-center align-items-center'>
+            <div className='silverSect p-1 d-flex justify-content-center align-items-center' style={{backgroundColor:'#C4C4C4'}}>
                 <h5 className='mb-0'>I Book genre? I</h5>
             </div>
             
@@ -76,5 +77,7 @@ export default function BookModal() {
 
      </div>
 
-  </div>);
+  </div>
+  </div>
+  );
 }
