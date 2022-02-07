@@ -14,8 +14,7 @@ import {
 import Footer from '../components/Footer/Footer';
 import NavG from '../components/Navbar/NavBarGuest';
 import Landing from '../pages/Landing/Landing';
-import Registration from '../pages/Registration/Registration';
-
+import SearchView from '../pages/SearchBooks/SearchBooks'
 
 function MainRouter() {
   return (
@@ -23,6 +22,7 @@ function MainRouter() {
       <BrowserRouter>
         <NavG />
         <main>
+        <SearchView />
         </main>
         {/* <Footer />  */}
       </BrowserRouter>
