@@ -22,7 +22,7 @@ function MainRouter() {
       <BrowserRouter>
         <NavG />
         <main>
-
+        <SearchView />
         </main>
         {/* <Footer />  */}
       </BrowserRouter>
