@@ -1,29 +1,63 @@
+#mask {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #2c2c2c;
+    opacity: 0.8;
+    z-index: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
 #ErrorModalContainer {
     max-width: 1166px;
+    min-width: 350px;
     width: 70vw;
-    max-height:100%;
-     margin: 0 auto;
- 
- 
- 
+    min-height: 30vh;
+    max-height: 100%;
+     margin: 130px auto;
+     z-index: 10;
+  
      #ErrorModal {
-     background-color: #004D4D;
-     max-height: 100%;
-     min-height: 80vh;
+     background-color: #008080;
+     max-height: 740px;
+     min-height: 30vh;
      max-width: 1200px;
      border: solid 12px #008080;
      border-radius: 50px;
-   
+    justify-content: center;
      display: flex;
      flex-direction: row;
      }
- 
-     .card {
-     background-color: #004d4d00;
-     border: 0px;
-     min-width: 270px;
-     max-width: 350px;
- 
+
+     .esclamation {
+         border-radius: 50%;
+         height: 250px;
+         width: 250px;
+         background-color: #004D4D;
+         color: #008080;
+         font-weight: 900;
+         font-size: 12rem;
+     }
+     .textWrap {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+
+         h1 {
+             font-weight: 900;
+             font-size: 8rem;
+            color: #2c2c2c;
+         }
+         h5, p {
+             font-weight: 700;
+             font-size: 2rem;
+            color: #2c2c2c;
+
+         }
+
+     }
      .btLink {
          background-color: #C4C4C4;
          text-transform:uppercase;
@@ -32,6 +66,7 @@
         width: 260px;
         height: 38px;
         text-align: left;
+        border: none 0px;
      }
      .btLink:hover {
          background-color: darkmagenta;
@@ -40,74 +75,28 @@
          border: none 0px;
      }
  
-     }
- 
-     body {
-   position: relative;
- }
- 
- 
-     .textContainer {
-     color: #C4C4C4;
-     max-width: 835px;
-     font-weight: 900;
-     max-height: 100vh;
-     min-height: 686px;
-     margin-right: 1.5rem;
- 
-         h1 {
-             font-weight: 500;
-         }
-       
-     }
-     .silverSect {
-     background-color: #C4C4C4;
-     color: #2c2c2c;
-     min-width: 100%;
- 
-     h5 {
-     font-weight: 700;
-     }
-     }
-     .textScroll {
-     background-color: rgba(196, 196, 196, 0.450);
-     color: #2c2c2c;
-     max-height: 44vh;
-     min-height: 20vh;
-     overflow: scroll;
- 
-     }
-
-     .btLink {
-        background-color: #C4C4C4;
-        text-transform:uppercase;
-        color: #008080;
-       font-weight: 900;
-       width: 290px;
-       height: 38px;
-       text-align: left;
-        border: 0px;
-
-    }
+   
     .btLink:hover {
         background-color: darkmagenta;
         color: #C4C4C4;
         box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
         border: 0px;
     }
- 
+}
+
  @media (max-width: 768px) {
-     #ErrorModal {
-         display: flex;
-         flex-direction: column;
+     #errorModalContainer {
+         margin-top: 130px;
+         margin-left: 0;
+        margin-right: 0;
      }
-     .textContainer {
-         margin: 0;
-     }
+
+ 
      .textWrap {
          margin: auto;
+         margin-left: 0px;
+        margin-right: 0px;
          min-width: 60px;
-         margin-left: 30px;
      }
   }
- }
+ 
