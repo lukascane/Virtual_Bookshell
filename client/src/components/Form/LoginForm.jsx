@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function LoginForm() {
-  return <div id='login' className='d-flex justify-content-center row align-items-center mt-2 mb-2'>
+  return <div id='login' className='d-flex justify-content-center row align-items-center'>
 
     <h4 className='mt-2 mb-5'>Login with your existing account to start</h4>
     <h4 className='mt-2'>Username:</h4>
