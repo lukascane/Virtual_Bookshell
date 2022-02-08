@@ -6,7 +6,7 @@ export default function ListCard() {
     const [buttonText, setButtonText] = useState("SHARE"); 
     const changeText = (text) => setButtonText(text);
 
-  return <div id='listCardElement' className='mt-5'>
+  return <div id='listCardElement' className='border-bottom mt-4'>
 
   <div className='picBookCont me-4 ms-4'>
       <img src='https://covers.openlibrary.org/b/id/8166951-M.jpg' alt='book-cover-thumb'className='book-cover-thumb' />
@@ -34,18 +34,24 @@ export default function ListCard() {
     </div>
 
     <div className='description'>
-        <div className='descrTxt textScroll mt-3 p-3'><p>
-        Change the visual order of specific flex items with a handful of order utilities. We only provide options for making an item first or last, as well as a reset to use the DOM order. As order takes any integer value from 0 to 5, add custom CSS for any additional values needed.Change the visual order of specific flex items with a handful of order utilities. We only provide options for making an item first or last, as well as a reset to use the DOM order. As order takes any integer value from 0 to 5, add custom CSS for any additional values needed.Change the visual order of specific flex items with a handful of order utilities. We only provide options for making an item first or last, as well as a reset to use the DOM order. As order takes any integer value from 0 to 5, add custom CSS for any additional values needed.Change the visual order of specific flex items with a handful of order utilities. We only provide options for making an item first or last, as well as a reset to use the DOM order. As order takes any integer value from 0 to 5, add custom CSS for any additional values needed.</p></div>
-        <div className='silverSect p-1 d-flex justify-content-center align-items-center mb-4 mt-3'>
+        <div className='descrTxt textScroll p-3'><p>
+        In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, The Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell, by chance, into the hands of the hobbit, Bilbo Baggins.
+
+From his fastness in the Dark Tower of Mordor, Sauron's power spread far and wide. He gathered all the Great Rings to him, but ever he searched far and wide for the One Ring that would complete his dominion.
+
+On his eleventy-first birthday Bilbo disappeared, bequeathing to his young cousin Frodo the Ruling Ring and a perilous quest --- to journey across Middle-earth, deep into the shadow of the Dark Lord, and destroy the Ring by casting it into the Cracks of Doom. THE LORD OF THE RINGS tells of the great quest undertaken by Frodo and the Fellowship of the Ring: Gandalf the Wizard, Merry, Pippin, and Sam, Gimli the Dwarf, Legolas the Elf, Boromir of Gondor, and a tall, mysterious stranger called Strider.
+--back cove</p></div>
+        <div className='silverSect p-1 d-flex justify-content-center align-items-center mb-4'>
         <h5 className='mb-0'>I Book genre? I</h5>
         </div>
     </div>
 
     <div className='commandWrap d-flex justify-content-around col align-items-center'>
-        <div className="card-body d-flex row justify-content-center align-items-center">
-        <a href="#" className="btn btLink m-2">list to read</a>
-        <a href="#" className="btn btLink m-2 mb-3">review</a>
-                <div className="dropdown d-flex justify-content-center align-items-center mb-5">
+
+        <div className="bttW mx-2 container-fluid">
+        <a href="#" className="btn btLink">to read</a>
+        <a href="#" className="btn btLink">review</a>
+                <div className="dropdown d-flex justify-content-center align-items-center">
         <button className="btn dropdown-toggle btLink" type="button" data-bs-toggle="dropdown" aria-expanded="false" >{buttonText}
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -66,6 +72,6 @@ export default function ListCard() {
     </div>
 
   </div>
-
+  
   </div>;
 }

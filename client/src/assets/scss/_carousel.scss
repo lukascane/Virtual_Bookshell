@@ -1,0 +1,23 @@
+#carousel {
+
+    .react-3d-carousel,.slider-container, .slider-content, .slider-single, .slider-single-content {
+    box-shadow: none;
+    }
+    .slider-left, .slider-right {
+        :first-child:not(i) {
+            border: solid #006666;
+            background-color: #006666;
+            border-radius: 10%;
+
+        }
+
+    }
+        .slider-left:hover, .slider-right:hover {
+           :first-child:not(i) { 
+            background-color: darkmagenta;
+            border: solid darkmagenta;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+        }
+
+}

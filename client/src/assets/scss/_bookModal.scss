@@ -1,8 +1,22 @@
+#mask {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #2c2c2c;
+    opacity: 0.8;
+    z-index: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
 #bookModalContainer {
    max-width: 1166px;
    width: 70vw;
    max-height:100%;
-    margin: 0 auto;
+    margin: 130px auto;
+    z-index: 10;
+
 
 
     .closeButton {
@@ -29,7 +43,7 @@
     background-color: #004D4D;
     max-height: 100%;
     min-height: 70vh;
-    max-width: 1200px;
+    max-width: 1215px;
     border: solid 12px #008080;
     border-radius: 50px;
     margin-right: -45px;
@@ -52,6 +66,7 @@
        width: 260px;
        height: 38px;
        text-align: left;
+       border: 0px;
     }
     .btLink:hover {
         background-color: darkmagenta;
@@ -122,6 +137,7 @@
     #bookModal {
         display: flex;
         flex-direction: column;
+        margin-left: 0;
     }
     .textContainer {
         margin: 0;
@@ -131,4 +147,10 @@
         margin-left: 20px;
     }
  }
+}
+@media (max-width: 768px) {
+    #bookModalContainer {
+        margin-left: 16px;
+        min-width: 82%;
+    } 
 }

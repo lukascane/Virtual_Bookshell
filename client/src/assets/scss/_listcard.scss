@@ -1,5 +1,5 @@
 #listCardElement {
-    max-width: 1400px;
+    // max-width: 1400px;
     width: 100%;
     min-height: 200px;
     max-height: 280px;
@@ -9,6 +9,8 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    margin-bottom: 20px;
+    border: #C4C4C4;
 
     .book-cover-thumb {
         max-height: 220px;
@@ -17,7 +19,13 @@
     .dataBookCont {
         background-color: rgba(196, 196, 196, 0.450);
         min-height: 200px;
-        max-height: 280px;
+        max-height: 250px;
+    }
+    .bttW{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
     .bookInfo, .bookInfo2 {
         font-weight: 700;
@@ -26,6 +34,7 @@
         display: flex;
         flex-direction: column;
         line-height: 18px;
+        min-width: 220px;
     }
     body {
     position: relative;
@@ -34,12 +43,13 @@
     .btLink {
         color: #C4C4C4;
         text-transform:uppercase;
-        background-color: #008080;
+        background-color: #004D4D;
        font-weight: 900;
-       width: 260px;
+       max-width: 260px;
        height: 38px;
        text-align: left;
        border: 0px;
+       margin: 10px 15px;
     }
     .btLink:hover {
         background-color: darkmagenta;
@@ -81,13 +91,16 @@
     max-height: 200px;
     min-height: 100px;
     overflow: scroll;
-    max-width: 70vw;
+    // max-width: 70vw;
     min-width: 300px;
     font-weight: 700;
     }
 
 }
 @media (min-width: 992px) {
+    .btLink {
+        min-width: 250px;
+    }
     .bookInfo2 {
         display: none !important;
         .bigHide {
@@ -108,8 +121,9 @@
     flex-direction: column !important; 
     justify-content: center !important;
     align-items: center;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     max-height: 100%;
+    margin-bottom: 0px;
 
     .dataBookCont {
         display: flex;
@@ -130,10 +144,51 @@
         min-width: 300px;
     }
     .description {
-        margin-top: 210px;
+        margin-top: 78px;
     }
     .bigHide, .bookInfo2 {
         max-width: 170px;
     }
-} 
+ 
+    .textScroll {
+    max-width: 100%;
+    }
+    .bttW {
+        min-width: 100vw;
+        display: flex;
+        flex-direction:row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+      
+
+        .btLink{
+        width: 30vw;
+        min-width: 105px;
+        background-color: #008080;            
+        }
+    }
+}    
 }
+@media (max-width: 576px) {
+    .bttW {
+        min-width: 100vw;
+        display: flex;
+        flex-direction:row-reverse;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        margin-right: 10px;
+      
+
+        .btLink{
+
+            a{
+            margin-top: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;            
+        }
+    }
+    }
+ }

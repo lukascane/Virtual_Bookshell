@@ -1,7 +1,7 @@
 import React from 'react';
 import BooksProvider from '../context/booksContextApi/BooksProvider';
 import Profile from '../pages/Profile/Profile'
-
+import Login from '../pages/Login/Login'; 
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,8 +12,9 @@ import {
 import Footer from '../components/Footer/Footer';
 import NavG from '../components/Navbar/NavBarGuest';
 import Landing from '../pages/Landing/Landing';
-import ParagraphInfo from '../components/ParagraphInfo/ParagraphInfo';
-
+import SearchView from '../pages/SearchBooks/SearchBooks'
+import BookModal from '../components/Modals/BookModal'
+import ErrorModal from '../components/Modals/ErrorModal'
 
 function MainRouter() {
   return (
@@ -23,7 +24,7 @@ function MainRouter() {
         <main>
 
         </main>
-        <Footer />
+        {/* <Footer />  */}
       </BrowserRouter>
     </BooksProvider>
   );

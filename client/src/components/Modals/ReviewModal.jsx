@@ -2,7 +2,9 @@ import React from 'react';
 import CommentReview from './CommentReview';
 
 export default function ReviewModal() {
-  return <div id='bookModalContainer2' className='mt-5 mb-5'>
+  return (
+  <div id='mask'>
+  <div id='bookModalContainer2' className='mb-5'>
      <button className='closeButton d-flex justify-content-center align-items-center fixed-top'>X</button>
 
      <div id='bookModal2' className='d-flex justify-content-center align-items-center row'>
@@ -17,7 +19,7 @@ export default function ReviewModal() {
             </div>
 
             <div className="card-body d-flex justify-content-start align-items-center" style={{marginLeft: '-20px'}}>
-            <a href="#" className="btn btLink m-2">add a comment/review</a>
+            <a href="#" className="btn btLink m-2">comment/review</a>
             </div>
 
             <hr />
@@ -28,10 +30,11 @@ export default function ReviewModal() {
         <CommentReview />
         </div>
          <div className="card-body d-flex justify-content-start align-items-center mb-2" style={{maxWidth:'93%'}}>
-         <a href="#" className="btn btLink m-2">back to book search</a>
+         <a href="#" className="btn btLink m-2">back</a>
          </div>
      </div>
 
-  </div>;
+  </div>
+  </div>);
 }
 

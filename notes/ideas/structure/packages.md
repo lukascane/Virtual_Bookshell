@@ -25,3 +25,4 @@
  - "sass": "^1.49.0",
  - "scripts": "^0.1.0",
  - "web-vitals": "^1.1.2"
+ - "3d-react-carousal": "^4.0.2",
