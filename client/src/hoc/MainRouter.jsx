@@ -26,7 +26,7 @@ function MainRouter() {
             <Route path="/searchbooks" element={<SearchBooks />} />
             <Route path="/toreadlist" element={<ToReadList />} />
             <Route path="/readlist" element={<ReadList />} />
-            <Route path="notfound" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         {/* <Footer />  */}
