@@ -82,9 +82,7 @@ export default function SearchForm() {
           </li>
         </ul>
       </div>
-      <div className="form-text mt-3 vText">
-        You found 11111 books text to be a variable of search.
-      </div>
+      {/* <Paragraph component here></Paragraph> */}
     </div>
   );
 }

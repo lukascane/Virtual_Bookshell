@@ -7,7 +7,7 @@ function MiniCardWrapper() {
   const { onClickFetchData, bookInfos } = useContext(BookContext);
   console.log(bookInfos);
   return (
-    <div className="d-flex justify-content-evenly col">
+    <div className="d-flex justify-content-between col container">
       {bookInfos.map((item, index) => (
         <MiniCard item={item} id={index}></MiniCard>
       ))}

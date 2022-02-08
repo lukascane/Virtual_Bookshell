@@ -2,15 +2,12 @@ import React from 'react';
 
 function miniCard() {
   return (
-    <div id="bigCard">
-      <div class="row d-flex justify-content-between ">
-        <div>
+
           <div
-            id="bigcard"
-            className="sshadow-lg row card"
-            style={{ width: '18rem' }}
+            id="miniCard"
+            className="shadow-lg card"
           >
-            <div>
+            <div className='container'>
               <img
                 src="https://covers.openlibrary.org/b/id/8166951-M.jpg
   "
@@ -29,10 +26,7 @@ function miniCard() {
               </a>
             </div>
           </div>
-          ;
-        </div>
-      </div>
-    </div>
+
   );
 }
 
