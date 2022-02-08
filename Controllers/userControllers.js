@@ -44,7 +44,7 @@ exports.listUsers = async (req, res) => {
 
 exports.login = async (req, res) => {
   //check if the user exists with that email
-  const user = await User.findOne({ email: req.body.email });
+  const user = await User.findOne({ username: req.body.username });
 
   if (user === null) {
     return res

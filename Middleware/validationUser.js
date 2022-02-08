@@ -1,5 +1,5 @@
 const { body, validationResult } = require('express-validator');
-const { capitalizeFirstLetter } = require('./../helpers/sanitizationHelper');
+const { capitalizeFirstLetter } = require('../Helpers/sanitizationhelpers');
 
 module.exports.validateUser = [
   body('firstname')
@@ -21,6 +21,7 @@ module.exports.validateUser = [
 
     next();
   },
+
   body('lastname')
     .exists()
     .trim()
@@ -30,6 +31,7 @@ module.exports.validateUser = [
     .withMessage(
       'lastname should not be empty, should be more than one and less than 50 characters'
     ),
+
   function (req, res, next) {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -40,17 +42,36 @@ module.exports.validateUser = [
 
     next();
   },
+
   body('email')
     .exists()
     .trim()
     .isEmail()
     .withMessage('This is not a valid email'),
+
   function (req, res, next) {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res
         .status(400)
         .json({ titel: 'Validation errors email', error: errors });
+    }
+
+    next();
+  },
+
+  body('password')
+    .notEmpty()
+    .isString()
+    .isLength({ min: 8 })
+    .withMessage('The password has to be minimum 8 characters'),
+
+  function (req, res, next) {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res
+        .status(400)
+        .json({ titel: 'Validation errors password', error: errors });
     }
 
     next();
