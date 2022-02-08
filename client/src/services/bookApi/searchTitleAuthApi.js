@@ -4,7 +4,7 @@ function searchTitleAuthApi() {
   const config = {
     params: {
       q: 'the+lord+of+the+rings',
-      limit: 12,
+      limit: 8,
     },
   };
   return searchAxiosInstance

@@ -31,7 +31,6 @@ function Card() {
               </a>
             </div>
           </div>
-          ;
         </div>
       </div>
     </div>

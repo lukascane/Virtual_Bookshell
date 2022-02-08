@@ -1,5 +1,7 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import let2 from '../../assets/images/lettring2.png'
+
 
 export default function Navbar() {
 
@@ -12,8 +14,6 @@ export default function Navbar() {
             }
         </>
     } */
-
-
 
   return <div id='navB'>
   <nav className="navbar navbar-expand-lg">
@@ -32,13 +32,13 @@ export default function Navbar() {
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li className="nav-item">
-          <a className="nav-link" href="#"><button className="btn rounded-pill buttons" type="button">demo</button></a>
+                <NavLink to="/" exact className="nav-link"><button className="btn rounded-pill buttons" type="button">demo</button></NavLink>
         </li>
                 <li className="nav-item">
-          <a className="nav-link" href="#"><button className="btn rounded-pill buttons" type="button">sign up</button></a>
+                <NavLink to="/registration" exact className="nav-link"><button className="btn rounded-pill buttons" type="button">sign up</button></NavLink>
         </li>
                 <li className="nav-item">
-          <a className="nav-link" href="#"><button className="btn rounded-pill buttons" type="button">login</button></a>
+                <NavLink to="/login" exact className="nav-link"><button className="btn rounded-pill buttons" type="button">login</button></NavLink>
         </li>
       </ul>
     </div>
