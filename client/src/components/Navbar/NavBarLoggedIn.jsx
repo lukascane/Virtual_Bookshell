@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import let2 from '../../assets/images/lettring2.png'
 
 export default function Navbar() {
@@ -30,20 +31,21 @@ export default function Navbar() {
     </div>
     <div className="collapse navbar-collapse collM" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        
         <li className="nav-item">
-          <a className="nav-link" aria-current="page" href="#"><button className="btn rounded-pill buttons" type="button">books</button></a>
+                <NavLink to="/searchbooks" exact className="nav-link"><button className="btn rounded-pill buttons" type="button">books</button></NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#"><button className="btn rounded-pill buttons" type="button">to read</button></a>
+                <NavLink to="/toreadlist" exact className="nav-link"><button className="btn rounded-pill buttons" type="button">to read</button></NavLink>
         </li>
-                <li className="nav-item">
-          <a className="nav-link" href="#"><button className="btn rounded-pill buttons" type="button">read</button></a>
+        <li className="nav-item">
+                <NavLink to="/readlist" exact className="nav-link"><button className="btn rounded-pill buttons" type="button">read</button></NavLink>
         </li>
-                <li className="nav-item">
-          <a className="nav-link" href="#"><button className="btn rounded-pill buttons" type="button">profile</button></a>
+        <li className="nav-item">
+                <NavLink to="/profile" exact className="nav-link"><button className="btn rounded-pill buttons" type="button">profile</button></NavLink>
         </li>
-                <li className="nav-item">
-          <a className="nav-link" href="#"><button className="btn rounded-pill buttons" type="button">logout</button></a>
+        <li className="nav-item">
+                <NavLink to="/login" exact className="nav-link"><button className="btn rounded-pill buttons" type="button">logout</button></NavLink>
         </li>
       </ul>
     </div>
