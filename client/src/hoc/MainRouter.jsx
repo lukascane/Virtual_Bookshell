@@ -1,32 +1,37 @@
 import React from 'react';
-import BooksProvider from '../context/booksContextApi/BooksProvider';
-import Profile from '../pages/Profile/Profile'
-import Login from '../pages/Login/Login'; 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  BrowserRouter,
-} from 'react-router-dom';
-import Footer from '../components/Footer/Footer';
-import NavG from '../components/Navbar/NavBarGuest';
 import Landing from '../pages/Landing/Landing';
-import SearchView from '../pages/SearchBooks/SearchBooks'
-import BookModal from '../components/Modals/BookModal'
-import ErrorModal from '../components/Modals/ErrorModal'
+import BooksProvider from '../context/booksContextApi/BooksProvider';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavG from '../components/Navbar/NavBarGuest';
+import Footer from '../components/Footer/Footer';
+import Login from '../pages/Login/Login';
+import Profile from '../pages/Profile/Profile';
+import Registration from '../pages/Registration/Registration';
+import SearchBooks from '../pages/SearchBooks/SearchBooks';
+import ToReadList from '../pages/ReadList/ToReadList';
+import ReadList from '../pages/ReadList/ReadList';
+import NotFound from '../pages/NotFound/NotFound';
 
 function MainRouter() {
   return (
-    <BooksProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <BooksProvider>
         <NavG />
         <main>
-
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/searchbooks" element={<SearchBooks />} />
+            <Route path="/toreadlist" element={<ToReadList />} />
+            <Route path="/readlist" element={<ReadList />} />
+            <Route path="notfound" element={<NotFound />} />
+          </Routes>
         </main>
         {/* <Footer />  */}
-      </BrowserRouter>
-    </BooksProvider>
+      </BooksProvider>
+    </BrowserRouter>
   );
 }
 export default MainRouter;
