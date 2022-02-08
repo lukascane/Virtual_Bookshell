@@ -11,12 +11,14 @@ import SearchBooks from '../pages/SearchBooks/SearchBooks';
 import ToReadList from '../pages/ReadList/ToReadList';
 import ReadList from '../pages/ReadList/ReadList';
 import NotFound from '../pages/NotFound/NotFound';
+import NavBarLoggedIn from '../components/Navbar/NavBarLoggedIn';
 
 function MainRouter() {
   return (
     <BrowserRouter>
       <BooksProvider>
         <NavG />
+        {/* < NavBarLoggedIn /> */}
         <main>
           <Routes>
             <Route path="/" element={<Landing />} />
