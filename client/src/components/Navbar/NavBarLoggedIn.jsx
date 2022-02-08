@@ -49,13 +49,5 @@ export default function Navbar() {
     </div>
   </div>
 </nav>
-
-
-{/*     <button className="btn rounded-pill me-3" type="button">books</button>
-        <button className="btn rounded-pill me-3" type="button">to read</button>
-          <button className="btn rounded-pill me-3" type="button">read</button>
-            <button className="btn rounded-pill me-3" type="button">profile</button>
-              <button className="btn rounded-pill" type="button">logout</button> */}
-
 </div>;
 }

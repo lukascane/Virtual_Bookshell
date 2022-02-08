@@ -137,6 +137,7 @@
     #bookModal {
         display: flex;
         flex-direction: column;
+        margin-left: 0;
     }
     .textContainer {
         margin: 0;
@@ -146,4 +147,10 @@
         margin-left: 20px;
     }
  }
+}
+@media (max-width: 768px) {
+    #bookModalContainer {
+        margin-left: 16px;
+        min-width: 82%;
+    } 
 }

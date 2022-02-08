@@ -28,8 +28,6 @@ button:hover {
   
    max-width: 768px;
    background-color: #004D4D;
-   opacity: 0.9;
-//    margin: 0 auto;
  }
  .nav-link {
      display: flex;
@@ -41,7 +39,6 @@ button:hover {
  }
 
 }
-
 @media (max-width: 992px) {
     .collM {
         margin: 0 auto;

@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState, useContext } from 'react';
-
 
 export default function ParagraphInfo() {
  
