@@ -26,7 +26,7 @@ exports.createBooksCollection = async (req, res) => {
     });
   }
 };
-
+// list of showing book endpoint
 exports.listBooks = async (req, res) => {
   try {
     const books = await Books.find();
@@ -35,3 +35,18 @@ exports.listBooks = async (req, res) => {
     return res.status(400).json({ message: 'Error happened' });
   }
 };
+
+// search book with title using query
+
+exports.searchTitle = async (req, res) => {
+  try {
+  const titles = await Books.find({title:req.query.title});
+  return res.status(200).json({ message: 'list of title', titles });
+  } catch (error) {
+  return res.status(400).json({ message: 'Error happened' });
+  }
+  };
+  
+  
+  
+  

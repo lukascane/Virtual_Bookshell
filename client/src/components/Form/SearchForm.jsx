@@ -3,7 +3,9 @@ import { useState, useContext } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
 
 export default function SearchForm() {
-  const [buttonText, setButtonText] = useState('Title/Year');
+  const [title, setTitle] = useState('');
+  
+  const [buttonText, setButtonText] = useState('Title');
   const { onClickFetchData } = useContext(BookContext);
   const changeText = (text) => setButtonText(text);
 
@@ -44,16 +46,18 @@ export default function SearchForm() {
         </div>
 
         <input
-          type="text"
+          type="text" 
+          onChange={(e)=>setTitle(e.target.value)}
           id="inputSearchField"
           className="form-control w-50 mx-3 text-light"
           placeholder="Type your book here.."
+          name="searchbook"
         />
 
         <button
           type="button"
           className="btn rounded-pill"
-          onClick={onClickFetchData}
+          onClick={(e)=>onClickFetchData(title, buttonText, e)}
         >
           search
         </button>
