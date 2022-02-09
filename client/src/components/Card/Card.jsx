@@ -7,26 +7,31 @@ function Card({ item }) {
   console.log(bookInfos);
 
   return (
-    // if(item.cover_i ? null : PurpleBook)
 
     <div id="bigCard">
       <div className="row d-flex justify-content-between">
         <div>
-          <div className="shadow-lg row card" style={{ width: '18rem' }}>
-            <div className="photoframe card-img-top">
-              <img 
+          <div className="shadow-lg row card layout" style={{ width: '18rem' }}>
+            <div className="photoframe card-img-top mt-3 layout">
+            <a>
+            {item.cover_i ?
+            <img 
                 src={`https://covers.openlibrary.org/b/id/${item.cover_i}-L.jpg`}
-                className="card-img-top mt-3"
                 alt="book-cover"
-              />
+              /> :
+              <img 
+                src={PurpleBook}
+                alt="book-cover"
+              />}
+              </a>
             </div>
             <div className="card-body text-left">
               <h5 className="card-title">{item.title}</h5>
-              <p className="card-text">{item.author[0]} </p>
-              <p className="card-text">Pages: {item.pages} </p>
+              <p className="card-text bt">{item.author[0]}</p>
+              <p className="card-text">Pages: {item.pages}</p>
             </div>
 
-            <div className="button">
+            <div className="button m-auto d-flex justify-content-center row align-items-center mb-2">
               <a onClick={sendBookInfo} className="btn cardBtn homeBtn btn-sm">
                 List to read
               </a>

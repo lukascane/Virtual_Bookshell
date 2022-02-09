@@ -1,5 +1,14 @@
 #bigCard {
     height: 100%;
+    min-height: 800px;
+
+    .layout {
+        min-height: 380px;
+
+        a{
+            cursor: pointer;
+        }
+    }
     
     .container {
         display: flex;
@@ -8,12 +17,16 @@
         flex-direction: row;   
     }
     .card-title {
+            font-size: 1.4rem;
+            line-height: 1.2;
             color: #2c2c2c;
-            font-weight: 700;
+            font-weight: 900;
             text-transform: uppercase;
         }
+
     .cardBtn {
-        margin:15px;
+        margin:7.5px;
+        width: 100%;
         color: white;
         background-color: #008080;
         font-weight: 900;
@@ -26,6 +39,22 @@
         background-color: darkmagenta;
         box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     }
+    .card-body {
+
+        padding-bottom: 7.5px;
+        height: 180px;
+
+        .bt {
+            font-weight: 700;
+            font-size: 1.1rem;
+            }
+
+        p {
+            line-height: 1.4;
+            margin: 0px;
+        }
+        }
+
 }
 
 @media (max-width: 1400px) {

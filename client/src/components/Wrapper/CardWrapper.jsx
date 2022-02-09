@@ -15,13 +15,9 @@ export default function CardWrapper() {
   ));
 
   return (
-    <div id="carousel">
+    <div id="carousel" className='vh-100' style={{marginTop: '100px'}}>
       <Carousel slides={slidesTwo} autoplay={false} interval={1000}></Carousel>
     </div>
-    // <div className="d-flex justify-content-evenly col">
-    //   {bookInfos.map((item, index) => (
-    //     <Card item={item} id={index}></Card>
-    //   ))}
-    // </div>
+
   );
 }

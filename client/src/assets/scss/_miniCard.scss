@@ -1,27 +1,35 @@
 #miniCard {
     height: 100%;
     min-height:320px;
-    max-height:300px;
     min-width: 140px;
     max-width: 140px;
     background-color:white;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: rgba(93, 91, 92, 0.4) -5px 5px, rgba(56, 55, 56, 0.3) -10px 10px, rgba(17, 16, 16, 0.2) -15px 15px, rgba(29, 28, 29, 0.1) -20px 20px, rgba(12, 12, 12, 0.05) -25px 25px;
     
     .miniCardPic {
-        height:150px;
+        height:140px;
         width: auto;
     }
 
+    a{
+        cursor: pointer;
+    }
+    a:hover{
+        outline: solid 16px darkmagenta;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
     .infoLittle {
         width: 130px;
-        min-height: 100px;
+        min-height: 150px;
         color: #2c2c2c;
 
         p {
          margin-bottom: 0px;
+         line-height: 1;
         }
 
         h5 {
+            margin-top: 10px;
             font-size: 1.1rem;
             line-height: 1.1;
             font-weight: 700;
@@ -50,6 +58,9 @@
         justify-content: center;
         align-items: center;
     }
+}
+#miniCard:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
  @media (max-width: 576px) {
 
