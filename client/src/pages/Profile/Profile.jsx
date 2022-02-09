@@ -4,9 +4,10 @@ import ProfileCard from '../../components/ProfileComponents/ProfileCard';
 
 function Profile() {
   return <div id="profileview" className="container">
-      <div className="d-flex col justify-content-center profileviewcontainer" style={{marginTop:"130px"}}>
+      <div className="d-flex col justify-content-center profileviewcontainer mb-5" style={{marginTop:"130px"}}>
       <ProfileCard />
-      <EditProfileForm /></div>
+      <EditProfileForm />
+      </div>
       
   </div>;
 }

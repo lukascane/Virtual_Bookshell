@@ -31,7 +31,7 @@ export default function SignUpForm() {
       <div
         type="text"
         id="login"
-        className="d-flex justify-content-center row align-items-center"
+        className="d-flex justify-content-center row align-items-center mb-5"
       >
         <h4 className="mt-2 mb-5">
           Please create an account by filling out the information below to start

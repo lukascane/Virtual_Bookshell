@@ -29,7 +29,7 @@ export default function Navbar() {
     </button>
     </div>
     <div className="collapse navbar-collapse collM" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
 
                 <li className="nav-item">
                 <NavLink to="/" exact className="nav-link"><button className="btn rounded-pill buttons" type="button">demo</button></NavLink>
