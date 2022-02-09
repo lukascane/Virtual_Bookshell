@@ -5,9 +5,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
+        flex-direction: row;   
     }
-
+    .card-title {
+            color: #2c2c2c;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
     .cardBtn {
         margin:15px;
         color: white;

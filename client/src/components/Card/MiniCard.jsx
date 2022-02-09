@@ -12,9 +12,9 @@ function miniCard({ item }) {
   "
         alt="thumb"
       />
-      <div className="mx-2 mt-2">
+      <div className="mx-2 mt-2 infoLittle">
         <h5 className="card-title">{item.title}</h5>
-        <sm className="card-text">{item.author[0]}</sm>
+        <p style={{fontSize:'14px'}}><sm className="card-text">{item.author[0]}</sm></p>
       </div>
       <div className="button mb-2">
         <a href="#" className="btn cardBtn homeBtn btn-sm">

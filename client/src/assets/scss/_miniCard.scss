@@ -1,6 +1,6 @@
 #miniCard {
     height: 100%;
-    min-height:300px;
+    min-height:320px;
     max-height:300px;
     min-width: 140px;
     max-width: 148px;
@@ -11,7 +11,24 @@
         width:120px;
     }
 
-    
+    .infoLittle {
+        width: 130px;
+        min-height: 100px;
+        color: #2c2c2c;
+
+        p {
+         margin-bottom: 0px;
+        }
+
+        h5 {
+            font-size: 1.1rem;
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+  
+    }
 
     .cardBtn {
         margin:15px;
