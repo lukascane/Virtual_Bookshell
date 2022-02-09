@@ -19,7 +19,7 @@ function MainRouter() {
       <BooksProvider>
         <NavG />
         {/* < NavBarLoggedIn /> */}
-        <main>
+        <main style={{minHeight:'100vh'}}>
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
@@ -31,7 +31,7 @@ function MainRouter() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-        {/* <Footer />  */}
+       <Footer />  
       </BooksProvider>
     </BrowserRouter>
   );

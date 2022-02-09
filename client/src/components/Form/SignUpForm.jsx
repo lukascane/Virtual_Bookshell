@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function SignUpForm() {
-  return <div id='login' className='d-flex justify-content-center row align-items-center'>
+  return <div id='login' className='d-flex justify-content-center row align-items-center mb-5'>
 
     <h4 className='mt-2 mb-5'>Please create an account by filling out the information below to start</h4>
     <h4 className='mt-2'>Username:</h4>
