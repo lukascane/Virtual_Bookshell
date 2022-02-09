@@ -1,12 +1,36 @@
 import searchAxiosInstance from '../../util/searchAxiosInstance';
 
-function searchTitleAuthApi() {
-  const config = {
+
+function searchTitleAuthApi(search, searchCathegory) {
+ let config = null
+  if (searchCathegory == "Title") { 
+  config = {
     params: {
-      q: 'the+lord+of+the+rings',
+      q: search, 
       limit: 8,
-    },
+    }, 
   };
+
+  };
+  if (searchCathegory == "Year") { 
+    config = {
+      params: {
+        q: search, 
+        limit: 8,
+      }, 
+
+  };
+
+};
+  if (searchCathegory == "Author") { 
+    config = {
+      params: { 
+       author: search,
+       limit: 8,
+      }, 
+    
+  }
+};
   return searchAxiosInstance
     .get('/', config)
     .then((response) => {
@@ -22,7 +46,7 @@ function searchTitleAuthApi() {
         };
       });
 
-      console.log(showData);
+      
       return showData;
     })
     .catch((err) => {

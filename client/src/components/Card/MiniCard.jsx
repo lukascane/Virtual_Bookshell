@@ -4,14 +4,12 @@ function miniCard({ item }) {
   return (
     <div
       className="card text-left d-flex justify-content-center align-items-center m-4"
-      id="miniCard"
-    >
+      id="miniCard">
       <img
         className="card-img-top p-1 miniCardPic mt-3"
         src={`https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`}
-        alt="thumb"
-      />
-      <div className="mx-2 mt-2 infoLittle">
+        alt="thumb" />
+      <div className="mx-2 mt-2">
         <h5 className="card-title">{item.title}</h5>
         <p style={{fontSize:'14px'}}><sm className="card-text">{item.author[0]}</sm></p>
       </div>

@@ -8,13 +8,15 @@ import sendBookInfoApi from '../../services/bookApi/sendBookInfoApi';
 export default function BooksProvider({ children }) {
   const [bookInfos, setBookInfos] = useState([]);
 
-  const onClickFetchData = async () => {
-    const data = await searchTitleAuthApi();
-
+  const onClickFetchData = async (title, buttonText) => {
+    const data = await searchTitleAuthApi(title, buttonText);
+console.log(title);
     setBookInfos(data);
     console.log('I am from showData ', bookInfos);
     return bookInfos;
   };
+
+console.log(bookInfos);
 
   const sendBookInfo = async () => {
     const response = await axiosApi.get(
