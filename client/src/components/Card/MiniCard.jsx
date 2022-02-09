@@ -14,7 +14,7 @@ function miniCard({ item }) {
       />
       <div className="mx-2 mt-2">
         <h5 className="card-title">{item.title}</h5>
-        <p className="card-text">{item.author}</p>
+        <sm className="card-text">{item.author[0]}</sm>
       </div>
       <div className="button mb-2">
         <a href="#" className="btn cardBtn homeBtn btn-sm">
