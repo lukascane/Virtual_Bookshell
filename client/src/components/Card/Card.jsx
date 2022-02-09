@@ -1,17 +1,20 @@
 import React, { useContext } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
+import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 
 function Card({ item }) {
   const { sendBookInfo, bookInfos } = useContext(BookContext);
   console.log(bookInfos);
 
   return (
+    // if(item.cover_i ? null : PurpleBook)
+
     <div id="bigCard">
       <div className="row d-flex justify-content-between">
         <div>
           <div className="shadow-lg row card" style={{ width: '18rem' }}>
             <div className="photoframe card-img-top">
-              <img
+              <img 
                 src={`https://covers.openlibrary.org/b/id/${item.cover_i}-L.jpg`}
                 className="card-img-top mt-3"
                 alt="book-cover"
