@@ -8,8 +8,7 @@ function miniCard({ item }) {
     >
       <img
         className="card-img-top p-1 miniCardPic mt-3"
-        src="https://covers.openlibrary.org/b/id/8166951-M.jpg
-  "
+        src={`https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`}
         alt="thumb"
       />
       <div className="mx-2 mt-2">
