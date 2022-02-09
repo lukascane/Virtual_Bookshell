@@ -42,6 +42,7 @@ function searchTitleAuthApi(search, searchCathegory) {
           author: item.author_name,
           cover_i: item.cover_i,
           isbn: item.isbn,
+          pages: item.number_of_pages_median,
         };
       });
 
