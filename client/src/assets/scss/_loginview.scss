@@ -1,16 +1,14 @@
 
 
-    #logineview{
-       
-    
-        .loginviewcontainer {
+    #loginview {
+
         min-height: 100vh;
+
+        .loginviewcontainer {
         display: flex;
         align-items: center;
         justify-content: center;
-        
-        padding: 10px;
-        
+        padding: 10px;        
         }
     }
     
@@ -18,8 +16,8 @@
 
     @media (max-width: 992px) {  
 
-        #logineview{
-             
+        #loginview{
+
         
             .loginviewcontainer {
         

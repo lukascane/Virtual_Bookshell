@@ -1,4 +1,5 @@
 import React from 'react';
+import DummyPicture from '../../assets/images/dummy.png'
 
 export default function ProfileCard() {
   return <div id='profile'>
@@ -9,7 +10,7 @@ export default function ProfileCard() {
         </div>
         <div className='d-flex justify-content-between align-items-center mx-5 subC'>
         <div id="profilePicture" className='rounded-circle d-flex justify-content-center align-items-center'>
-        <img src='https://avatars.githubusercontent.com/u/79979330?v=4' alt='pp' className='rounded-circle'/>
+        <img src={DummyPicture} alt='pp' className='rounded-circle'/>
         </div>
         <div id='profileData'>
         <div className='texts'>
@@ -22,8 +23,9 @@ export default function ProfileCard() {
         </div>
         </div>
     </div>
-    <div>
+    <div className='d-flex flex-column align-items-center'>
     <button className='rounded-pill buttons mt-5 mb-2' type='button'>MODIFY IMAGE</button>
+    <button className='rounded-pill buttons mt-3 mb-2' type='button'>DELETE PROFILE</button>
     </div>
 
   </div>;
