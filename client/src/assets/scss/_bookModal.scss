@@ -1,12 +1,13 @@
 #mask {
     min-width: 100vw;
     min-height: 100vh;
-    background-color: #2c2c2c;
-    opacity: 0.8;
-    z-index: 0;
+    height: 100%;
+    background-color: #2c2c2ce5;
+    z-index: 10;
     position: absolute;
     top: 0px;
     left: 0px;
+    right: 0px;
 }
 
 
@@ -15,7 +16,8 @@
    width: 70vw;
    max-height:100%;
     margin: 130px auto;
-    z-index: 10;
+    z-index: 11;
+    opacity: 1;
 
 
 
@@ -102,13 +104,16 @@
     color: #C4C4C4;
     max-width: 835px;
     min-width: 300px;
-    font-weight: 700;
     max-height: 80vh;
     min-height: 686px;
     margin-right: 1.5rem;
 
         h1 {
             font-weight: 900;
+            text-transform: uppercase;
+        }
+        h5 {
+            font-weight: 700;
         }
         hr {
         color: #C4C4C4;

@@ -1,14 +1,19 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import PurpleBook from '../../assets/images/bookDarkMagenta.png';
+import ModalContext from '../../context/ModalContext';
+export default function BookModal(props) {
 
-export default function BookModal() {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
+  // const [showModal, setShowModal] = useState(true)
+  // const {closeHandler} = useContext(ModalContext);
 
   return (
+    <>
     <div id="mask">
       <div id="bookModalContainer" className="mb-5">
-        <button className="closeButton d-flex justify-content-center align-items-center fixed-top">
+        <button onClick={props.closeHandler} className="closeButton d-flex justify-content-center align-items-center fixed-top">
           X
         </button>
 
@@ -18,11 +23,18 @@ export default function BookModal() {
         >
           <div className="card">
             <div className="d-flex justify-content-center align-items-center p-4">
-              <img
-                src="https://covers.openlibrary.org/b/id/8166951-L.jpg"
+
+{/*               { book.cover_i ? <img
+                src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
                 className="card-img-top rounded"
                 alt="Book-cover"
-              />
+              /> :  */}
+              <img
+                src={PurpleBook}
+                className="card-img-top rounded"
+                alt="Book-cover"
+              /> 
+
             </div>
 
             <div className="card-body d-flex row justify-content-center align-items-center">
@@ -114,9 +126,9 @@ export default function BookModal() {
           <div className="textContainer">
             <div className="textWrap">
               <br />
-              <h1>Book title?</h1>
-              <h5>some variable?</h5>
-              <p>other variable?</p>
+              <h1>title</h1>
+              <h5>author</h5>
+              <p>Pages:</p>
             </div>
 
             <hr />
@@ -177,5 +189,8 @@ export default function BookModal() {
         </div>
       </div>
     </div>
+    {props.children}
+    </>
+
   );
 }

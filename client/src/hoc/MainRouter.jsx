@@ -12,11 +12,14 @@ import ToReadList from '../pages/ReadList/ToReadList';
 import ReadList from '../pages/ReadList/ReadList';
 import NotFound from '../pages/NotFound/NotFound';
 import NavBarLoggedIn from '../components/Navbar/NavBarLoggedIn';
+import ModalWrapper from '../components/Wrapper/ModalWrapper';
+
 
 function MainRouter() {
   return (
     <BrowserRouter>
       <BooksProvider>
+      <ModalWrapper>
         <NavG />
         {/* < NavBarLoggedIn /> */}
         <main style={{minHeight:'100vh'}}>
@@ -31,7 +34,8 @@ function MainRouter() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-       <Footer />  
+       <Footer />
+       </ModalWrapper>  
       </BooksProvider>
     </BrowserRouter>
   );
