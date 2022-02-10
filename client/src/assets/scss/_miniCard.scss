@@ -4,7 +4,12 @@
     min-width: 140px;
     max-width: 140px;
     background-color:white;
-    box-shadow: rgba(93, 91, 92, 0.4) -5px 5px, rgba(56, 55, 56, 0.3) -10px 10px, rgba(17, 16, 16, 0.2) -15px 15px, rgba(29, 28, 29, 0.1) -20px 20px, rgba(12, 12, 12, 0.05) -25px 25px;
+    box-shadow: rgba(93, 91, 92, 0.4) -5px 5px, 
+    rgba(56, 55, 56, 0.3) -10px 10px, 
+    rgba(17, 16, 16, 0.2) -15px 15px, 
+    rgba(29, 28, 29, 0.1) -20px 20px, 
+    rgba(12, 12, 12, 0.05) -25px 25px;
+
     
     .miniCardPic {
         height:140px;
@@ -16,7 +21,8 @@
     }
     a:hover{
         outline: solid 16px darkmagenta;
-        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, 
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
     }
     .infoLittle {
         width: 130px;
@@ -60,7 +66,14 @@
     }
 }
 #miniCard:hover {
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, 
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+    img {
+            opacity: 0.5;
+
+    }
 }
  @media (max-width: 576px) {
 

@@ -3,7 +3,7 @@
     min-height: 800px;
 
     .layout {
-        min-height: 380px;
+        min-height: 350px;
 
         a{
             cursor: pointer;
@@ -54,6 +54,9 @@
             margin: 0px;
         }
         }
+    .photoframe:hover {
+        opacity: 0.5;
+    }
 
 }
 
