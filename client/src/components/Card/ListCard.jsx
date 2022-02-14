@@ -1,18 +1,39 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import BookContext from '../../context/booksContextApi/BookContext';
+import ModalContext from '../../context/ModalContext';
+import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 
 
-export default function ListCard() {
+export default function ListCard({ item }) {
+
     const [buttonText, setButtonText] = useState("SHARE"); 
     const changeText = (text) => setButtonText(text);
+    const { sendBookInfo, bookInfos } = useContext(BookContext);
+    const { onClickShowModal, setModalContent } = useContext(ModalContext);
+
+    const handleOpenModal = () =>{
+    onClickShowModal();
+    setModalContent({
+    title: item.title,
+    author: item.author[0],
+    pages: item.pages,
+    isbn: item.isbn[0],
+    cover_i: item.cover_i
+  })
+  }
+
 
   return <div id='listCardElement' className='border-bottom mt-4'>
 
   <div className='picBookCont me-4 ms-4'>
-      <img src='https://covers.openlibrary.org/b/id/8166951-M.jpg' alt='book-cover-thumb'className='book-cover-thumb' />
+  <a onClick={handleOpenModal}>
+      {item.cover_i ? (<img src='https://covers.openlibrary.org/b/id/8166951-M.jpg' alt='book-cover-thumb' className='book-cover-thumb' />) :
+      (<img src={PurpleBook} alt='book-cover-thumb' className='book-cover-thumb' />)}
+    </a>
     <div className='bookInfo2'>
     <div className='ms-3 mt-4 bigHide'>
-        <p className='mt-3'>Title: variable</p>
+        <p className='mt-3'>hkhkhkjhk</p>
         <p>Year: variable</p>
         <p>Author: variable</p>
         <p>more variable</p>
@@ -25,7 +46,7 @@ export default function ListCard() {
 
     <div className='bookInfo'>
     <div className='ms-3 mt-4'>
-        <p className='mt-3'>Title: variable</p>
+        <p className='mt-3'>uztutzutzutzut</p>
         <p>Year: variable</p>
         <p>Author: variable</p>
         <p>more variable</p>

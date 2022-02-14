@@ -5,13 +5,15 @@ import { useState } from 'react';
 export default function ListCardToRead() {
     const [buttonText, setButtonText] = useState("SHARE"); 
     const changeText = (text) => setButtonText(text);
-  return <div id='listCardElement' className='mt-5'>
+  return <div id='listCardElement' className='border-bottom mt-4'>
 
   <div className='picBookCont me-4 ms-4'>
+    <a>
       <img src='https://covers.openlibrary.org/b/id/8166951-M.jpg' alt='book-cover-thumb'className='book-cover-thumb' />
+    </a>
     <div className='bookInfo2'>
     <div className='ms-3 mt-4 bigHide'>
-        <p className='mt-3'>Title: variable</p>
+        <p className='mt-3'>Tporporporpo</p>
         <p>Year: variable</p>
         <p>Author: variable</p>
         <p>more variable</p>
@@ -33,18 +35,18 @@ export default function ListCardToRead() {
     </div>
 
     <div className='description'>
-        <div className='descrTxt textScroll mt-3 p-3'><p>
+        <div className='descrTxt textScroll p-3'><p>
         Change the visual order of specific flex items with a handful of order utilities. We only provide options for making an item first or last, as well as a reset to use the DOM order. As order takes any integer value from 0 to 5, add custom CSS for any additional values needed.Change the visual order of specific flex items with a handful of order utilities. We only provide options for making an item first or last, as well as a reset to use the DOM order. As order takes any integer value from 0 to 5, add custom CSS for any additional values needed.Change the visual order of specific flex items with a handful of order utilities. We only provide options for making an item first or last, as well as a reset to use the DOM order. As order takes any integer value from 0 to 5, add custom CSS for any additional values needed.Change the visual order of specific flex items with a handful of order utilities. We only provide options for making an item first or last, as well as a reset to use the DOM order. As order takes any integer value from 0 to 5, add custom CSS for any additional values needed.</p></div>
-        <div className='silverSect p-1 d-flex justify-content-center align-items-center mb-4 mt-3'>
+        <div className='silverSect p-1 d-flex justify-content-center align-items-center mb-4'>
         <h5 className='mb-0'>I Book genre? I</h5>
         </div>
     </div>
 
     <div className='commandWrap d-flex justify-content-around col align-items-center'>
-        <div className="card-body d-flex row justify-content-center align-items-center">
-        <a href="#" className="btn btLink m-2">list read</a>
-        <a href="#" className="btn btLink m-2 mb-3">review</a>
-                <div className="dropdown d-flex justify-content-center align-items-center mb-5">
+        <div className="bttW mx-2 container-fluid">
+        <a href="#" className="btn btLink">list read</a>
+        <a href="#" className="btn btLink">review</a>
+                <div className="dropdown d-flex justify-content-center align-items-center">
         <button className="btn dropdown-toggle btLink" type="button" data-bs-toggle="dropdown" aria-expanded="false" >{buttonText}
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">

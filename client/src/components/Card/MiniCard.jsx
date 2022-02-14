@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PurpleBook from '../../assets/images/bookDarkMagenta.png';
+import ModalContext from '../../context/ModalContext'
 
-function miniCard({ item }) {
+function MiniCard({ item }) {
+  const { onClickShowModal, setModalContent } = useContext(ModalContext);
+
+
+  const handleOpenModal = () =>{
+    onClickShowModal();
+    setModalContent({
+    title: item.title,
+    author: item.author[0],
+    pages: item.pages,
+    isbn: item.isbn[0],
+    cover_i: item.cover_i
+  })
+  }
   return (
     <div
       className="card text-left d-flex justify-content-center align-items-center m-4"
       id="miniCard">
-      <a>
+      <a onClick={handleOpenModal}>
       <div className='d-flex justify-content-center align-items-center'>
        {item.cover_i ? <img
         className="card-img-top p-1 miniCardPic mt-3"
@@ -31,4 +45,4 @@ function miniCard({ item }) {
   );
 }
 
-export default miniCard;
+export default MiniCard;

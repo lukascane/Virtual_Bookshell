@@ -1,5 +1,6 @@
 import React from 'react';
 import ListCard from '../../components/Card/ListCard'
+import ListCardToRead from '../../components/Card/ListCardToRead';
 
 
 function ToReadList() {
@@ -15,11 +16,11 @@ function ToReadList() {
   </div>
 
   <div id='' className='container-fluid'>
-      <ListCard />
-            <ListCard />
-      <ListCard />
-      <ListCard />
-      <ListCard />
+      <ListCardToRead />
+            <ListCardToRead />
+      <ListCardToRead />
+      <ListCardToRead />
+      <ListCardToRead />
 
   </div>
 

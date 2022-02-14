@@ -6,8 +6,6 @@ export default function BookModal(props) {
 
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
-  // const [showModal, setShowModal] = useState(true)
-  // const {closeHandler} = useContext(ModalContext);
 
   return (
     <>
@@ -24,17 +22,17 @@ export default function BookModal(props) {
           <div className="card">
             <div className="d-flex justify-content-center align-items-center p-4">
 
-{/*               { book.cover_i ? <img
-                src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
+               { props.content.cover_i ? <img
+                src={`https://covers.openlibrary.org/b/id/${props.content.cover_i}-L.jpg`}
                 className="card-img-top rounded"
                 alt="Book-cover"
-              /> :  */}
+              /> : 
               <img
                 src={PurpleBook}
                 className="card-img-top rounded"
                 alt="Book-cover"
               /> 
-
+               } 
             </div>
 
             <div className="card-body d-flex row justify-content-center align-items-center">
@@ -126,9 +124,9 @@ export default function BookModal(props) {
           <div className="textContainer">
             <div className="textWrap">
               <br />
-              <h1>title</h1>
-              <h5>author</h5>
-              <p>Pages:</p>
+              <h1>{props.content.title}</h1>
+              <h5>{props.content.author}</h5>
+              <p>Pages: <b>{props.content.pages}</b></p>
             </div>
 
             <hr />
@@ -148,41 +146,7 @@ export default function BookModal(props) {
               tabindex="0"
             >
               <p>
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classical Latin literature from
-                45 BC, making it over 2000 years old. Richard McClintock, a
-                Latin professor at Hampden-Sydney College in Virginia, looked up
-                one of the more obscure Latin words, consectetur, from a Lorem
-                Ipsum passage, and going through the cites of the word in
-                classical literature, discovered the undoubtable source. Lorem
-                Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus
-                Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
-                written in 45 BC. This book is a treatise on the theory of
-                ethics, very popular during the Renaissance. The first line of
-                Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-                in section 1.10.32. The standard chunk of Lorem Ipsum used since
-                the 1500s is reproduced below for those interested. Sections
-                1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by
-                Cicero are also reproduced in their exact original form,
-                accompanied by English versions from the 1914 translation by H.
-                Rackham.Contrary to popular belief, Lorem Ipsum is not simply
-                random text. It has roots in a piece of classical Latin
-                literature from 45 BC, making it over 2000 years old. Richard
-                McClintock, a Latin professor at Hampden-Sydney College in
-                Virginia, looked up one of the more obscure Latin words,
-                consectetur, from a Lorem Ipsum passage, and going through the
-                cites of the word in classical literature, discovered the
-                undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-                1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good
-                and Evil) by Cicero, written in 45 BC. This book is a treatise
-                on the theory of ethics, very popular during the Renaissance.
-                The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..",
-                comes from a line in section 1.10.32. The standard chunk of
-                Lorem Ipsum used since the 1500s is reproduced below for those
-                interested. Sections 1.10.32 and 1.10.33 from "de Finibus
-                Bonorum et Malorum" by Cicero are also reproduced in their exact
-                original form, accompanied by English versions from the 1914
-                translation by H. Rackham.{' '}
+              {props.content.isbn[0]}{' '}
               </p>
             </div>
           </div>

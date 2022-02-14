@@ -12,6 +12,15 @@
     margin-bottom: 20px;
     border: #C4C4C4;
 
+    .picBookCont {
+        a {
+            cursor: pointer;
+        }
+        a:hover {
+            opacity: 0.5;
+        }
+    }
+
     .book-cover-thumb {
         max-height: 220px;
         display: block;
@@ -166,6 +175,9 @@
         width: 30vw;
         min-width: 105px;
         background-color: #008080;            
+        }
+        .btLink:hover {
+            background-color: darkmagenta;
         }
     }
 }    

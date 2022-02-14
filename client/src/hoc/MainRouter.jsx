@@ -20,8 +20,8 @@ function MainRouter() {
     <BrowserRouter>
       <BooksProvider>
         <ModalProvider>
-          {/* <NavG /> */}
-          <NavBarLoggedIn />
+           {/* <NavG />  */}
+           <NavBarLoggedIn /> 
           <main>
             <Routes>
               <Route path="/" element={<Landing />} />
