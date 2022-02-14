@@ -7,6 +7,7 @@ const UserSchema = new Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   createdOn: { type: Date, default: Date.now() },
+  role: [String],
   /*  profile_img:{type:String} */
 });
 
