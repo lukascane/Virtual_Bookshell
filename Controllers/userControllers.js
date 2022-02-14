@@ -19,6 +19,7 @@ exports.registerUser = async (req, res) => {
     user.lastname = req.body.lastname;
     user.email = req.body.email;
     user.password = hashedPassword;
+    user.role = req.body.role;
 
     await user.save();
 
@@ -83,6 +84,17 @@ exports.login = async (req, res) => {
   } catch (error) {
     console.log('the error ', error);
     return res.status(400).json({ message: 'General error upon signing in.' });
+  }
+};
+
+
+// Delete user
+exports.deleteUser = async (req, res) => {
+  try {
+    const user = await User.findByIdAndDelete(req.params.id);
+    return res.status(200).json({ message: 'User removed', user });
+  } catch (error) {
+    return res.status(400).json({ message: 'Error happened' });
   }
 };
 // Log out and clear Cookies
