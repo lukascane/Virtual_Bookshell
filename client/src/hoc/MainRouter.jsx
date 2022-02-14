@@ -19,10 +19,10 @@ function MainRouter() {
   return (
     <BrowserRouter>
       <BooksProvider>
-      <ModalWrapper>
+       {/* <ModalWrapper>  */}
         <NavG />
         {/* < NavBarLoggedIn /> */}
-        <main style={{minHeight:'100vh'}}>
+        <main>
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
@@ -35,7 +35,7 @@ function MainRouter() {
           </Routes>
         </main>
        <Footer />
-       </ModalWrapper>  
+       {/* </ModalWrapper>   */}
       </BooksProvider>
     </BrowserRouter>
   );

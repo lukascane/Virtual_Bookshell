@@ -3,7 +3,7 @@ import ModalContext from "./ModalContext";
 
 export default function ModalProvider({children}){
 
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false);
     const closeHandler = ()=>{
       return  setShowModal(false)
        
