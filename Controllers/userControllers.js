@@ -74,7 +74,8 @@ exports.login = async (req, res) => {
         .json({
           message: 'Login successful',
           // we are sending the user as an object with only selected keys
-          user: { username: user.username }, // later I might want to send more keys here
+          user // later I might want to send more keys here
+          
         });
     } else {
       return res.status(400).json({ message: 'Passwords not matching' });
