@@ -1,28 +1,28 @@
 import React, { useContext } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
+import ModalContext from '../../context/ModalContext';
 import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 
 function Card({ item }) {
   const { sendBookInfo, bookInfos } = useContext(BookContext);
+  const { onClickShowModal } = useContext(ModalContext);
   console.log(bookInfos);
 
   return (
-
     <div id="bigCard">
       <div className="row d-flex justify-content-between">
         <div>
           <div className="shadow-lg row card layout" style={{ width: '18rem' }}>
             <div className="photoframe card-img-top mt-3 layout">
-            <a>
-            {item.cover_i ?
-            <img 
-                src={`https://covers.openlibrary.org/b/id/${item.cover_i}-L.jpg`}
-                alt="book-cover"
-              /> :
-              <img 
-                src={PurpleBook}
-                alt="book-cover"
-              />}
+              <a onClick={onClickShowModal}>
+                {item.cover_i ? (
+                  <img
+                    src={`https://covers.openlibrary.org/b/id/${item.cover_i}-L.jpg`}
+                    alt="book-cover"
+                  />
+                ) : (
+                  <img src={PurpleBook} alt="book-cover" />
+                )}
               </a>
             </div>
             <div className="card-body text-left">

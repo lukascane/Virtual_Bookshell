@@ -7,25 +7,17 @@ import BookModal from '../../components/Modals/BookModal';
 
 function SearchBooks() {
   const { onClickFetchData, bookInfos } = useContext(BookContext);
-  const [showModal, setShowModal] = useState(true)
 
   useEffect(async () => {
     onClickFetchData();
   }, []);
 
-  const closeModal = () => {
-    setShowModal(false);
-  }
-
   return (
-    <>
-    {showModal ? <BookModal closeHandler={closeModal} /> : null}
     <div>
       <SearchForm />
       <CardWrapper />
       <MiniCardWrapper />
     </div>
-    </>
   );
 }
 
