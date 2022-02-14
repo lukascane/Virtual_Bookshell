@@ -10,8 +10,6 @@ async function subjectSearchApi() {
   } catch (error) {
     console.log('Could not get data');
   }
-
-  return <div></div>;
 }
 
 export default subjectSearchApi;

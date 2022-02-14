@@ -16,7 +16,7 @@ function configureJwtStrategy(passport) {
         return (
           User.findById(jwtPayload.sub)
             // performance improvement, not necessary
-            .select('_id firstname lastname username email')
+            .select('_id firstname lastname username email role')
             .then((user) => {
               return done(null, user);
             })
