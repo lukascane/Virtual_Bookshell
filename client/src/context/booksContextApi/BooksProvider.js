@@ -10,18 +10,19 @@ export default function BooksProvider({ children }) {
 
   const onClickFetchData = async (title, buttonText) => {
     const data = await searchTitleAuthApi(title, buttonText);
-console.log(title);
+    console.log(title);
     setBookInfos(data);
     console.log('I am from showData ', bookInfos);
     return bookInfos;
   };
 
-console.log(bookInfos);
+  console.log(bookInfos);
 
-  const sendBookInfo = async () => {
+  const sendBookInfo = async (item) => {
     const response = await axiosApi.get(
-      `http://openlibrary.org/search.json?q=the+lord+of+the+rings&page=2&limit=10`
+      `http://openlibrary.org/search.json?q=${item.title}&page=2&limit=10`
     );
+    //* use item. here
 
     const books = response.data;
     const bookOne = books.docs[0];
