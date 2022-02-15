@@ -45,7 +45,7 @@ function searchTitleAuthApi(search, searchCathegory) {
           cover_i: item.cover_i,
           isbn: item.isbn[0],
           pages: item.number_of_pages_median,
-          language: item.language[0],
+          language: item.language,
           numFound: data.numFound,
         };
       });
