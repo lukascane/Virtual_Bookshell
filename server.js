@@ -11,7 +11,9 @@ app.set('port', process.env.PORT || 4000);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({credentials:true, origin:true})
+);
 
 //* read the cookie and add it to the request object under the prop "cookies"
 app.use(cookieParser());
