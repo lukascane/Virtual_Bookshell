@@ -42,6 +42,12 @@ export default function SearchForm() {
             >
               Author
             </li>
+            <li
+              onClick={() => changeText('Subject')}
+              className="dropdown-item subject"
+            >
+              Subject
+            </li>
           </ul>
         </div>
 
