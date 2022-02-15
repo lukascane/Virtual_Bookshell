@@ -10,45 +10,35 @@ export default function BooksProvider({ children }) {
 
   const onClickFetchData = async (title, buttonText) => {
     const data = await searchTitleAuthApi(title, buttonText);
-console.log(title);
+    console.log(title);
     setBookInfos(data);
     console.log('I am from showData ', bookInfos);
     return bookInfos;
   };
 
   // handle user /log in function
-  const [user, setUser] = useState("")
+  const [user, setUser] = useState('');
   const handleLogin = (user) => {
     if (user) {
       setUser(user);
     } else {
-      setUser("");
+      setUser('');
     }
   };
 
+  console.log(user);
 
-console.log(user);
-
-  const sendBookInfo = async () => {
-    const response = await axiosApi.get(
-      `http://openlibrary.org/search.json?q=the+lord+of+the+rings&page=2&limit=10`
-    );
-
-    const books = response.data;
-    const bookOne = books.docs[0];
+  const sendBookInfo = async (item) => {
     const bookInfoToSend = {
-      key_isbn: bookOne.isbn[0],
-      cover: bookOne.isbn[0],
-      title: bookOne.title,
-      author: bookOne.author_name[0],
-      subject: bookOne.isbn[0],
-      publisher: bookOne.publisher[0],
+      title: item.title,
+      author: item.author[0],
+      pages: item.pages,
+      isbn: item.isbn[0],
+      cover_i: item.cover_i,
       reading_status: 0,
-      pages: 50,
       //  user_id
       language: 'english',
     };
-    console.log(bookOne);
     const res = await axios.post('/api/books/create', bookInfoToSend);
     console.log(res.data);
   };
@@ -65,9 +55,10 @@ console.log(user);
   };
 
   return (
-    <BookContext.Provider value={{bookInfos,
-      sendBookInfo,
-      handleLogin,
-      user,}}>{children}</BookContext.Provider>
+    <BookContext.Provider
+      value={{ onClickFetchData, bookInfos, sendBookInfo, handleLogin, user }}
+    >
+      {children}
+    </BookContext.Provider>
   );
 }

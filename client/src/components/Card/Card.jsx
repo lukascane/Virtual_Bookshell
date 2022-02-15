@@ -7,27 +7,27 @@ function Card({ item }) {
   const { sendBookInfo, bookInfos } = useContext(BookContext);
   const { onClickShowModal, setModalContent } = useContext(ModalContext);
 
-  const handleOpenModal = () =>{
+  const handleOpenModal = () => {
     onClickShowModal();
     setModalContent({
-    title: item.title,
-    author: item.author[0],
-    pages: item.pages,
-    isbn: item.isbn[0],
-    cover_i: item.cover_i
-  })
-  }
+      title: item.title,
+      author: item.author[0],
+      pages: item.pages,
+      isbn: item.isbn[0],
+      cover_i: item.cover_i,
+    });
+  };
 
-  const title = item.title
-  const words = title.split(" ");
+  const title = item.title;
+  const words = title.split(' ');
 
   const newTitle = words.reduce((prev, curr, index) => {
-    if(index >= 7) {
-        return prev;
+    if (index >= 7) {
+      return prev;
     }
-    
-    return "" + prev + " " + curr;
-})
+
+    return '' + prev + ' ' + curr;
+  });
 
   return (
     <div id="bigCard">
@@ -53,8 +53,11 @@ function Card({ item }) {
             </div>
 
             <div className="button m-auto d-flex justify-content-center row align-items-center mb-2">
-              <a onClick={sendBookInfo} className="btn cardBtn homeBtn btn-sm">
-                List to read
+              <a
+                onClick={() => sendBookInfo(item)}
+                className="btn cardBtn homeBtn btn-sm"
+              >
+                Add to read list
               </a>
               <a className="btn cardBtn homeBtn btn-sm">Review</a>
               <a className="btn cardBtn homeBtn btn-sm">Read/to read</a>
