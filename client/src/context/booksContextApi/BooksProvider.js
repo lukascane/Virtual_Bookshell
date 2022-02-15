@@ -12,7 +12,6 @@ export default function BooksProvider({ children }) {
     const data = await searchTitleAuthApi(title, buttonText);
     console.log(title);
     setBookInfos(data);
-    console.log('I am from showData ', bookInfos);
     return bookInfos;
   };
 
@@ -37,7 +36,7 @@ export default function BooksProvider({ children }) {
       cover_i: item.cover_i,
       reading_status: 0,
       //  user_id
-      language: 'english',
+      language: item.language,
     };
     const res = await axios.post('/api/books/create', bookInfoToSend);
     console.log(res.data);

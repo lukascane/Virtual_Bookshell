@@ -39,11 +39,13 @@ function searchTitleAuthApi(search, searchCathegory) {
 
       const showData = data.docs.map((item) => {
         return {
+          key: item.key,
           title: item.title,
           author: item.author_name,
           cover_i: item.cover_i,
-          isbn: item.isbn,
+          isbn: item.isbn[0],
           pages: item.number_of_pages_median,
+          language: item.language[0],
           numFound: data.numFound,
         };
       });

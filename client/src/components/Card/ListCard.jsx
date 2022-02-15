@@ -3,6 +3,7 @@ import { useState, useContext } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
 import ModalContext from '../../context/ModalContext';
 import PurpleBook from '../../assets/images/bookDarkMagenta.png';
+import Description from '../Description/Description';
 
 export default function ListCard({ item }) {
   const [buttonText, setButtonText] = useState('SHARE');
@@ -21,22 +22,22 @@ export default function ListCard({ item }) {
     });
   };
 
-  const title = item.title
-  const words = title.split(" ");
+  const title = item.title;
+  const words = title.split(' ');
 
   const newTitle = words.reduce((prev, curr, index) => {
-    if(index >= 7) {
-        return prev;
+    if (index >= 7) {
+      return prev;
     }
-    
-    return "" + prev + " " + curr;
-})
+
+    return '' + prev + ' ' + curr;
+  });
 
   return (
     <div id="listCardElement" className="border-bottom mt-4">
       <div className="picBookCont me-4 ms-4">
         <a onClick={handleOpenModal}>
-          { item.cover_i ? (
+          {item.cover_i ? (
             <img
               src={`https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`}
               alt="book-cover-thumb"
@@ -52,7 +53,9 @@ export default function ListCard({ item }) {
         </a>
         <div className="bookInfo2">
           <div className="ms-3 mt-4 bigHide">
-            <p className="mt-3 bttl"><b>{newTitle}</b></p>
+            <p className="mt-3 bttl">
+              <b>{newTitle}</b>
+            </p>
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
@@ -63,7 +66,9 @@ export default function ListCard({ item }) {
       <div className="dataBookCont d-flex justify-content-evenly col">
         <div className="bookInfo">
           <div className="ms-3 mt-4">
-            <p className="mt-3 bttl"><b>{newTitle}</b></p>
+            <p className="mt-3 bttl">
+              <b>{newTitle}</b>
+            </p>
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
@@ -72,26 +77,7 @@ export default function ListCard({ item }) {
 
         <div className="description">
           <div className="descrTxt textScroll p-3">
-            <p>
-              In ancient times the Rings of Power were crafted by the
-              Elven-smiths, and Sauron, The Dark Lord, forged the One Ring,
-              filling it with his own power so that he could rule all others.
-              But the One Ring was taken from him, and though he sought it
-              throughout Middle-earth, it remained lost to him. After many ages
-              it fell, by chance, into the hands of the hobbit, Bilbo Baggins.
-              From his fastness in the Dark Tower of Mordor, Sauron's power
-              spread far and wide. He gathered all the Great Rings to him, but
-              ever he searched far and wide for the One Ring that would complete
-              his dominion. On his eleventy-first birthday Bilbo disappeared,
-              bequeathing to his young cousin Frodo the Ruling Ring and a
-              perilous quest --- to journey across Middle-earth, deep into the
-              shadow of the Dark Lord, and destroy the Ring by casting it into
-              the Cracks of Doom. THE LORD OF THE RINGS tells of the great quest
-              undertaken by Frodo and the Fellowship of the Ring: Gandalf the
-              Wizard, Merry, Pippin, and Sam, Gimli the Dwarf, Legolas the Elf,
-              Boromir of Gondor, and a tall, mysterious stranger called Strider.
-              --back cove
-            </p>
+            <Description></Description>
           </div>
           <div className="silverSect p-1 d-flex justify-content-center align-items-center mb-4">
             <h5 className="mb-0">I Book genre? I</h5>
