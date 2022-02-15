@@ -17,6 +17,8 @@ function searchTitleAuthApi(search, searchCathegory) {
     }, 
   };
 
+
+  
   };
   if (searchCathegory == "Year") { 
     config = {
@@ -36,6 +38,16 @@ function searchTitleAuthApi(search, searchCathegory) {
       }, 
     
   }
+};
+
+if (searchCathegory == "Subject") { 
+  config = {
+    params: { 
+     author: search,
+     limit: 8,
+    }, 
+  
+}
 };
   return searchAxiosInstance
     .get('/', config)
