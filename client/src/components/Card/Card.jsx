@@ -1,32 +1,53 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
+import ModalContext from '../../context/ModalContext';
 import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 
 function Card({ item }) {
   const { sendBookInfo, bookInfos } = useContext(BookContext);
-  console.log(bookInfos);
+  const { onClickShowModal, setModalContent } = useContext(ModalContext);
+
+  const handleOpenModal = () =>{
+    onClickShowModal();
+    setModalContent({
+    title: item.title,
+    author: item.author[0],
+    pages: item.pages,
+    isbn: item.isbn[0],
+    cover_i: item.cover_i
+  })
+  }
+
+  const title = item.title
+  const words = title.split(" ");
+
+  const newTitle = words.reduce((prev, curr, index) => {
+    if(index >= 7) {
+        return prev;
+    }
+    
+    return "" + prev + " " + curr;
+})
 
   return (
-
     <div id="bigCard">
       <div className="row d-flex justify-content-between">
         <div>
           <div className="shadow-lg row card layout" style={{ width: '18rem' }}>
             <div className="photoframe card-img-top mt-3 layout">
-            <a>
-            {item.cover_i ?
-            <img 
-                src={`https://covers.openlibrary.org/b/id/${item.cover_i}-L.jpg`}
-                alt="book-cover"
-              /> :
-              <img 
-                src={PurpleBook}
-                alt="book-cover"
-              />}
+              <a onClick={handleOpenModal}>
+                {item.cover_i ? (
+                  <img
+                    src={`https://covers.openlibrary.org/b/id/${item.cover_i}-L.jpg`}
+                    alt="book-cover"
+                  />
+                ) : (
+                  <img src={PurpleBook} alt="book-cover" />
+                )}
               </a>
             </div>
             <div className="card-body text-left">
-              <h5 className="card-title">{item.title}</h5>
+              <h5 className="card-title">{newTitle}</h5>
               <p className="card-text bt">{item.author[0]}</p>
               <p className="card-text">Pages: {item.pages}</p>
             </div>
