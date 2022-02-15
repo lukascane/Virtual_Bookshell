@@ -29,26 +29,16 @@ export default function BooksProvider({ children }) {
   console.log(user);
 
   const sendBookInfo = async (item) => {
-    const response = await axiosApi.get(
-      `http://openlibrary.org/search.json?q=${item.title}&page=2&limit=10`
-    );
-    //* use item. here
-
-    const books = response.data;
-    const bookOne = books.docs[0];
     const bookInfoToSend = {
-      key_isbn: bookOne.isbn[0],
-      cover: bookOne.isbn[0],
-      title: bookOne.title,
-      author: bookOne.author_name[0],
-      subject: bookOne.isbn[0],
-      publisher: bookOne.publisher[0],
+      title: item.title,
+      author: item.author[0],
+      pages: item.pages,
+      isbn: item.isbn[0],
+      cover_i: item.cover_i,
       reading_status: 0,
-      pages: 50,
       //  user_id
       language: 'english',
     };
-    console.log(bookOne);
     const res = await axios.post('/api/books/create', bookInfoToSend);
     console.log(res.data);
   };
@@ -66,7 +56,7 @@ export default function BooksProvider({ children }) {
 
   return (
     <BookContext.Provider
-      value={{ bookInfos, sendBookInfo, handleLogin, user }}
+      value={{ onClickFetchData, bookInfos, sendBookInfo, handleLogin, user }}
     >
       {children}
     </BookContext.Provider>
