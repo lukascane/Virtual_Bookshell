@@ -21,13 +21,24 @@ export default function ListCard({ item }) {
     });
   };
 
+  const title = item.title
+  const words = title.split(" ");
+
+  const newTitle = words.reduce((prev, curr, index) => {
+    if(index >= 7) {
+        return prev;
+    }
+    
+    return "" + prev + " " + curr;
+})
+
   return (
     <div id="listCardElement" className="border-bottom mt-4">
       <div className="picBookCont me-4 ms-4">
         <a onClick={handleOpenModal}>
-          {item.cover_i ? (
+          { item.cover_i ? (
             <img
-              src="https://covers.openlibrary.org/b/id/8166951-M.jpg"
+              src={`https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`}
               alt="book-cover-thumb"
               className="book-cover-thumb"
             />
@@ -41,11 +52,10 @@ export default function ListCard({ item }) {
         </a>
         <div className="bookInfo2">
           <div className="ms-3 mt-4 bigHide">
-            <p className="mt-3">hkhkhkjhk</p>
-            <p>Year: variable</p>
-            <p>Author: {item.author}</p>
+            <p className="mt-3 bttl"><b>{newTitle}</b></p>
+            <p>{item.author}</p>
+            <p>Pages: {item.pages}</p>
             <p>more variable</p>
-            <p>pages? variable</p>
           </div>
         </div>
       </div>
@@ -53,11 +63,10 @@ export default function ListCard({ item }) {
       <div className="dataBookCont d-flex justify-content-evenly col">
         <div className="bookInfo">
           <div className="ms-3 mt-4">
-            <p className="mt-3">uztutzutzutzut</p>
-            <p>Year: variable</p>
-            <p>Author: variable</p>
+            <p className="mt-3 bttl"><b>{newTitle}</b></p>
+            <p>{item.author}</p>
+            <p>Pages: {item.pages}</p>
             <p>more variable</p>
-            <p>pages? variable</p>
           </div>
         </div>
 

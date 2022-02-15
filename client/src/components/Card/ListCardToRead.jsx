@@ -1,27 +1,61 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useState } from 'react';
+import BookContext from '../../context/booksContextApi/BookContext';
+import ModalContext from '../../context/ModalContext';
+import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 
 export default function ListCardToRead({ item }) {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
+  const { sendBookInfo, bookInfos } = useContext(BookContext);
+  const { onClickShowModal, setModalContent } = useContext(ModalContext);
+
+  const handleOpenModal = () => {
+    onClickShowModal();
+    setModalContent({
+      title: item.title,
+      author: item.author[0],
+      pages: item.pages,
+      // isbn: item.isbn[0],
+      cover_i: item.cover_i,
+    });
+  };
+
+  const title = item.title
+  const words = title.split(" ");
+
+  const newTitle = words.reduce((prev, curr, index) => {
+    if(index >= 5) {
+        return prev;
+    }
+    
+    return "" + prev + " " + curr;
+})
 
   return (
     <div id="listCardElement" className="border-bottom mt-4">
       <div className="picBookCont me-4 ms-4">
         <a>
-          <img
-            src="https://covers.openlibrary.org/b/id/8166951-M.jpg"
-            alt="book-cover-thumb"
-            className="book-cover-thumb"
-          />
+          { item.cover_i ? (
+            <img
+              src={`https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`}
+              alt="book-cover-thumb"
+              className="book-cover-thumb"
+            />
+          ) : (
+            <img
+              src={PurpleBook}
+              alt="book-cover-thumb"
+              className="book-cover-thumb"
+            />
+          )}
         </a>
         <div className="bookInfo2">
           <div className="ms-3 mt-4 bigHide">
-            <p className="mt-3">Tporporporpo</p>
-            <p>Year: variable</p>
-            <p>Author: </p>
+            <p className="mt-3 bttl">{newTitle}</p>
+            <p>{item.author}</p>
+            <p>Pages: {item.pages}</p>
             <p>more variable</p>
-            <p>pages? variable</p>
           </div>
         </div>
       </div>
@@ -29,11 +63,10 @@ export default function ListCardToRead({ item }) {
       <div className="dataBookCont d-flex justify-content-evenly col">
         <div className="bookInfo">
           <div className="ms-3 mt-4">
-            <p className="mt-3">Title: variable</p>
-            <p>Year: variable</p>
-            <p>Author: variable</p>
+            <p className="mt-3 bttl">{newTitle}</p>
+            <p>{item.author}</p>
+            <p>Pages: {item.pages}</p>
             <p>more variable</p>
-            <p>pages? variable</p>
           </div>
         </div>
 
