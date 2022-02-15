@@ -6,7 +6,6 @@ import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 function Card({ item }) {
   const { sendBookInfo, bookInfos } = useContext(BookContext);
   const { onClickShowModal, setModalContent } = useContext(ModalContext);
-  console.log(bookInfos);
 
   const handleOpenModal = () => {
     onClickShowModal();

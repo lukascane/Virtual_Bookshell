@@ -12,7 +12,11 @@
     margin-bottom: 20px;
     border: #C4C4C4;
 
+    .bttl {
+        text-transform: uppercase;
+    }
     .picBookCont {
+        // background-color: whitesmoke;
         a {
             cursor: pointer;
         }

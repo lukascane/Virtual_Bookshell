@@ -16,7 +16,17 @@ export default function BooksProvider({ children }) {
     return bookInfos;
   };
 
-  console.log(bookInfos);
+  // handle user /log in function
+  const [user, setUser] = useState('');
+  const handleLogin = (user) => {
+    if (user) {
+      setUser(user);
+    } else {
+      setUser('');
+    }
+  };
+
+  console.log(user);
 
   const sendBookInfo = async (item) => {
     const response = await axiosApi.get(
@@ -50,9 +60,15 @@ export default function BooksProvider({ children }) {
     onClickFetchData,
     bookInfos,
     sendBookInfo,
+    handleLogin,
+    user,
   };
 
   return (
-    <BookContext.Provider value={providedData}>{children}</BookContext.Provider>
+    <BookContext.Provider
+      value={{ bookInfos, sendBookInfo, handleLogin, user }}
+    >
+      {children}
+    </BookContext.Provider>
   );
 }
