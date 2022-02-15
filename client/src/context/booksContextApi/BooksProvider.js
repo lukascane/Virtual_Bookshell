@@ -16,7 +16,18 @@ console.log(title);
     return bookInfos;
   };
 
-console.log(bookInfos);
+  // handle user /log in function
+  const [user, setUser] = useState("")
+  const handleLogin = (user) => {
+    if (user) {
+      setUser(user);
+    } else {
+      setUser("");
+    }
+  };
+
+
+console.log(user);
 
   const sendBookInfo = async () => {
     const response = await axiosApi.get(
@@ -49,9 +60,14 @@ console.log(bookInfos);
     onClickFetchData,
     bookInfos,
     sendBookInfo,
+    handleLogin,
+    user,
   };
 
   return (
-    <BookContext.Provider value={providedData}>{children}</BookContext.Provider>
+    <BookContext.Provider value={{bookInfos,
+      sendBookInfo,
+      handleLogin,
+      user,}}>{children}</BookContext.Provider>
   );
 }

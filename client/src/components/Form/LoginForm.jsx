@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import axios from '../../util/axiosInstance';
-
+import BookContext from '../../context/booksContextApi/BookContext';
+import { useNavigate } from "react-router-dom";
 export default function LoginForm() {
+  const navigate = useNavigate();
+  const { handleLogin } = useContext(BookContext);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log('Login the user');
@@ -14,10 +18,13 @@ export default function LoginForm() {
     console.log(data);
     try {
       const response = await axios.post('/api/user/login', data);
+      console.log("response", response.data.user);
 
-      if (response.status === 200) {
+      if (response.status == 200) {
         //everything went well!
+        handleLogin(response.data.user)
         console.log('You are now logged in');
+        navigate("/profile");
       }
     } catch (error) {
       console.log('The error is: ', error);

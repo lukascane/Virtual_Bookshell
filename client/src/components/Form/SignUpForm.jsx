@@ -1,6 +1,7 @@
 import axios from '../../util/axiosInstance';
-
+import { useNavigate } from "react-router-dom";
 export default function SignUpForm() {
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log('Submit the form');
@@ -20,6 +21,7 @@ export default function SignUpForm() {
       if (response.status === 200) {
         //everything went well!
         console.log('user was created');
+        navigate("/login");
       }
     } catch (error) {
       console.log('The error is: ', error);

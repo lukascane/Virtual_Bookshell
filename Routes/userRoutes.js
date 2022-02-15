@@ -14,5 +14,5 @@ router.get('/list', controller.listUsers);
 router.use(passport.authenticate('jwt', { session: false }));
 
 router.delete('/delete/:id', roleManager.isAdmin,controller.deleteUser)
-
+router.patch('/update', controller.updateUser)
 module.exports = router;

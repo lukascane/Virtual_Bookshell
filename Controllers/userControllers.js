@@ -50,7 +50,7 @@ exports.login = async (req, res) => {
   if (user === null) {
     return res
       .status(404)
-      .json({ message: 'User with that email was not found' });
+      .json({ message: 'Username not found' });
   }
 
   try {
@@ -75,7 +75,8 @@ exports.login = async (req, res) => {
         .json({
           message: 'Login successful',
           // we are sending the user as an object with only selected keys
-          user: { username: user.username }, // later I might want to send more keys here
+          user // later I might want to send more keys here
+          
         });
     } else {
       return res.status(400).json({ message: 'Passwords not matching' });
@@ -96,6 +97,27 @@ exports.deleteUser = async (req, res) => {
     return res.status(400).json({ message: 'Error happened' });
   }
 };
+
+
+// Update user 
+exports.updateUser = async (req, res) => {
+  console.log(req.user);
+  try {
+    const user = await User.findByIdAndUpdate(req.user._id, {
+      username:req.body.username,
+      firstname:req.body.firstname,
+      lastname:req.body.lastname,
+      password:req.body.password,
+      email:req.body.email,
+    },{new:true});
+    
+    return res.status(200).json({ message: 'User updated', user });
+  } catch (error) {
+    return res.status(400).json({ message: 'Error happened' });
+  }
+};
+
+
 // Log out and clear Cookies
 exports.logout = async (req, res) => {
   // Remove the httpOnly cookie
