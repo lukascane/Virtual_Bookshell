@@ -5,11 +5,10 @@ import ParagraphInfo from '../ParagraphInfo/ParagraphInfo';
 
 export default function SearchForm() {
   const [title, setTitle] = useState('');
-  
   const [buttonText, setButtonText] = useState('Title');
-  const { onClickFetchData } = useContext(BookContext);
+  const { onClickFetchData, bookInfos } = useContext(BookContext);
   const changeText = (text) => setButtonText(text);
-
+  console.log(bookInfos,'from search form!');
   return (
     <div id="searchForm">
       <div className="container formWrapper">
@@ -93,8 +92,7 @@ export default function SearchForm() {
           </li>
         </ul>
       </div>
-      
-      <ParagraphInfo />
+      {bookInfos[0] === undefined ? null : <ParagraphInfo bookInfos={bookInfos}/>}
     </div>
   );
 }
