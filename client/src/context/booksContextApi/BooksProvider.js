@@ -7,6 +7,7 @@ import sendBookInfoApi from '../../services/bookApi/sendBookInfoApi';
 
 export default function BooksProvider({ children }) {
   const [bookInfos, setBookInfos] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const onClickFetchData = async (title, buttonText) => {
     const data = await searchTitleAuthApi(title, buttonText);
@@ -23,6 +24,12 @@ export default function BooksProvider({ children }) {
     } else {
       setUser('');
     }
+  };
+
+  const logout = async () => {
+    const response = await axios.get('/api/user/logout');
+    handleLogin(null);
+    setLoggedIn(false);
   };
 
   console.log(user);
@@ -43,6 +50,13 @@ export default function BooksProvider({ children }) {
     console.log(res.data);
   };
 
+  const checkLogin = () => {
+    setLoggedIn(true);
+  };
+
+  // const checkLogout = () => {
+  //   setLoggedIn(false);
+  // };
   // const newData = onClickFetchData();
   // console.log(newData);
 
@@ -52,11 +66,25 @@ export default function BooksProvider({ children }) {
     sendBookInfo,
     handleLogin,
     user,
+    checkLogin,
+    // checkLogout,
+    loggedIn,
+    logout,
   };
 
   return (
     <BookContext.Provider
-      value={{ onClickFetchData, bookInfos, sendBookInfo, handleLogin, user }}
+      value={{
+        onClickFetchData,
+        bookInfos,
+        sendBookInfo,
+        handleLogin,
+        user,
+        checkLogin,
+        // checkLogout,
+        loggedIn,
+        logout,
+      }}
     >
       {children}
     </BookContext.Provider>

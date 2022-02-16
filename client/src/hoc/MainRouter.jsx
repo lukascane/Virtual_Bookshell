@@ -15,28 +15,30 @@ import NavBarLoggedIn from '../components/Navbar/NavBarLoggedIn';
 import ModalWrapper from '../components/Wrapper/ModalWrapper';
 import ModalProvider from '../context/ModalProvider';
 import AlertProvider from '../context/AlertProvider';
+import NavbarWrapper from '../components/Wrapper/NavbarWrapper';
 
 function MainRouter() {
   return (
     <BrowserRouter>
       <BooksProvider>
         <ModalProvider>
-         <AlertProvider>
-             <NavG /> 
+          <AlertProvider>
+            <NavbarWrapper />
+            {/* <NavG />  */}
             {/* <NavBarLoggedIn />  */}
-          <main>
-            <Routes>
-              <Route path="/" element={<Landing />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/registration" element={<Registration />} />
-              <Route path="/searchbooks" element={<SearchBooks />} />
-              <Route path="/toreadlist" element={<ToReadList />} />
-              <Route path="/readlist" element={<ReadList />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
+            <main>
+              <Routes>
+                <Route path="/" element={<Landing />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/registration" element={<Registration />} />
+                <Route path="/searchbooks" element={<SearchBooks />} />
+                <Route path="/toreadlist" element={<ToReadList />} />
+                <Route path="/readlist" element={<ReadList />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
           </AlertProvider>
         </ModalProvider>
       </BooksProvider>

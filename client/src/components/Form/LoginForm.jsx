@@ -1,12 +1,14 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import axios from '../../util/axiosInstance';
 import BookContext from '../../context/booksContextApi/BookContext';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import AlertContext from '../../context/AlertContext';
+
 export default function LoginForm() {
-  const {showAlert, onClickShowAlert, currentAlertType } = useContext(AlertContext)
+  const { showAlert, onClickShowAlert, currentAlertType } =
+    useContext(AlertContext);
   const navigate = useNavigate();
-  const { handleLogin } = useContext(BookContext);
+  const { handleLogin, checkLogin, checkLogout } = useContext(BookContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,19 +22,19 @@ export default function LoginForm() {
     console.log(data);
     try {
       const response = await axios.post('/api/user/login', data);
-      console.log("response", response.data.user);
+      console.log('response', response.data.user);
 
       if (response.status == 200) {
         //everything went well!
-        handleLogin(response.data.user)
+        handleLogin(response.data.user);
         console.log('You are now logged in');
-        onClickShowAlert(8)
-        navigate("/profile");
-        
+        onClickShowAlert(8);
+        checkLogin();
+        navigate('/profile');
       }
     } catch (error) {
       console.log('The error is: ', error);
-      onClickShowAlert(7)
+      onClickShowAlert(7);
     }
   };
 
