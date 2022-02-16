@@ -1,8 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const BookCollectionSchema = new Schema({
-  key_isbn: Number,
-  cover: String,
+  key: String,
   title: { type: String, required: true },
   author: { type: String, required: true },
   year: Number,
@@ -10,10 +9,12 @@ const BookCollectionSchema = new Schema({
   publisher: String,
   review: String,
   rating: Number,
-  reading_status: Number,
   pages: Number,
+  isbn: String,
+  cover_i: Number,
+  reading_status: Number,
   user_id: { type: Schema.Types.ObjectId, ref: 'user' },
-  language: String,
+  language: Array,
 });
 
 const Book = model('book', BookCollectionSchema);

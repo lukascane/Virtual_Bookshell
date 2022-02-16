@@ -5,11 +5,12 @@ import BookModal from '../components/Modals/BookModal';
 export default function ModalProvider({ children }) {
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState({
-    title: "",
-    author: "",
+    key: 0,
+    title: '',
+    author: '',
     pages: 0,
-    isbn: "",
-    cover_i: 0
+    isbn: '',
+    cover_i: 0,
   });
 
   const closeHandler = () => {
@@ -27,10 +28,19 @@ export default function ModalProvider({ children }) {
   const providedData = { closeHandler, onClickShowModal, example };
   return (
     <ModalContext.Provider
-      value={{ providedData, closeHandler, onClickShowModal, showModal, setModalContent, modalContent }}
+      value={{
+        providedData,
+        closeHandler,
+        onClickShowModal,
+        showModal,
+        setModalContent,
+        modalContent,
+      }}
     >
       {children}
-      {showModal ? <BookModal closeHandler={closeHandler} content={modalContent} /> : null}
+      {showModal ? (
+        <BookModal closeHandler={closeHandler} content={modalContent} />
+      ) : null}
     </ModalContext.Provider>
   );
 }
