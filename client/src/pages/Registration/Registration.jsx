@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import SignUpForm from '../../components/Form/SignUpForm';
 import AlertRegister from '../../components/ParagraphInfo/AlertRegister';
+import AlertContext from '../../context/AlertContext';
+
 
 function Registration() {
-  return <div id="profileView" className="container">
-  <div className="d-flex col justify-content-center profileviewcontainer" style={{marginTop:"130px"}}>
+  const {showAlert, onClickShowAlert, currentAlertType } = useContext(AlertContext)
+
+  return <div id="profileView" className="container" style={{marginTop:"130px"}}>
+      {showAlert === true &&currentAlertType === 11 ? <AlertRegister /> : null}
+  <div className="d-flex col justify-content-center profileviewcontainer" >
   <SignUpForm/>
-  <AlertRegister />
   </div>
   </div>;
 }

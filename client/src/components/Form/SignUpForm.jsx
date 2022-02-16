@@ -1,6 +1,11 @@
+import React, {useContext} from 'react';
 import axios from '../../util/axiosInstance';
 import { useNavigate } from "react-router-dom";
+import AlertContext from '../../context/AlertContext';
+
 export default function SignUpForm() {
+
+  const {showAlert, onClickShowAlert, currentAlertType } = useContext(AlertContext)
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -21,10 +26,12 @@ export default function SignUpForm() {
       if (response.status === 200) {
         //everything went well!
         console.log('user was created');
+        onClickShowAlert(10)
         navigate("/login");
       }
     } catch (error) {
       console.log('The error is: ', error);
+      onClickShowAlert(11)
     }
   };
 

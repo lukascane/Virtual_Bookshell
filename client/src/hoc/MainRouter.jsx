@@ -22,8 +22,8 @@ function MainRouter() {
       <BooksProvider>
         <ModalProvider>
          <AlertProvider>
-           {/* <NavG />  */}
-           <NavBarLoggedIn /> 
+             <NavG /> 
+            {/* <NavBarLoggedIn />  */}
           <main>
             <Routes>
               <Route path="/" element={<Landing />} />

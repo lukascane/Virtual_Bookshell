@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {NavLink} from 'react-router-dom';
 import let2 from '../../assets/images/lettring2.png'
+import AlertContext from '../../context/AlertContext';
+
 
 export default function Navbar() {
+  const { showAlert, currentAlertType, onClickShowAlert } = useContext(AlertContext)
 
 /*   let loggedIn = true;
   return {
@@ -45,7 +48,7 @@ export default function Navbar() {
                 <NavLink to="/profile" exact className="nav-link"><button className="btn rounded-pill buttons" type="button">profile</button></NavLink>
         </li>
         <li className="nav-item">
-                <NavLink to="/login" exact className="nav-link"><button className="btn rounded-pill buttons" type="button">logout</button></NavLink>
+                <NavLink onClick={()=>onClickShowAlert(9)} to="/login" exact className="nav-link"><button className="btn rounded-pill buttons" type="button">logout</button></NavLink>
         </li>
       </ul>
     </div>
