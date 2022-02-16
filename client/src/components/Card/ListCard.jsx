@@ -94,7 +94,26 @@ export default function ListCard({ item }) {
 
         <div className="description">
           <div className="descrTxt textScroll p-3">
-            <Description></Description>
+            {/* <Description></Description> */}
+            <p>
+              Change the visual order of specific flex items with a handful of
+              order utilities. We only provide options for making an item first
+              or last, as well as a reset to use the DOM order. As order takes
+              any integer value from 0 to 5, add custom CSS for any additional
+              values needed.Change the visual order of specific flex items with
+              a handful of order utilities. We only provide options for making
+              an item first or last, as well as a reset to use the DOM order. As
+              order takes any integer value from 0 to 5, add custom CSS for any
+              additional values needed.Change the visual order of specific flex
+              items with a handful of order utilities. We only provide options
+              for making an item first or last, as well as a reset to use the
+              DOM order. As order takes any integer value from 0 to 5, add
+              custom CSS for any additional values needed.Change the visual
+              order of specific flex items with a handful of order utilities. We
+              only provide options for making an item first or last, as well as
+              a reset to use the DOM order. As order takes any integer value
+              from 0 to 5, add custom CSS for any additional values needed.
+            </p>
           </div>
           <div className="silverSect p-1 d-flex justify-content-center align-items-center mb-4">
             <h5 className="mb-0">I Book genre? I</h5>
