@@ -1,15 +1,13 @@
 import React from 'react';
 
-
-export default function ParagraphInfo() {
- 
-
+export default function ParagraphInfo({ bookInfos }) {
+  console.log( 'bookinfo from paragraph', bookInfos)
   return (
     <div id="infoSearch">
       <div className="container formWrapper">
         
       <div className="form-text mt-3 vText">
-        You found: <span>1111</span> books with this searching criteria.
+        You found: <span>{bookInfos[0].numFound}</span> books with this searching criteria.
       </div>
     </div>
     </div>
