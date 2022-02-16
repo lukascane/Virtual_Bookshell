@@ -5,6 +5,7 @@ import AlertProfileDeleted from '../../components/ParagraphInfo/AlertProfileDele
 import EditProfileForm from '../../components/ProfileComponents/EditProfileForm';
 import ProfileCard from '../../components/ProfileComponents/ProfileCard';
 import AlertContext from '../../context/AlertContext';
+import AlertLoginSucces from '../../components/ParagraphInfo/AlertLoginSucces';
 
 function Profile() {
   const { showAlert, currentAlertType } = useContext(AlertContext)
@@ -14,6 +15,7 @@ function Profile() {
   {showAlert === true && currentAlertType === 4 ? <AlertPictureUpdated /> : null}
     {showAlert === true && currentAlertType === 5 ?  <AlertProfileDeleted /> : null}
     {showAlert === true && currentAlertType === 6 ?   <AlertProfile /> : null}
+    {showAlert === true && currentAlertType === 8 ? <AlertLoginSucces /> : null}
   </div>
       <div className="d-flex col justify-content-center profileviewcontainer mb-5">
       <ProfileCard />
