@@ -1,19 +1,22 @@
 import React, {useContext} from 'react';
 import DummyPicture from '../../assets/images/dummy.png'
 import BookContext from '../../context/booksContextApi/BookContext';
+import AlertContext from '../../context/AlertContext'
 
 export default function ProfileCard() {
 const {user} = useContext(BookContext)
-
+const {onClickShowAlert} = useContext(AlertContext)
   return <div id='profile'>
 
-        <div className='mt-2 mb-5'>    
+        <div className='mb-5'>    
         <h4 >My profile</h4>
         <h6>{user.username}</h6>
         </div>
         <div className='d-flex justify-content-between align-items-center mx-5 subC'>
         <div id="profilePicture" className='rounded-circle d-flex justify-content-center align-items-center'>
+        <a style={{cursor:'pointer'}}>
         <img src={DummyPicture} alt='pp' className='rounded-circle'/>
+        </a>
         </div>
         <div id='profileData'>
         <div className='texts'>
@@ -27,8 +30,8 @@ const {user} = useContext(BookContext)
         </div>
     </div>
     <div className='d-flex flex-column align-items-center'>
-    <button className='rounded-pill buttons mt-5 mb-2' type='button'>MODIFY IMAGE</button>
-    <button className='rounded-pill buttons mt-3 mb-2' type='button'>DELETE PROFILE</button>
+    <button className='rounded-pill buttons mt-5 mb-2' type='button' onClick={()=>onClickShowAlert(4)}>SAVE IMAGE</button>
+    <button className='rounded-pill buttons mt-3 mb-2' type='button'onClick={()=>onClickShowAlert(5)}>DELETE PROFILE</button>
     </div>
 
   </div>;

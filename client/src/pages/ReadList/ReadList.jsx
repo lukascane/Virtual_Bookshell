@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AlertAddedReadList from '../../components/ParagraphInfo/AlertAddedReadList'
+import AlertRemovedFromReadList from '../../components/ParagraphInfo/AlertRemovedFromReadList';
 import ListReadWrapper from '../../components/Wrapper/ListReadWrapper';
+import AlertContext from '../../context/AlertContext';
 
 function ReadList() {
+  const { showAlert, currentAlertType } = useContext(AlertContext)
   return (
     <div id="readList" className="container-fluid">
       <div className="wiewType container-fluid border-bottom">
+
+      <div className='container'>
+              {showAlert === true && currentAlertType === 0 ? <AlertRemovedFromReadList /> : null}
+              {showAlert === true && currentAlertType === 1 ?  <AlertAddedReadList /> : null }
+      </div>
+
         <div className="state text-center d-flex justify-content-center align-items-center">
           <h4 className="">
             READ <span>(2)</span>

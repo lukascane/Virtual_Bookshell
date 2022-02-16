@@ -4,11 +4,11 @@ export default function ParagraphInfo() {
  
 
   return (
-    <div id="searchForm">
+    <div id="infoSearch">
       <div className="container formWrapper">
         
       <div className="form-text mt-3 vText">
-        You found 11111 books text to be a variable of search.
+        You found: <span>1111</span> books with this searching criteria.
       </div>
     </div>
     </div>

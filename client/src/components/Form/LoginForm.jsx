@@ -53,7 +53,7 @@ export default function LoginForm() {
           className="form-control w-100 mx-1 text-light mb-5"
         />
         <div>
-          <button className="rounded-pill buttons">LOGIN</button>
+          <button className="rounded-pill buttons mb-4">LOGIN</button>
         </div>
       </div>
     </form>
