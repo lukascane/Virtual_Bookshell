@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
+import ParagraphInfo from '../ParagraphInfo/ParagraphInfo';
 
 export default function SearchForm() {
   const [title, setTitle] = useState('');
@@ -41,6 +42,12 @@ export default function SearchForm() {
               className="dropdown-item author"
             >
               Author
+            </li>
+            <li
+              onClick={() => changeText('Subject')}
+              className="dropdown-item subject"
+            >
+              Subject
             </li>
           </ul>
         </div>
@@ -86,7 +93,8 @@ export default function SearchForm() {
           </li>
         </ul>
       </div>
-      {/* <Paragraph component here></Paragraph> */}
+      
+      <ParagraphInfo />
     </div>
   );
 }

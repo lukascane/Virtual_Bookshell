@@ -14,12 +14,14 @@ import NotFound from '../pages/NotFound/NotFound';
 import NavBarLoggedIn from '../components/Navbar/NavBarLoggedIn';
 import ModalWrapper from '../components/Wrapper/ModalWrapper';
 import ModalProvider from '../context/ModalProvider';
+import AlertProvider from '../context/AlertProvider';
 
 function MainRouter() {
   return (
     <BrowserRouter>
       <BooksProvider>
         <ModalProvider>
+         <AlertProvider>
            {/* <NavG />  */}
            <NavBarLoggedIn /> 
           <main>
@@ -35,6 +37,7 @@ function MainRouter() {
             </Routes>
           </main>
           <Footer />
+          </AlertProvider>
         </ModalProvider>
       </BooksProvider>
     </BrowserRouter>

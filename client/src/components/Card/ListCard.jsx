@@ -4,12 +4,15 @@ import BookContext from '../../context/booksContextApi/BookContext';
 import ModalContext from '../../context/ModalContext';
 import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 import Description from '../Description/Description';
+import AlertContext from '../../context/AlertContext';
 
 export default function ListCard({ item }) {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
   const { sendBookInfo, bookInfos } = useContext(BookContext);
   const { onClickShowModal, setModalContent } = useContext(ModalContext);
+  const { providedDataAlert, showAlert, onClickShowAlert } =
+    useContext(AlertContext);
 
   const handleOpenModal = () => {
     onClickShowModal();
@@ -59,6 +62,13 @@ export default function ListCard({ item }) {
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
+            <button
+              onClick={() => onClickShowAlert(0)}
+              className="btn btLink rmv"
+              style={{ width: '120px' }}
+            >
+              REMOVE
+            </button>
           </div>
         </div>
       </div>
@@ -72,6 +82,13 @@ export default function ListCard({ item }) {
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
+            <button
+              onClick={() => onClickShowAlert(0)}
+              className="btn btLink2"
+              style={{ margin: '0px' }}
+            >
+              REMOVE
+            </button>
           </div>
         </div>
 
@@ -86,7 +103,11 @@ export default function ListCard({ item }) {
 
         <div className="commandWrap d-flex justify-content-around col align-items-center">
           <div className="bttW mx-2 container-fluid">
-            <a href="#" className="btn btLink">
+            <a
+              onClick={() => onClickShowAlert(1)}
+              href="#"
+              className="btn btLink"
+            >
               to read
             </a>
             <a href="#" className="btn btLink">

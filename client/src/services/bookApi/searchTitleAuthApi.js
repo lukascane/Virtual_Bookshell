@@ -8,7 +8,18 @@ function searchTitleAuthApi(search, searchCathegory) {
       limit: 8,
     }, 
   }; */
-  if (searchCathegory == 'Title') {
+  if (searchCathegory == "Title") { 
+  config = {
+    params: {
+      q: search, 
+      limit: 8,
+    }, 
+  };
+
+
+  
+  };
+  if (searchCathegory == "Year") { 
     config = {
       params: {
         q: search,
@@ -32,6 +43,17 @@ function searchTitleAuthApi(search, searchCathegory) {
       },
     };
   }
+};
+
+if (searchCathegory == "Subject") { 
+  config = {
+    params: { 
+     author: search,
+     limit: 8,
+    }, 
+  
+}
+};
   return searchAxiosInstance
     .get('/', config)
     .then((response) => {
