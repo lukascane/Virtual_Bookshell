@@ -8,6 +8,16 @@
     align-items: center;
     flex-direction: column;
 
+    #infoSearch {
+
+        .vText {
+        color: #DEDADA;
+        font-weight: 700;
+        font-size: 1.2rem;
+        min-width: 300px;
+        } 
+    }
+
     .formWrapper {
     display: flex;
     justify-content: center;
@@ -15,10 +25,7 @@
     flex-direction: row;
     }
 
-     .vText {
-        color: #DEDADA;
-        font-weight: 600;
-    } 
+     
 
     #inputSearchField {
         background-color: #008080;

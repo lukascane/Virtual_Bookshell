@@ -5,6 +5,7 @@ import CardWrapper from '../../components/Wrapper/CardWrapper';
 import MiniCardWrapper from '../../components/Wrapper/MiniCardWrapper';
 import BookModal from '../../components/Modals/BookModal';
 
+
 function SearchBooks() {
   const { onClickFetchData, bookInfos } = useContext(BookContext);
 

@@ -2,9 +2,11 @@ import React, {useContext} from 'react';
 import axiosInstance from '../../util/axiosInstance'
 import BookContext from '../../context/booksContextApi/BookContext';
 import searchAxiosInstance from '../../util/searchAxiosInstance';
+import AlertProfile from '../ParagraphInfo/AlertProfile';
+import AlertContext from '../../context/AlertContext';
 
 export default function EditProfileForm() {
-  
+  const {onClickShowAlert} = useContext(AlertContext)
   const {handleLogin} = useContext(BookContext)
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,7 +30,8 @@ export default function EditProfileForm() {
 
     <h4 className='mt-2 mb-5'>Edit your profile</h4>
     
-    <form onSubmit={handleSubmit}><h4 className='mt-2'>Username:</h4>
+    <form onSubmit={handleSubmit}>
+    <h4 className='mt-2'>Username:</h4>
     <input type="text" id="user_name_input" name="username" className="form-control w-100 mx-1 text-light mb-5"/>
     <h4 className='mt-2'>First name:</h4>
     <input type="text" id="first_name_input"name="firstname" className="form-control w-100 mx-1 text-light mb-5 signUp border-bottom"/>
@@ -39,7 +42,7 @@ export default function EditProfileForm() {
     <h4 className='mt-2'>Password:</h4>
     <input type="text" id="password_input" name="password" className="form-control w-100 mx-1 text-light mb-5"/>
     <div>
-    <button className='rounded-pill buttons' >SAVE</button>
+    <button onClick={()=> onClickShowAlert(6)} className='rounded-pill buttons'>SAVE</button>
     </div>
     </form>
 

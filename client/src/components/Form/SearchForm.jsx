@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
+import ParagraphInfo from '../ParagraphInfo/ParagraphInfo';
 
 export default function SearchForm() {
   const [title, setTitle] = useState('');
@@ -86,7 +87,8 @@ export default function SearchForm() {
           </li>
         </ul>
       </div>
-      {/* <Paragraph component here></Paragraph> */}
+      
+      <ParagraphInfo />
     </div>
   );
 }

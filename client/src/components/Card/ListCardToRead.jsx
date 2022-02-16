@@ -3,13 +3,14 @@ import { useState } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
 import ModalContext from '../../context/ModalContext';
 import PurpleBook from '../../assets/images/bookDarkMagenta.png';
+import AlertContext from '../../context/AlertContext';
 
 export default function ListCardToRead({ item }) {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
   const { sendBookInfo, bookInfos } = useContext(BookContext);
   const { onClickShowModal, setModalContent } = useContext(ModalContext);
-
+  const {onClickShowAlert} = useContext(AlertContext)
   const handleOpenModal = () => {
     onClickShowModal();
     setModalContent({
@@ -56,6 +57,7 @@ export default function ListCardToRead({ item }) {
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
+            <button onClick={() => onClickShowAlert(3)}className="btn btLink rmv" style={{width:'120px'}}>REMOVE</button>
           </div>
         </div>
       </div>
@@ -67,6 +69,7 @@ export default function ListCardToRead({ item }) {
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
+            <button onClick={() => onClickShowAlert(3)} className="btn btLink2" style={{margin:'0px'}}>REMOVE</button>
           </div>
         </div>
 
@@ -99,7 +102,7 @@ export default function ListCardToRead({ item }) {
 
         <div className="commandWrap d-flex justify-content-around col align-items-center">
           <div className="bttW mx-2 container-fluid">
-            <a href="#" className="btn btLink">
+            <a onClick={() => onClickShowAlert(2)} href="#" className="btn btLink">
               list read
             </a>
             <a href="#" className="btn btLink">
