@@ -8,6 +8,11 @@ function Description() {
 
   console.log(bookInfos);
 
+  const listBooks = async () => {
+    const response = await axios.get(`http://localhost:3001/api/books/list`);
+    console.log(response.data);
+  };
+
   const fetchData = async () => {
     const response = await axios.get(
       `https://openlibrary.org${bookInfos.key}.json`
@@ -16,13 +21,14 @@ function Description() {
     // setDescription(response.data.description);
   };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    // fetchData();
+    listBooks();
+  }, []);
   return (
     <div>
-      {/* <p>{description}</p> */}
-      <p>Test</p>
+      <p>{description}</p>
+      {/* <p>Test</p> */}
     </div>
   );
 }
