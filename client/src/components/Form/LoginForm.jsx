@@ -2,7 +2,9 @@ import React, {useContext} from 'react';
 import axios from '../../util/axiosInstance';
 import BookContext from '../../context/booksContextApi/BookContext';
 import { useNavigate } from "react-router-dom";
+import AlertContext from '../../context/AlertContext';
 export default function LoginForm() {
+  const {showAlert, onClickShowAlert, currentAlertType } = useContext(AlertContext)
   const navigate = useNavigate();
   const { handleLogin } = useContext(BookContext);
 
@@ -24,10 +26,13 @@ export default function LoginForm() {
         //everything went well!
         handleLogin(response.data.user)
         console.log('You are now logged in');
+        onClickShowAlert(8)
         navigate("/profile");
+        
       }
     } catch (error) {
       console.log('The error is: ', error);
+      onClickShowAlert(7)
     }
   };
 
@@ -53,7 +58,7 @@ export default function LoginForm() {
           className="form-control w-100 mx-1 text-light mb-5"
         />
         <div>
-          <button className="rounded-pill buttons">LOGIN</button>
+          <button className="rounded-pill buttons mb-4">LOGIN</button>
         </div>
       </div>
     </form>

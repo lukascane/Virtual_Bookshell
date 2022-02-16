@@ -23,3 +23,7 @@
   - if cover_id === null -> render a dummy img
 
 - to show bestsellers use edition count from the api
+
+### For the description we need to use this Api
+  - example: works/OLnumber 
+  https://openlibrary.org/works/OL45883W.json

@@ -3,8 +3,9 @@ const Books = require('./../Models/BookSchema');
 exports.createBooksCollection = async (req, res) => {
   try {
     const book = new Books();
-    book.key_isbn = req.body.key_isbn;
-    book.cover = req.body.cover;
+    book.key = req.body.key;
+    book.isbn = req.body.isbn;
+    book.cover_i = req.body.cover_i;
     book.title = req.body.title;
     book.author = req.body.author;
     book.subject = req.body.subject;
@@ -40,13 +41,9 @@ exports.listBooks = async (req, res) => {
 
 exports.searchTitle = async (req, res) => {
   try {
-  const titles = await Books.find({title:req.query.title});
-  return res.status(200).json({ message: 'list of title', titles });
+    const titles = await Books.find({ title: req.query.title });
+    return res.status(200).json({ message: 'list of title', titles });
   } catch (error) {
-  return res.status(400).json({ message: 'Error happened' });
+    return res.status(400).json({ message: 'Error happened' });
   }
-  };
-  
-  
-  
-  
+};

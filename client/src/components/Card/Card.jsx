@@ -10,6 +10,7 @@ function Card({ item }) {
   const handleOpenModal = () => {
     onClickShowModal();
     setModalContent({
+      key: item.key,
       title: item.title,
       author: item.author[0],
       pages: item.pages,
@@ -48,7 +49,7 @@ function Card({ item }) {
             </div>
             <div className="card-body text-left">
               <h5 className="card-title">{newTitle}</h5>
-              <p className="card-text bt">{item.author[0]}</p>
+              <p className="card-text bt">{item.author}</p>
               <p className="card-text">Pages: {item.pages}</p>
             </div>
 
