@@ -4,6 +4,7 @@ import SearchForm from '../../components/Form/SearchForm';
 import CardWrapper from '../../components/Wrapper/CardWrapper';
 import MiniCardWrapper from '../../components/Wrapper/MiniCardWrapper';
 import BookModal from '../../components/Modals/BookModal';
+import AlertSearchFailure from '../../components/ParagraphInfo/AlertSearchFailure';
 
 
 function SearchBooks() {
@@ -15,6 +16,9 @@ function SearchBooks() {
 
   return (
     <div>
+    <div style={{marginTop:'130px'}} className='container'>
+      <AlertSearchFailure />
+    </div>
       <SearchForm />
       <CardWrapper />
       <MiniCardWrapper />

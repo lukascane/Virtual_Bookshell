@@ -52,3 +52,28 @@
         }
      }
 }
+#avatar { 
+    margin: 0 auto;
+    max-width: 470px;
+    min-width: 300px;
+    height: 100px;
+    max-height: 100%;
+    background-color: #008080;
+    color: #C4C4C4;
+    text-align: center;
+    padding: 10px 5px;
+
+    a, img {
+        height: 85px;
+        width: 85px;
+        border: 0px none;
+        border-radius: 50%;
+    }
+    img {
+        border: solid 2px #C4C4C4;
+    }
+    a:hover, img:hover {
+        outline: solid 12px darkmagenta;
+    }
+
+}
