@@ -1,13 +1,12 @@
 import searchAxiosInstance from '../../util/searchAxiosInstance';
 
 function searchTitleAuthApi(search, searchCathegory) {
-  let config = null;
-  /*  {
+  let config = {
     params: {
-      q: 'the+lord+of+the+rings', 
+      q: 'little+prince',
       limit: 8,
-    }, 
-  }; */
+    },
+  };
   if (searchCathegory == 'Title') {
     config = {
       params: {
