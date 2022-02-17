@@ -7,7 +7,7 @@ export default function ParagraphInfo({ bookInfos }) {
       <div className="container formWrapper">
         
       <div className="form-text mt-3 vText">
-        You found: <span>{bookInfos[0].numFound}</span> books with this searching criteria.
+        You found: <span><big>{bookInfos[0].numFound}</big></span> books with this searching criteria.
       </div>
     </div>
     </div>

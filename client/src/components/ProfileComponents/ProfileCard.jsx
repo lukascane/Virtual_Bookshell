@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import DummyPicture from '../../assets/images/dummy.png'
 import BookContext from '../../context/booksContextApi/BookContext';
 import AlertContext from '../../context/AlertContext'
+import Cat from '../../assets/images/abase.jpg'
 
 export default function ProfileCard() {
 const {user} = useContext(BookContext)
@@ -14,8 +14,8 @@ const {onClickShowAlert} = useContext(AlertContext)
         </div>
         <div className='d-flex justify-content-between align-items-center mx-5 subC'>
         <div id="profilePicture" className='rounded-circle d-flex justify-content-center align-items-center'>
-        <a style={{cursor:'pointer'}}>
-        <img src={DummyPicture} alt='pp' className='rounded-circle'/>
+        <a style={{cursor:'pointer', background: 'whitesmoke'}} className='rounded-circle'>
+        <img src={Cat} alt='pp' className='rounded-circle' title='Click here to select a new avatar.'/>
         </a>
         </div>
         <div id='profileData'>
@@ -30,7 +30,7 @@ const {onClickShowAlert} = useContext(AlertContext)
         </div>
     </div>
     <div className='d-flex flex-column align-items-center'>
-    <button className='rounded-pill buttons mt-5 mb-2' type='button' onClick={()=>onClickShowAlert(4)}>SAVE IMAGE</button>
+    <button className='rounded-pill buttons mt-5 mb-2' type='button' onClick={()=>onClickShowAlert(4)}>SAVE AVATAR</button>
     <button className='rounded-pill buttons mt-3 mb-2' type='button'onClick={()=>onClickShowAlert(5)}>DELETE PROFILE</button>
     </div>
 
