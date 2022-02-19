@@ -7,11 +7,11 @@ export default function SignUpForm() {
 
   const {showAlert, onClickShowAlert, currentAlertType } = useContext(AlertContext)
   const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log('Submit the form');
     const formData = new FormData(event.target);
-
     const data = {
       username: formData.get('username'), //get the data from the input with name username
       firstname: formData.get('firstname'), //get the data from the input with name firstname
@@ -19,22 +19,23 @@ export default function SignUpForm() {
       email: formData.get('email'), //...
       password: formData.get('password'),
     };
+    console.log(data.password, 'im the pass');
+    if (data.password.length < 8){
+      return onClickShowAlert(14)
+    }
     console.log(data);
     try {
       const response = await axios.post('/api/user/register', data);
-
       if (response.status === 200) {
-        //everything went well!
         console.log('user was created');
         onClickShowAlert(10)
         navigate("/login");
       }
     } catch (error) {
       console.log('The error is: ', error);
-      onClickShowAlert(11)
+      return onClickShowAlert(11)
     }
   };
-
   return (
     <form onSubmit={handleSubmit}>
       <div

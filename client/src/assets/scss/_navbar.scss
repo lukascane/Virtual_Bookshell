@@ -13,7 +13,16 @@
     text-transform:uppercase;
     width: 105px;
     
-}
+    }
+    a {
+        img {
+            cursor: pointer;
+        }
+        img:hover {
+            opacity: 0.4;
+        }
+    }
+
  .togg {
     color:whitesmoke;
     border: solid 1px whitesmoke;

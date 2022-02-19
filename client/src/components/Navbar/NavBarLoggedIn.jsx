@@ -9,22 +9,14 @@ export default function Navbar() {
   const { showAlert, currentAlertType, onClickShowAlert } =
     useContext(AlertContext);
 
-  /*   let loggedIn = true;
-  return {
-        <>
-            {loggedIn ? 
-                <NavBarLoggedIn /> :
-                <NavBarGuest />
-            }
-        </>
-    } */
-
   return (
     <div id="navB">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid d-flex justify-content-between">
           <div>
+            <a href='/'>
             <img src={let2} alt="logo-brand" className="logoImg navbar-brand" />
+            </a>
             <button
               className="navbar-toggler togg"
               type="button"
