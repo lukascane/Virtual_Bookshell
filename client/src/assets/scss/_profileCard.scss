@@ -68,12 +68,31 @@
         width: 85px;
         border: 0px none;
         border-radius: 50%;
+        cursor: pointer;
+
     }
     img {
         border: solid 2px #C4C4C4;
+        cursor: pointer;
     }
     a:hover, img:hover {
         outline: solid 12px darkmagenta;
+        cursor: pointer;
     }
 
+}    
+// block to style the alerts buttons //
+.buttons {
+    background-color: #004D4D;
+    font-weight: 900;
+    text-transform:uppercase;
+    width: 165px;
+    height: 38px;
+    border: none;
+    color: #C4C4C4;
 }
+.buttons:hover {
+background-color: darkmagenta;
+box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+//////////////////////////////////////

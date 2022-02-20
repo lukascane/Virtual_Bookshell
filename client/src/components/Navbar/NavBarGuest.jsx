@@ -3,22 +3,15 @@ import { NavLink } from 'react-router-dom';
 import let2 from '../../assets/images/lettring2.png';
 
 export default function Navbar() {
-  /*   let loggedIn = true;
-  return {
-        <>
-            {loggedIn ? 
-                <NavBarLoggedIn /> :
-                <NavBarGuest />
-            }
-        </>
-    } */
 
   return (
     <div id="navB">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid d-flex justify-content-between">
           <div>
+          <a href='/'>
             <img src={let2} alt="logo-brand" className="logoImg navbar-brand" />
+            </a>
             <button
               className="navbar-toggler togg"
               type="button"

@@ -6,11 +6,12 @@ import AlertContext from '../../context/AlertContext';
 
 
 function Registration() {
+
   const {showAlert, onClickShowAlert, currentAlertType } = useContext(AlertContext)
 
   return <div id="profileView" className="container" style={{marginTop:"130px"}}>
       {showAlert === true && currentAlertType === 11 ? <AlertRegister /> : null}
-     <AlertPasswordMinimum /> 
+      {showAlert === true && currentAlertType === 14 ? <AlertPasswordMinimum /> : null}
   <div className="d-flex col justify-content-center profileviewcontainer" >
   <SignUpForm/>
   </div>
