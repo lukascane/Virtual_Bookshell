@@ -51,7 +51,7 @@ export default function BooksProvider({ children }) {
       pages: item.pages,
       isbn: item.isbn,
       cover_i: item.cover_i,
-      reading_status: 0,
+      reading_status: readingStatus,
       //  user_id
       language: item.language,
     };
