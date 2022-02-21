@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
 import ModalContext from '../../context/ModalContext';
@@ -8,9 +8,10 @@ import AlertContext from '../../context/AlertContext';
 export default function ListCardToRead({ item }) {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
-  const { sendBookInfo, bookInfos } = useContext(BookContext);
+  const { sendBookInfo, bookInfos, onClickChangeStatus, readingStatus } =
+    useContext(BookContext);
   const { onClickShowModal, setModalContent } = useContext(ModalContext);
-  const {onClickShowAlert} = useContext(AlertContext)
+  const { onClickShowAlert } = useContext(AlertContext);
   const handleOpenModal = () => {
     onClickShowModal();
     setModalContent({
@@ -22,22 +23,29 @@ export default function ListCardToRead({ item }) {
     });
   };
 
-  const title = item.title
-  const words = title.split(" ");
+  const listReadBtn = () => {
+    onClickShowAlert(2);
+    onClickChangeStatus();
+  };
+
+  console.log('readingStatus: ', readingStatus);
+
+  const title = item.title;
+  const words = title.split(' ');
 
   const newTitle = words.reduce((prev, curr, index) => {
-    if(index >= 5) {
-        return prev;
+    if (index >= 5) {
+      return prev;
     }
-    
-    return "" + prev + " " + curr;
-})
+
+    return '' + prev + ' ' + curr;
+  });
 
   return (
     <div id="listCardElement" className="border-bottom mt-4">
       <div className="picBookCont me-4 ms-4">
         <a>
-          { item.cover_i ? (
+          {item.cover_i ? (
             <img
               src={`https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`}
               alt="book-cover-thumb"
@@ -57,9 +65,23 @@ export default function ListCardToRead({ item }) {
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
-            <button onClick={() => onClickShowAlert(3)}className="btn btLink rmv d-flex justify-content-between align-items-center" style={{width:'140px'}}>REMOVE<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-trash3-fill" viewBox="0 0 16 16">
-  <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
-</svg></button>
+            <button
+              onClick={() => onClickShowAlert(3)}
+              className="btn btLink rmv d-flex justify-content-between align-items-center"
+              style={{ width: '140px' }}
+            >
+              REMOVE
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                className="bi bi-trash3-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -71,9 +93,23 @@ export default function ListCardToRead({ item }) {
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
-            <button onClick={() => onClickShowAlert(3)} className="btn btLink2 d-flex justify-content-between align-items-center" style={{margin:'0px', width:'170px'}}>REMOVE<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-trash3-fill" viewBox="0 0 16 16">
-  <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
-</svg></button>
+            <button
+              onClick={() => onClickShowAlert(3)}
+              className="btn btLink2 d-flex justify-content-between align-items-center"
+              style={{ margin: '0px', width: '170px' }}
+            >
+              REMOVE
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                className="bi bi-trash3-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -106,7 +142,7 @@ export default function ListCardToRead({ item }) {
 
         <div className="commandWrap d-flex justify-content-around col align-items-center">
           <div className="bttW mx-2 container-fluid">
-            <a onClick={() => onClickShowAlert(2)} href="#" className="btn btLink">
+            <a onClick={listReadBtn} href="#" className="btn btLink">
               list read
             </a>
             <a href="#" className="btn btLink">
