@@ -1,25 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import listBooksApi from '../../services/bookApi/listBooksApi';
 import ListCardToRead from '../Card/ListCardToRead';
+import BookContext from '../../context/booksContextApi/BookContext';
 
 function ListBooksWrapper() {
-  const [listBooks, setListBooks] = useState([]);
-
-  const fetchData = async () => {
-    const response = await axios.get('http://localhost:3001/api/books/list');
-    setListBooks(response.data.books);
-  };
+  const { fetchToReadList, readList } = useContext(BookContext);
 
   useEffect(() => {
-    fetchData();
+    fetchToReadList();
   }, []);
-
-  console.log('Listbooks ', listBooks);
 
   return (
     <div>
-      {listBooks.map((item, index) => (
+      {readList.map((item, index) => (
         <ListCardToRead item={item} id={index}></ListCardToRead>
       ))}
     </div>
