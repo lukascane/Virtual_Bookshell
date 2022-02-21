@@ -6,8 +6,10 @@ import searchTitleAuthApi from '../../services/bookApi/searchTitleAuthApi';
 import sendBookInfoApi from '../../services/bookApi/sendBookInfoApi';
 
 export default function BooksProvider({ children }) {
+  const [readingStatus, setReadingStatus] = useState(0);
   const [bookInfos, setBookInfos] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState('');
 
   const onClickFetchData = async (title, buttonText) => {
     const data = await searchTitleAuthApi(title, buttonText);
@@ -16,8 +18,15 @@ export default function BooksProvider({ children }) {
     return bookInfos;
   };
 
+  const onClickChangeStatus = () => {
+    if (readingStatus === 0) {
+      setReadingStatus(1);
+    } else if (readingStatus === 1) {
+      setReadingStatus(0);
+    }
+  };
+
   // handle user /log in function
-  const [user, setUser] = useState('');
   const handleLogin = (user) => {
     if (user) {
       setUser(user);
@@ -70,6 +79,8 @@ export default function BooksProvider({ children }) {
     // checkLogout,
     loggedIn,
     logout,
+    onClickChangeStatus,
+    readingStatus,
   };
 
   return (
@@ -84,6 +95,8 @@ export default function BooksProvider({ children }) {
         // checkLogout,
         loggedIn,
         logout,
+        onClickChangeStatus,
+        readingStatus,
       }}
     >
       {children}
