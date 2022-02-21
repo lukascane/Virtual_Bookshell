@@ -2,9 +2,12 @@ import React from 'react';
 import { useState, useContext } from 'react';
 import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 import ModalContext from '../../context/ModalContext';
+
+
 export default function BookModal(props) {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
+  const { onClickShowModal, setModalContent, onClickShowModalReview } = useContext(ModalContext);
 
   return (
     <>
@@ -42,7 +45,7 @@ export default function BookModal(props) {
                 <a href="#" className="btn btLink m-2">
                   list to read
                 </a>
-                <a href="#" className="btn btLink m-2">
+                <a href="#" className="btn btLink m-2" onClick={onClickShowModalReview}>
                   review
                 </a>
                 <a href="#" className="btn btLink m-2">

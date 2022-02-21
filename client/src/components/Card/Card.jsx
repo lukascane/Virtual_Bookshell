@@ -5,7 +5,7 @@ import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 
 function Card({ item }) {
   const { sendBookInfo, bookInfos } = useContext(BookContext);
-  const { onClickShowModal, setModalContent } = useContext(ModalContext);
+  const { onClickShowModal, setModalContent, onClickShowModalReview } = useContext(ModalContext);
 
   const handleOpenModal = () => {
     onClickShowModal();
@@ -17,6 +17,10 @@ function Card({ item }) {
       isbn: item.isbn[0],
       cover_i: item.cover_i,
     });
+  };
+
+  const handleOpenModalReview = () => {
+    onClickShowModalReview();
   };
 
   const title = item.title;
@@ -60,7 +64,7 @@ function Card({ item }) {
               >
                 Add to read list
               </a>
-              <a className="btn cardBtn homeBtn btn-sm">Review</a>
+              <a className="btn cardBtn homeBtn btn-sm" onClick={handleOpenModalReview}>Review</a>
               <a className="btn cardBtn homeBtn btn-sm">Read/to read</a>
             </div>
           </div>
