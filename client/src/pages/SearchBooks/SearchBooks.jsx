@@ -6,6 +6,11 @@ import MiniCardWrapper from '../../components/Wrapper/MiniCardWrapper';
 import BookModal from '../../components/Modals/BookModal';
 import AlertSearchFailure from '../../components/ParagraphInfo/AlertSearchFailure';
 import AlertContext from '../../context/AlertContext';
+import AlertAddedReadList from '../../components/ParagraphInfo/AlertAddedReadList'
+import AlertAddedToReadList from '../../components/ParagraphInfo/AlertAddedToReadList';
+
+
+
 
 function SearchBooks() {
   const { showAlert, onClickShowAlert, currentAlertType } =
@@ -25,12 +30,14 @@ function SearchBooks() {
     if(firstLoad) {
       setFirstLoad(false)
     }
-  }, [bookInfos])
+  }, [bookInfos]);
 
   return (
     <div>
     <div style={{marginTop:'130px'}} className='container'>
       {showAlert && currentAlertType === 16 ? <AlertSearchFailure /> : null }
+      {showAlert === true && currentAlertType === 1 ?  <AlertAddedReadList /> : null }
+      {showAlert === true && currentAlertType === 2 ?<AlertAddedToReadList /> : null}
     </div>
       <SearchForm />
       <CardWrapper /> 

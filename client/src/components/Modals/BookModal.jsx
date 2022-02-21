@@ -4,6 +4,8 @@ import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 import ModalContext from '../../context/ModalContext';
 import BookContext from '../../context/booksContextApi/BookContext';
 import AlertContext from '../../context/AlertContext';
+import AlertAddedReadList from '../../components/ParagraphInfo/AlertAddedReadList'
+import AlertAddedToReadList from '../../components/ParagraphInfo/AlertAddedToReadList';
 
 export default function BookModal(props) {
   const [buttonText, setButtonText] = useState('SHARE');
@@ -14,22 +16,30 @@ export default function BookModal(props) {
     onClickChangeStatus,
     readingStatus,
   } = useContext(BookContext);
-  const { onClickShowAlert } = useContext(AlertContext);
+  const { onClickShowAlert, showAlert, currentAlertType } = useContext(AlertContext);
   const changeText = (text) => setButtonText(text);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =
     useContext(ModalContext);
 
-  const listToReadBtn = () => {
+  const listReadBtn = () => {
     onClickChangeStatus();
-    // onClickShowAlert(1);
-    sendBookInfoModal(props.content);
+    onClickShowAlert(2);
   };
-  console.log('Props Modal ', props);
-  console.log('ReadingStatus ', readingStatus);
+
+  const listToReadBtn = () => {
+    onClickChangeStatus();    
+    sendBookInfoModal(props.content);
+    onClickShowAlert(1);
+
+  };
 
   return (
     <>
       <div id="mask">
+      <div style={{marginTop:'130px'}} className='container'>
+      {showAlert === true && currentAlertType === 1 ? <AlertAddedReadList /> : null }
+      {showAlert === true && currentAlertType === 2 ? <AlertAddedToReadList /> : null}
+      </div>
         <div id="bookModalContainer" className="mb-5">
           <button
             onClick={props.closeHandler}
@@ -62,10 +72,10 @@ export default function BookModal(props) {
               <div className="card-body d-flex row justify-content-center align-items-center">
                 <a
                   href="#"
-                  onClick={listToReadBtn}
+                  onClick={listReadBtn}
                   className="btn btLink m-2"
                 >
-                  list to read
+                  read
                 </a>
                 <a
                   href="#"
@@ -74,8 +84,8 @@ export default function BookModal(props) {
                 >
                   review
                 </a>
-                <a href="#" className="btn btLink m-2">
-                  Read/to read
+                <a href="#" className="btn btLink m-2" onClick={listToReadBtn}>
+                  to read
                 </a>
               </div>
 

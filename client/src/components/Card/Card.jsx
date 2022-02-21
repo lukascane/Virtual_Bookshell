@@ -23,10 +23,15 @@ function Card({ item }) {
     });
   };
 
+  const listReadBtn = () => {
+    onClickChangeStatus();
+    onClickShowAlert(2);
+    sendBookInfo(item);
+  };
+
   const listToReadBtn = () => {
     onClickChangeStatus();
     onClickShowAlert(1);
-    sendBookInfo(item);
   };
 
   const handleOpenModalReview = () => {
@@ -68,8 +73,8 @@ function Card({ item }) {
             </div>
 
             <div className="button m-auto d-flex justify-content-center row align-items-center mb-2">
-              <a onClick={listToReadBtn} className="btn cardBtn homeBtn btn-sm">
-                Add to read list
+              <a onClick={listReadBtn} className="btn cardBtn homeBtn btn-sm">
+                read
               </a>
               <a
                 className="btn cardBtn homeBtn btn-sm"
@@ -77,7 +82,7 @@ function Card({ item }) {
               >
                 Review
               </a>
-              <a className="btn cardBtn homeBtn btn-sm">Read/to read</a>
+              <a className="btn cardBtn homeBtn btn-sm" onClick={listToReadBtn}>to read</a>
             </div>
           </div>
         </div>
