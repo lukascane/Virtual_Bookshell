@@ -2,10 +2,14 @@ import React, { useContext, useEffect } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
 import ModalContext from '../../context/ModalContext';
 import PurpleBook from '../../assets/images/bookDarkMagenta.png';
+import AlertContext from '../../context/AlertContext';
 
 function Card({ item }) {
-  const { sendBookInfo, bookInfos } = useContext(BookContext);
-  const { onClickShowModal, setModalContent, onClickShowModalReview } = useContext(ModalContext);
+  const { sendBookInfo, bookInfos, onClickChangeStatus, readingStatus } =
+    useContext(BookContext);
+  const { onClickShowAlert } = useContext(AlertContext);
+  const { onClickShowModal, setModalContent, onClickShowModalReview } =
+    useContext(ModalContext);
 
   const handleOpenModal = () => {
     onClickShowModal();
@@ -17,6 +21,12 @@ function Card({ item }) {
       isbn: item.isbn[0],
       cover_i: item.cover_i,
     });
+  };
+
+  const listToReadBtn = () => {
+    onClickChangeStatus();
+    onClickShowAlert(1);
+    sendBookInfo(item);
   };
 
   const handleOpenModalReview = () => {
@@ -58,13 +68,15 @@ function Card({ item }) {
             </div>
 
             <div className="button m-auto d-flex justify-content-center row align-items-center mb-2">
-              <a
-                onClick={() => sendBookInfo(item)}
-                className="btn cardBtn homeBtn btn-sm"
-              >
+              <a onClick={listToReadBtn} className="btn cardBtn homeBtn btn-sm">
                 Add to read list
               </a>
-              <a className="btn cardBtn homeBtn btn-sm" onClick={handleOpenModalReview}>Review</a>
+              <a
+                className="btn cardBtn homeBtn btn-sm"
+                onClick={handleOpenModalReview}
+              >
+                Review
+              </a>
               <a className="btn cardBtn homeBtn btn-sm">Read/to read</a>
             </div>
           </div>
