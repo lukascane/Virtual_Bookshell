@@ -13,7 +13,16 @@
     text-transform:uppercase;
     width: 105px;
     
-}
+    }
+    a {
+        img {
+            cursor: pointer;
+        }
+        img:hover {
+            opacity: 0.4;
+        }
+    }
+
  .togg {
     color:whitesmoke;
     border: solid 1px whitesmoke;
@@ -25,9 +34,12 @@ button:hover {
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
  .collM {
-  
+
    max-width: 768px;
    background-color: #004D4D;
+ }
+ ul{
+     width: 100%;
  }
  .nav-link {
      display: flex;
@@ -46,14 +58,25 @@ button:hover {
      #navB {
         a {
             height: 200px;
-            // height: 100vh;
             align-items: center; 
         }
+
         .buttons {
     width: 40%;
     height: 39px;
     
     }
+    .buttons:hover {
+        background-color: darkmagenta;
+    }
+    }
+    .reductionContainer{
+        width: 100%;
+    }
+    .togg {
+        float: right;
+        margin-right: 20px;
+        margin-top: 20px;
     } 
  }
 @media (max-width: 399.98px) {

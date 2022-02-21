@@ -1,11 +1,20 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
+import ParagraphInfo from '../ParagraphInfo/ParagraphInfo';
 
 export default function SearchForm() {
-  const [buttonText, setButtonText] = useState('Title/Year');
-  const { onClickFetchData } = useContext(BookContext);
+  const [title, setTitle] = useState('');
+  const [buttonText, setButtonText] = useState('Title');
+  const { onClickFetchData, bookInfos } = useContext(BookContext);
   const changeText = (text) => setButtonText(text);
+  // console.log(bookInfos,'from search form!');
+
+  const onChangeSearchInput = (e) => {
+    e.preventDefault();
+    console.log('e.target.value console-log', e.target.value);
+    return setTitle(e.target.value);
+  };
 
   return (
     <div id="searchForm">
@@ -40,20 +49,28 @@ export default function SearchForm() {
             >
               Author
             </li>
+            <li
+              onClick={() => changeText('Subject')}
+              className="dropdown-item subject"
+            >
+              Subject
+            </li>
           </ul>
         </div>
 
         <input
-          type="text"
+          type="text" 
+          onChange={onChangeSearchInput}
           id="inputSearchField"
           className="form-control w-50 mx-3 text-light"
           placeholder="Type your book here.."
+          name="searchbook"
         />
 
         <button
           type="button"
           className="btn rounded-pill"
-          onClick={onClickFetchData}
+          onClick={(e)=>onClickFetchData(title, buttonText, e)}
         >
           search
         </button>
@@ -82,7 +99,7 @@ export default function SearchForm() {
           </li>
         </ul>
       </div>
-      {/* <Paragraph component here></Paragraph> */}
+      {bookInfos[0] === undefined ? null : <ParagraphInfo bookInfos={bookInfos}/>}
     </div>
   );
 }

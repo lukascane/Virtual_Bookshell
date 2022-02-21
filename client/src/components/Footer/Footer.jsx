@@ -5,7 +5,7 @@ export default function Footer() {
 
      const today = new Date();
 
-  return <div id='footer' style={{background: '#2c2c2c', marginBottom:"0%"}}>
+  return <div id='footer' style={{background: '#2c2c2c'}}>
 
         <nav className="navbar" style={{background: '#2c2c2c'}}>
         <div className="container-fluid d-flex justify-content-center">
@@ -17,7 +17,7 @@ export default function Footer() {
         <span className='p-2 createdBY'>Created by:</span>
         <a className='p-2' href='https://www.linkedin.com/in/peony-langner-6808b218a/' target='_blank'>Peony</a>
         <a className='p-2' href='https://www.linkedin.com/in/lukasz-trzcinski-berlin/' target='_blank'>Lukasz</a>
-        <a className='p-2' href='https://www.linkedin.com/in/riccardo-limiti-a81061226/' target='_blank'>Riccardo </a>
+        <a className='p-2' href='https://www.linkedin.com/in/riccardo-limiti-a81061226/' target='_blank'>Riccardo</a>
         </div>
         </div>
         </nav>

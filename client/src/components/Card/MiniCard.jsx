@@ -1,33 +1,55 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import PurpleBook from '../../assets/images/bookDarkMagenta.png';
+import ModalContext from '../../context/ModalContext';
 
-function miniCard() {
+function MiniCard({ item }) {
+  const { onClickShowModal, setModalContent } = useContext(ModalContext);
+
+  const handleOpenModal = () => {
+    onClickShowModal();
+    setModalContent({
+      title: item.title,
+      author: item.author[0],
+      pages: item.pages,
+      isbn: item.isbn[0],
+      cover_i: item.cover_i,
+    });
+  };
   return (
-
-          <div
-            id="miniCard"
-            className="shadow-lg card"
-          >
-            <div className='container'>
-              <img
-                src="https://covers.openlibrary.org/b/id/8166951-M.jpg
-  "
-                className="card-img-top mt-3"
-                alt="..."
-              />
-            </div>
-            <div className="card-body text-left">
-              <h5 className="card-title">Book Title</h5>
-              <p className="card-text">Some quick example </p>
-            </div>
-
-            <div className="button">
-              <a href="#" className="btn cardBtn homeBtn btn-sm">
-                Open
-              </a>
-            </div>
-          </div>
-
+    <div
+      className="card text-left d-flex justify-content-center align-items-center m-4"
+      id="miniCard"
+    >
+      <a onClick={handleOpenModal}>
+        <div className="d-flex justify-content-center align-items-center">
+          {item.cover_i ? (
+            <img
+              className="card-img-top p-1 miniCardPic mt-3"
+              src={`https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`}
+              alt="thumb"
+            />
+          ) : (
+            <img
+              className="card-img-top p-1 miniCardPic mt-3"
+              src={PurpleBook}
+              alt="thumb"
+            />
+          )}
+        </div>
+        <div className="p-2 infoLittle">
+          <h5 className="card-title">{item.title}</h5>
+          <p style={{ fontSize: '14px' }}>
+            <sm className="card-text">{item.author}</sm>
+          </p>
+        </div>
+        {/* <div className="button mb-2">
+        <a href="#" className="btn cardBtn homeBtn btn-sm">
+          OPEN
+        </a>
+      </div> */}
+      </a>
+    </div>
   );
 }
 
-export default miniCard;
+export default MiniCard;

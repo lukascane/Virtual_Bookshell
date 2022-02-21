@@ -1,18 +1,22 @@
 #banner {
     height: 100%;
     background-color: #004D4D;
+    margin-top: 30px;
 
     .container {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
+        padding-bottom: 100px;
     }
 
-    .card {
-        height: 100%;
+    .card, .textWrapper {
         min-height: 485px;
+        max-height: 555px;
         width: 100%;
+        border: none 0px;
+        background-color: whitesmoke;
     }
     .sep {
         border: solid 3px #2c2c2c;

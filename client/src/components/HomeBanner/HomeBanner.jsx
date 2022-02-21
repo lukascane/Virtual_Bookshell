@@ -3,7 +3,7 @@ import l1 from '../../assets/images/Logo1.png'
 
 export default function HomeBanner() {
   return <div id='banner'>
-        <div className='container mb-5'>
+        <div className='container'>
         
         <div className='hideImg'></div>
 
@@ -11,7 +11,7 @@ export default function HomeBanner() {
         <div className="card">
         <img src={l1} className="card-img-top logoMain m-4" alt="Logo-BS" />
         <div className="card-body">
-        <h5 className="card-title">Your favorite Virtual Book Shelve.</h5>
+        <h4 className="card-title">Your favorite Virtual Book Shelve.</h4>
 
         <hr className='sep'/>
 
@@ -32,5 +32,6 @@ export default function HomeBanner() {
         </div>
 
         </div>
+        
   </div>;
 }

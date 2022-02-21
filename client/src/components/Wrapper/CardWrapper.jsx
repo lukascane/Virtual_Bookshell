@@ -1,30 +1,23 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
 import Card from '../Card/Card';
-import {Carousel} from '3d-react-carousal';
+import { Carousel } from '3d-react-carousal';
+import AlertContext from '../../context/AlertContext';
 
-const slides = [
-    <Card />,
-    <Card />,
-    <Card />,
-    <Card />,
-    <Card />,
 
-    ];
 
 export default function CardWrapper() {
-/*   const { onClickFetchData, bookInfos } = useContext(BookContext);
-  console.log(bookInfos); */
+  const { showAlert, onClickShowAlert, currentAlertType } =
+    useContext(AlertContext);
+  const { bookInfos } = useContext(BookContext);
+  console.log(bookInfos.length, 'hello cardwrapper')
+  const slidesTwo = bookInfos.map((item, index) => (
+    <Card item={item} id={index}></Card>
+  ));
 
   return (
-    <div className='' id='carousel'>
-    <Carousel slides={slides} autoplay={false} interval={1000} />
+    <div id="carousel" className="vh-100" style={{ marginTop: '100px' }}>
+      <Carousel slides={slidesTwo} autoplay={false} interval={1000}></Carousel>
     </div>
-
-/*     <div className='d-flex justify-content-evenly col'>
-      {bookInfos.map((item, index) => (
-        <Card item={item} id={index}></Card>
-      ))}
-    </div> */
   );
 }
