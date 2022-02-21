@@ -11,7 +11,7 @@ export default function ListCard({ item }) {
   const changeText = (text) => setButtonText(text);
   const { sendBookInfo, bookInfos, onClickChangeStatus, readingStatus } =
     useContext(BookContext);
-  const { onClickShowModal, setModalContent } = useContext(ModalContext);
+  const { onClickShowModal, setModalContent, onClickShowModalReview } = useContext(ModalContext);
   const { providedDataAlert, showAlert, onClickShowAlert } =
     useContext(AlertContext);
 
@@ -153,7 +153,7 @@ export default function ListCard({ item }) {
             <a onClick={listToReadBtn} href="#" className="btn btLink">
               to read
             </a>
-            <a href="#" className="btn btLink">
+            <a href="#" className="btn btLink" onClick={onClickShowModalReview}>
               review
             </a>
             <div className="dropdown d-flex justify-content-center align-items-center">

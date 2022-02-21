@@ -7,8 +7,9 @@ import AlertContext from '../../context/AlertContext';
 function Card({ item }) {
   const { sendBookInfo, bookInfos, onClickChangeStatus, readingStatus } =
     useContext(BookContext);
-  const { onClickShowModal, setModalContent } = useContext(ModalContext);
   const { onClickShowAlert } = useContext(AlertContext);
+  const { onClickShowModal, setModalContent, onClickShowModalReview } =
+    useContext(ModalContext);
 
   const handleOpenModal = () => {
     onClickShowModal();
@@ -26,6 +27,10 @@ function Card({ item }) {
     onClickChangeStatus();
     onClickShowAlert(1);
     sendBookInfo(item);
+  };
+
+  const handleOpenModalReview = () => {
+    onClickShowModalReview();
   };
 
   const title = item.title;
@@ -66,7 +71,12 @@ function Card({ item }) {
               <a onClick={listToReadBtn} className="btn cardBtn homeBtn btn-sm">
                 Add to read list
               </a>
-              <a className="btn cardBtn homeBtn btn-sm">Review</a>
+              <a
+                className="btn cardBtn homeBtn btn-sm"
+                onClick={handleOpenModalReview}
+              >
+                Review
+              </a>
               <a className="btn cardBtn homeBtn btn-sm">Read/to read</a>
             </div>
           </div>
