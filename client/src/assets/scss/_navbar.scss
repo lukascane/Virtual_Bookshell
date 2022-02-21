@@ -60,11 +60,23 @@ button:hover {
             height: 200px;
             align-items: center; 
         }
+
         .buttons {
     width: 40%;
     height: 39px;
     
     }
+    .buttons:hover {
+        background-color: darkmagenta;
+    }
+    }
+    .reductionContainer{
+        width: 100%;
+    }
+    .togg {
+        float: right;
+        margin-right: 20px;
+        margin-top: 20px;
     } 
  }
 @media (max-width: 399.98px) {
