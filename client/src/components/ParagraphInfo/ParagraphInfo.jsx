@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function ParagraphInfo({ bookInfos }) {
-  console.log( 'bookinfo from paragraph', bookInfos)
+  // console.log( 'bookinfo from paragraph', bookInfos)
   return (
     <div id="infoSearch">
       <div className="container formWrapper">

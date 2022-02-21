@@ -8,7 +8,14 @@ export default function SearchForm() {
   const [buttonText, setButtonText] = useState('Title');
   const { onClickFetchData, bookInfos } = useContext(BookContext);
   const changeText = (text) => setButtonText(text);
-  console.log(bookInfos,'from search form!');
+  // console.log(bookInfos,'from search form!');
+
+  const onChangeSearchInput = (e) => {
+    e.preventDefault();
+    console.log('e.target.value console-log', e.target.value);
+    return setTitle(e.target.value);
+  };
+
   return (
     <div id="searchForm">
       <div className="container formWrapper">
@@ -53,7 +60,7 @@ export default function SearchForm() {
 
         <input
           type="text" 
-          onChange={(e)=>setTitle(e.target.value)}
+          onChange={onChangeSearchInput}
           id="inputSearchField"
           className="form-control w-50 mx-3 text-light"
           placeholder="Type your book here.."
