@@ -18,7 +18,7 @@ function Card({ item }) {
       title: item.title,
       author: item.author[0],
       pages: item.pages,
-      isbn: item.isbn[0],
+      isbn: item.isbn,
       cover_i: item.cover_i,
     });
   };
