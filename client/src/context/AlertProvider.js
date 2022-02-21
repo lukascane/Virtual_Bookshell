@@ -9,8 +9,8 @@ export default function AlertProvider({children}){
      setCurrentAlertType(props)
      setShowAlert(true);   
      setTimeout(() => {
-     setShowAlert(false)
-  }, 4000)
+        setShowAlert(false)
+     }, 4000)
   };
 
   const onClickShowAlert2 = (props) => {
