@@ -8,7 +8,7 @@ export default function Navbar() {
     <div id="navB">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid d-flex justify-content-between">
-          <div>
+          <div className='reductionContainer'>
           <a href='/'>
             <img src={let2} alt="logo-brand" className="logoImg navbar-brand" />
             </a>
