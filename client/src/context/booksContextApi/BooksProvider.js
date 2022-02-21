@@ -21,7 +21,7 @@ export default function BooksProvider({ children }) {
   const onClickChangeStatus = () => {
     if (readingStatus === 0) {
       setReadingStatus(1);
-    } else {
+    } else if (readingStatus === 1) {
       setReadingStatus(0);
     }
   };
