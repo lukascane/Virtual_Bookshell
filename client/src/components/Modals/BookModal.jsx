@@ -2,12 +2,30 @@ import React from 'react';
 import { useState, useContext } from 'react';
 import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 import ModalContext from '../../context/ModalContext';
-
+import BookContext from '../../context/booksContextApi/BookContext';
+import AlertContext from '../../context/AlertContext';
 
 export default function BookModal(props) {
   const [buttonText, setButtonText] = useState('SHARE');
+  const {
+    sendBookInfo,
+    sendBookInfoModal,
+    bookInfos,
+    onClickChangeStatus,
+    readingStatus,
+  } = useContext(BookContext);
+  const { onClickShowAlert } = useContext(AlertContext);
   const changeText = (text) => setButtonText(text);
-  const { onClickShowModal, setModalContent, onClickShowModalReview } = useContext(ModalContext);
+  const { onClickShowModal, setModalContent, onClickShowModalReview } =
+    useContext(ModalContext);
+
+  const listToReadBtn = () => {
+    onClickChangeStatus();
+    // onClickShowAlert(1);
+    sendBookInfoModal(props.content);
+  };
+  console.log('Props Modal ', props);
+  console.log('ReadingStatus ', readingStatus);
 
   return (
     <>
@@ -42,10 +60,19 @@ export default function BookModal(props) {
               </div>
 
               <div className="card-body d-flex row justify-content-center align-items-center">
-                <a href="#" className="btn btLink m-2">
+                <a
+                  href="#"
+                  on
+                  onClick={listToReadBtn}
+                  className="btn btLink m-2"
+                >
                   list to read
                 </a>
-                <a href="#" className="btn btLink m-2" onClick={onClickShowModalReview}>
+                <a
+                  href="#"
+                  className="btn btLink m-2"
+                  onClick={onClickShowModalReview}
+                >
                   review
                 </a>
                 <a href="#" className="btn btLink m-2">

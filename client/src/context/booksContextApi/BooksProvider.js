@@ -59,6 +59,22 @@ export default function BooksProvider({ children }) {
     console.log(res.data);
   };
 
+  const sendBookInfoModal = async (item) => {
+    const bookInfoToSend = {
+      key: item.key,
+      title: item.title,
+      author: item.author,
+      pages: item.pages,
+      isbn: item.isbn,
+      cover_i: item.cover_i,
+      reading_status: readingStatus,
+      //  user_id
+      language: item.language,
+    };
+    const res = await axios.post('/api/books/create', bookInfoToSend);
+    console.log(res.data);
+  };
+
   const checkLogin = () => {
     setLoggedIn(true);
   };
@@ -81,6 +97,7 @@ export default function BooksProvider({ children }) {
     logout,
     onClickChangeStatus,
     readingStatus,
+    sendBookInfoModal,
   };
 
   return (
@@ -97,6 +114,7 @@ export default function BooksProvider({ children }) {
         logout,
         onClickChangeStatus,
         readingStatus,
+        sendBookInfoModal,
       }}
     >
       {children}
