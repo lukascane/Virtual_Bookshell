@@ -13,8 +13,11 @@ export default function BooksProvider({ children }) {
 
   const onClickFetchData = async (title, buttonText) => {
     const data = await searchTitleAuthApi(title, buttonText);
-    console.log(title);
-    setBookInfos(data);
+    if(Array.isArray(data)) {
+      setBookInfos(data);
+    } else {
+      setBookInfos([]);
+    }
     return bookInfos;
   };
 

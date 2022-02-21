@@ -62,7 +62,6 @@ export default function BookModal(props) {
               <div className="card-body d-flex row justify-content-center align-items-center">
                 <a
                   href="#"
-                  on
                   onClick={listToReadBtn}
                   className="btn btLink m-2"
                 >
@@ -178,7 +177,7 @@ export default function BookModal(props) {
                 data-bs-target="#list-example"
                 data-bs-offset="0"
                 className="rounded scrollspy-example mt-3 textScroll p-3 mb-5"
-                tabindex="0"
+                tabIndex="0"
               >
                 {/* <p>{props.content.isbn[0]} </p> */}
               </div>

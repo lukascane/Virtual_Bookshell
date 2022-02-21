@@ -22,7 +22,7 @@ export default function ReviewModal(props) {
               data-bs-target="#list-example"
               data-bs-offset="0"
               className="rounded scrollspy-example mt-3 textScroll p-3"
-              tabindex="0"
+              tabIndex="0"
             >
               <p>
                 Contrary to popular belief, Lorem Ipsum is not simply random
