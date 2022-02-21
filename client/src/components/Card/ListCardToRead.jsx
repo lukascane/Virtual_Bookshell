@@ -10,7 +10,8 @@ export default function ListCardToRead({ item }) {
   const changeText = (text) => setButtonText(text);
   const { sendBookInfo, bookInfos, onClickChangeStatus, readingStatus } =
     useContext(BookContext);
-  const { onClickShowModal, setModalContent, onClickShowModalReview } = useContext(ModalContext);
+  const { onClickShowModal, setModalContent, onClickShowModalReview } =
+    useContext(ModalContext);
   const { onClickShowAlert } = useContext(AlertContext);
   const handleOpenModal = () => {
     onClickShowModal();
@@ -27,8 +28,6 @@ export default function ListCardToRead({ item }) {
     onClickShowAlert(2);
     onClickChangeStatus();
   };
-
-  console.log('readingStatus: ', readingStatus);
 
   const title = item.title;
   const words = title.split(' ');

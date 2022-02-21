@@ -8,6 +8,8 @@ import sendBookInfoApi from '../../services/bookApi/sendBookInfoApi';
 export default function BooksProvider({ children }) {
   const [readingStatus, setReadingStatus] = useState(0);
   const [bookInfos, setBookInfos] = useState([]);
+  const [readList, setReadList] = useState([]);
+  const [listBooks, setListBooks] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState('');
 
@@ -44,7 +46,7 @@ export default function BooksProvider({ children }) {
     setLoggedIn(false);
   };
 
-  console.log(user);
+  // console.log(user);
 
   const sendBookInfo = async (item) => {
     const bookInfoToSend = {
@@ -78,6 +80,20 @@ export default function BooksProvider({ children }) {
     console.log(res.data);
   };
 
+  const fetchReadBookList = async () => {
+    const response = await axios.get('/api/books/list');
+    setListBooks(response.data.books);
+    const result = listBooks.filter((element) => element.reading_status === 0);
+    setReadList(result);
+  };
+
+  const fetchToReadList = async () => {
+    const response = await axios.get('/api/books/list');
+    setListBooks(response.data.books);
+    const result = listBooks.filter((element) => element.reading_status === 1);
+    setReadList(result);
+  };
+
   const checkLogin = () => {
     setLoggedIn(true);
   };
@@ -101,6 +117,10 @@ export default function BooksProvider({ children }) {
     onClickChangeStatus,
     readingStatus,
     sendBookInfoModal,
+    fetchReadBookList,
+    listBooks,
+    readList,
+    fetchToReadList,
   };
 
   return (
@@ -118,6 +138,10 @@ export default function BooksProvider({ children }) {
         onClickChangeStatus,
         readingStatus,
         sendBookInfoModal,
+        fetchReadBookList,
+        listBooks,
+        readList,
+        fetchToReadList,
       }}
     >
       {children}

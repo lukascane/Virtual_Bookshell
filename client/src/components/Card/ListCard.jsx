@@ -11,7 +11,8 @@ export default function ListCard({ item }) {
   const changeText = (text) => setButtonText(text);
   const { sendBookInfo, bookInfos, onClickChangeStatus, readingStatus } =
     useContext(BookContext);
-  const { onClickShowModal, setModalContent, onClickShowModalReview } = useContext(ModalContext);
+  const { onClickShowModal, setModalContent, onClickShowModalReview } =
+    useContext(ModalContext);
   const { providedDataAlert, showAlert, onClickShowAlert } =
     useContext(AlertContext);
 
@@ -30,8 +31,6 @@ export default function ListCard({ item }) {
     onClickShowAlert(1);
     onClickChangeStatus();
   };
-
-  console.log('readingStatus: ', readingStatus);
 
   const title = item.title;
   const words = title.split(' ');
