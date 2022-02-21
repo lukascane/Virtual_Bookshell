@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import ModalContext from './ModalContext';
 import BookModal from '../components/Modals/BookModal';
+import ReviewModal from '../components/Modals/ReviewModal';
 
-export default function ModalProvider({ children }) {
+export default function ModalProvider({ children }) { 
+  const [showReviewModal, setReviewModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState({
     key: 0,
@@ -21,11 +23,19 @@ export default function ModalProvider({ children }) {
     return setShowModal(true);
   };
 
+  const closeHandlerRev = () => {
+    return setReviewModal(false);
+  };
+
+  const onClickShowModalReview = () => {
+    return setReviewModal(true);
+  };
+
   const example = () => {
     console.log('example');
   };
 
-  const providedData = { closeHandler, onClickShowModal, example };
+  const providedData = { closeHandler, onClickShowModal, example, closeHandlerRev, onClickShowModalReview };
   return (
     <ModalContext.Provider
       value={{
@@ -35,11 +45,17 @@ export default function ModalProvider({ children }) {
         showModal,
         setModalContent,
         modalContent,
+        showReviewModal,
+        closeHandlerRev,
+        onClickShowModalReview
       }}
     >
       {children}
       {showModal ? (
         <BookModal closeHandler={closeHandler} content={modalContent} />
+      ) : null}
+      {showReviewModal ? (
+        <ReviewModal closeHandler={closeHandlerRev} content={modalContent} />
       ) : null}
     </ModalContext.Provider>
   );
