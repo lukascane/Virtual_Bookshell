@@ -21,8 +21,8 @@ function MainRouter() {
   return (
     <BrowserRouter>
       <BooksProvider>
-        <ModalProvider>
-          <AlertProvider>
+          <AlertProvider>        
+          <ModalProvider>
             <NavbarWrapper />
             {/* <NavG />  */}
             {/* <NavBarLoggedIn />  */}
@@ -39,8 +39,8 @@ function MainRouter() {
               </Routes>
             </main>
             <Footer />
+            </ModalProvider>
           </AlertProvider>
-        </ModalProvider>
       </BooksProvider>
     </BrowserRouter>
   );
