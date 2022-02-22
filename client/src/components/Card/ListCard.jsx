@@ -15,13 +15,13 @@ export default function ListCard({ item }) {
     useContext(ModalContext);
   const { providedDataAlert, showAlert, onClickShowAlert } =
     useContext(AlertContext);
-  console.log('item ', item);
 
   const handleOpenModal = () => {
     onClickShowModal();
     setModalContent({
+      key: item.key,
       title: item.title,
-      author: item.author[0],
+      author: item.author,
       pages: item.pages,
       // isbn: item.isbn[0],
       cover_i: item.cover_i,
@@ -33,8 +33,8 @@ export default function ListCard({ item }) {
     onClickChangeStatus();
   };
 
-  const title = item.title;
-  const words = title.split(' ');
+  const titleToSplit = item.title;
+  const words = titleToSplit.split(' ');
 
   const newTitle = words.reduce((prev, curr, index) => {
     if (index >= 7) {
@@ -122,26 +122,7 @@ export default function ListCard({ item }) {
 
         <div className="description">
           <div className="descrTxt textScroll p-3">
-            {/* <Description></Description> */}
-            <p>
-              Change the visual order of specific flex items with a handful of
-              order utilities. We only provide options for making an item first
-              or last, as well as a reset to use the DOM order. As order takes
-              any integer value from 0 to 5, add custom CSS for any additional
-              values needed.Change the visual order of specific flex items with
-              a handful of order utilities. We only provide options for making
-              an item first or last, as well as a reset to use the DOM order. As
-              order takes any integer value from 0 to 5, add custom CSS for any
-              additional values needed.Change the visual order of specific flex
-              items with a handful of order utilities. We only provide options
-              for making an item first or last, as well as a reset to use the
-              DOM order. As order takes any integer value from 0 to 5, add
-              custom CSS for any additional values needed.Change the visual
-              order of specific flex items with a handful of order utilities. We
-              only provide options for making an item first or last, as well as
-              a reset to use the DOM order. As order takes any integer value
-              from 0 to 5, add custom CSS for any additional values needed.
-            </p>
+            <Description item={item.key} />
           </div>
           <div className="silverSect p-1 d-flex justify-content-center align-items-center mb-4">
             <h5 className="mb-0">I Book genre? I</h5>

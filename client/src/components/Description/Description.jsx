@@ -14,12 +14,13 @@ function Description({ item }) {
         // .get('/works/OL45883W.json')
         .then((response) => {
           const data = response.data;
-          console.log(data);
 
           if (data.description !== undefined) {
             setDescription(data.description);
+          } else if (data.description === {}) {
+            return setDescription('No text here');
           } else {
-            return setDescription(<p>No text</p>);
+            return setDescription('No text');
           }
         })
         .catch((err) => {
