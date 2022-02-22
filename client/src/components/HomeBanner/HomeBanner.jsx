@@ -9,7 +9,7 @@ export default function HomeBanner() {
 
         <div className='textWrapper rounded'>
         <div className="card">
-        <img src={l1} className="card-img-top logoMain m-4" alt="Logo-BS" />
+        <img src={l1} className="card-img-top logoMain m-4 heartbeat" alt="Logo-BS" />
         <div className="card-body">
         <h4 className="card-title">Your favorite Virtual Book Shelve.</h4>
 

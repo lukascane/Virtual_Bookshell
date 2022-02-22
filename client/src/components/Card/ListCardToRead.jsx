@@ -164,7 +164,7 @@ export default function ListCardToRead({ item }) {
                   onClick={() => changeText('Facebook')}
                   className="dropdown-item title"
                 >
-                  <a>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank">
                     {' '}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +183,7 @@ export default function ListCardToRead({ item }) {
                   onClick={() => changeText('Twitter')}
                   className="dropdown-item year"
                 >
-                  <a>
+                  <a href="https://twitter.com/intent/tweet" id="tweet-quote" target="_blank">
                     {' '}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +202,7 @@ export default function ListCardToRead({ item }) {
                   onClick={() => changeText('EMAIL')}
                   className="dropdown-item author"
                 >
-                  <a>
+                  <a href="mailto:">
                     {' '}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

@@ -17,7 +17,7 @@ function MiniCard({ item }) {
   };
   return (
     <div
-      className="card text-left d-flex justify-content-center align-items-center m-4"
+      className="card text-left d-flex justify-content-center align-items-center m-4 zooms"
       id="miniCard"
     >
       <a onClick={handleOpenModal}>

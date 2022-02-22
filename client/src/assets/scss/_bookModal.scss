@@ -19,7 +19,7 @@
     z-index: 11;
     opacity: 1;
     position: relative;
-    top: 30%;
+    top: 15%;
 
 
 
@@ -87,6 +87,10 @@
             li {
             color: #DEDADA;
             font-weight: 700;
+                a {
+                    text-decoration: none;
+                            color: #C4C4C4;
+                }
             }
 
             li:hover {
