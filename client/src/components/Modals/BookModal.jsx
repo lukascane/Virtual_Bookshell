@@ -196,7 +196,7 @@ export default function BookModal(props) {
                 className="rounded scrollspy-example mt-3 textScroll p-3 mb-5"
                 tabIndex="0"
               >
-                <Description props={props.content.key} />
+                <Description item={props.content.key} />
               </div>
             </div>
           </div>
