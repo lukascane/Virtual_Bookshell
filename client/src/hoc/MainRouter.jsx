@@ -2,7 +2,6 @@ import React from 'react';
 import Landing from '../pages/Landing/Landing';
 import BooksProvider from '../context/booksContextApi/BooksProvider';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavG from '../components/Navbar/NavBarGuest';
 import Footer from '../components/Footer/Footer';
 import Login from '../pages/Login/Login';
 import Profile from '../pages/Profile/Profile';
@@ -24,8 +23,6 @@ function MainRouter() {
           <AlertProvider>        
           <ModalProvider>
             <NavbarWrapper />
-            {/* <NavG />  */}
-            {/* <NavBarLoggedIn />  */}
             <main>
               <Routes>
                 <Route path="/" element={<Landing />} />

@@ -84,13 +84,21 @@
         border: 0px;
     }
     ul {
-            background-color: #008080;
+            background-color: #004D4D;
             cursor: pointer;
             border: 0px;
+
+            
             
             li {
             color: #DEDADA;
             font-weight: 700;
+            a{
+                text-decoration: none;
+                        color: #C4C4C4;
+            }
+
+
             }
 
             li:hover {
@@ -150,6 +158,10 @@
     padding-bottom: 100px;
     max-height: 100%;
     margin-bottom: 0px;
+
+    ul{
+        background-color: #008080;
+    }
 
     .dataBookCont {
         display: flex;
