@@ -45,14 +45,13 @@ export default function BookModal(props) {
             <AlertAddedToReadList />
           ) : null}
         </div>
-        <div id="bookModalContainer" className="mb-5">
+        <div id="bookModalContainer" className="mb-5 puff-in-center">
           <button
             onClick={props.closeHandler}
             className="closeButton d-flex justify-content-center align-items-center fixed-top"
           >
             X
           </button>
-
           <div
             id="bookModal"
             className="justify-content-between align-items-center"
@@ -107,7 +106,10 @@ export default function BookModal(props) {
                     onClick={() => changeText('Facebook')}
                     className="dropdown-item title"
                   >
-                    <a>
+                    <a
+                      href="https://www.facebook.com/sharer/sharer.php?u=example.org"
+                      target="_blank"
+                    >
                       {' '}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +128,11 @@ export default function BookModal(props) {
                     onClick={() => changeText('Twitter')}
                     className="dropdown-item year"
                   >
-                    <a>
+                    <a
+                      href="https://twitter.com/intent/tweet"
+                      id="tweet-quote"
+                      target="_blank"
+                    >
                       {' '}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +151,7 @@ export default function BookModal(props) {
                     onClick={() => changeText('EMAIL')}
                     className="dropdown-item author"
                   >
-                    <a>
+                    <a href="mailto:">
                       {' '}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

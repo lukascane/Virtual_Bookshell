@@ -14,7 +14,7 @@ export default function ReviewModal(props) {
 
         <div
           id="bookModal2"
-          className="d-flex justify-content-center align-items-center row"
+          className="d-flex justify-content-center align-items-center row puff-in-center"
         >
           <div className="textContainer mt-3">
             <div

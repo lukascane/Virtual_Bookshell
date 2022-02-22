@@ -16,7 +16,7 @@ function Login() {
         {showAlert && currentAlertType === 9 ? <AlertLogout /> : null}
         {showAlert && currentAlertType === 10 ? <AlertRegisterSucces /> : null}
       </div>
-      <div className="container mb-5">
+      <div className="container mb-5 fade-in">
         <LoginForm />
       </div>
     </div>

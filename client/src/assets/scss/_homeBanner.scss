@@ -12,8 +12,8 @@
     }
 
     .card, .textWrapper {
-        min-height: 485px;
-        max-height: 555px;
+        min-height: 500px;
+        max-height: 575px;
         width: 100%;
         border: none 0px;
         background-color: whitesmoke;
@@ -44,7 +44,7 @@
     .textWrapper {
         background-color: whitesmoke;
         box-shadow: rgba(93, 91, 92, 0.4) -5px 5px, rgba(56, 55, 56, 0.3) -10px 10px, rgba(17, 16, 16, 0.2) -15px 15px, rgba(29, 28, 29, 0.1) -20px 20px, rgba(12, 12, 12, 0.05) -25px 25px;
-        height: 50vh;
+        height: 52vh;
         width:430px ;
     }
     .logoMain {
@@ -70,7 +70,7 @@
 
 @media (max-width: 1400px) {
     .textWrapper {
-        height: 59vh;
+        height: 60vh;
     }
  }
  @media (min-width: 992px) {
@@ -105,8 +105,9 @@
          max-height: 600px;
      }
      .hideImg {
-         max-height: 500px;
+       width: 100vw;
+       min-height: 100vh;
+       margin:100px 0;
      }
    }
-
 }

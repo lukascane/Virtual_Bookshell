@@ -56,9 +56,18 @@ button:hover {
         margin: 0 auto;
     }
      #navB {
+
         a {
             height: 200px;
-            align-items: center; 
+            align-items: center;
+            
+            .zoom {
+                transition: transform .2s; /* Animation */
+            }
+
+            .zoom:hover {
+                transform: scale(1.5); 
+            }
         }
 
         .buttons {

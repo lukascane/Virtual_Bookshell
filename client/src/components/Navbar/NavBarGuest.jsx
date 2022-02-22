@@ -42,21 +42,21 @@ export default function Navbar() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
               <li className="nav-item">
                 <NavLink to="/" exact className="nav-link">
-                  <button className="btn rounded-pill buttons" type="button">
+                  <button className="btn rounded-pill buttons zoom" type="button">
                     demo
                   </button>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink to="/registration" exact className="nav-link">
-                  <button className="btn rounded-pill buttons" type="button">
+                  <button className="btn rounded-pill buttons zoom" type="button">
                     sign up
                   </button>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink to="/login" exact className="nav-link">
-                  <button className="btn rounded-pill buttons" type="button">
+                  <button className="btn rounded-pill buttons zoom" type="button">
                     login
                   </button>
                 </NavLink>

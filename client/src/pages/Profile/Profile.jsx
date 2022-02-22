@@ -22,7 +22,7 @@ function Profile() {
     {showAlert === true && currentAlertType === 8 ? <AlertLoginSucces /> : null}
     {showAlert === true && currentAlertType === 13 ? <AlertSureToDelete /> : null}
   </div>
-      <div className="d-flex col justify-content-center profileviewcontainer mb-5">
+      <div className="d-flex col justify-content-center profileviewcontainer mb-5 fade-in">
       <div>
       <ProfileCard setShowComponent={setShowComponent} selectAvatar={selectAvatar} />
       {showComponent === false ? null : <AvatarSelector setSelectAvatar={setSelectAvatar} showComponent=
