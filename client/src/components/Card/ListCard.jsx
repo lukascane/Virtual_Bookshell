@@ -15,6 +15,7 @@ export default function ListCard({ item }) {
     useContext(ModalContext);
   const { providedDataAlert, showAlert, onClickShowAlert } =
     useContext(AlertContext);
+  console.log('item ', item);
 
   const handleOpenModal = () => {
     onClickShowModal();
@@ -172,7 +173,10 @@ export default function ListCard({ item }) {
                   onClick={() => changeText('Facebook')}
                   className="dropdown-item title"
                 >
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank">
+                  <a
+                    href="https://www.facebook.com/sharer/sharer.php?u=example.org"
+                    target="_blank"
+                  >
                     {' '}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -191,7 +195,11 @@ export default function ListCard({ item }) {
                   onClick={() => changeText('Twitter')}
                   className="dropdown-item year"
                 >
-                  <a href="https://twitter.com/intent/tweet" id="tweet-quote" target="_blank">
+                  <a
+                    href="https://twitter.com/intent/tweet"
+                    id="tweet-quote"
+                    target="_blank"
+                  >
                     {' '}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
