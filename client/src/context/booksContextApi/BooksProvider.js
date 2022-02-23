@@ -15,7 +15,7 @@ export default function BooksProvider({ children }) {
 
   const onClickFetchData = async (title, buttonText) => {
     const data = await searchTitleAuthApi(title, buttonText);
-    if(Array.isArray(data)) {
+    if (Array.isArray(data)) {
       setBookInfos(data);
     } else {
       setBookInfos([]);
@@ -98,6 +98,20 @@ export default function BooksProvider({ children }) {
     setLoggedIn(true);
   };
 
+  const onClickDeleteBook = (item) => {
+    console.log('remove btn');
+    try {
+      axios
+        .delete(`http://localhost:3001/api/books/delete/${item}`)
+        .then((response) => console.log('Delete successful ', response))
+        .catch((error) => {
+          console.log('There was an error!', error);
+        });
+    } catch (error) {
+      console.log('There is an error: ', error);
+    }
+  };
+
   // const checkLogout = () => {
   //   setLoggedIn(false);
   // };
@@ -121,6 +135,7 @@ export default function BooksProvider({ children }) {
     listBooks,
     readList,
     fetchToReadList,
+    onClickDeleteBook,
   };
 
   return (
@@ -142,6 +157,7 @@ export default function BooksProvider({ children }) {
         listBooks,
         readList,
         fetchToReadList,
+        onClickDeleteBook,
       }}
     >
       {children}
