@@ -9,8 +9,13 @@ import AlertContext from '../../context/AlertContext';
 export default function ListCard({ item }) {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
-  const { sendBookInfo, bookInfos, onClickChangeStatus, readingStatus } =
-    useContext(BookContext);
+  const {
+    sendBookInfo,
+    bookInfos,
+    onClickChangeStatus,
+    readingStatus,
+    onClickDeleteBook,
+  } = useContext(BookContext);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =
     useContext(ModalContext);
   const { providedDataAlert, showAlert, onClickShowAlert } =
@@ -30,6 +35,11 @@ export default function ListCard({ item }) {
   const listToReadBtn = () => {
     onClickShowAlert(1);
     onClickChangeStatus();
+  };
+
+  const removeBtn = () => {
+    onClickShowAlert(0);
+    onClickDeleteBook();
   };
 
   const title = item.title;
@@ -70,7 +80,7 @@ export default function ListCard({ item }) {
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
             <button
-              onClick={() => onClickShowAlert(0)}
+              onClick={removeBtn}
               className="btn btLink rmv d-flex justify-content-between align-items-center"
               style={{ width: '140px' }}
             >
@@ -100,7 +110,7 @@ export default function ListCard({ item }) {
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
             <button
-              onClick={() => onClickShowAlert(0)}
+              onClick={removeBtn}
               className="btn btLink2 d-flex justify-content-between align-items-center"
               style={{ margin: '0px', width: '170px' }}
             >
@@ -172,7 +182,10 @@ export default function ListCard({ item }) {
                   onClick={() => changeText('Facebook')}
                   className="dropdown-item title"
                 >
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank">
+                  <a
+                    href="https://www.facebook.com/sharer/sharer.php?u=example.org"
+                    target="_blank"
+                  >
                     {' '}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -191,7 +204,11 @@ export default function ListCard({ item }) {
                   onClick={() => changeText('Twitter')}
                   className="dropdown-item year"
                 >
-                  <a href="https://twitter.com/intent/tweet" id="tweet-quote" target="_blank">
+                  <a
+                    href="https://twitter.com/intent/tweet"
+                    id="tweet-quote"
+                    target="_blank"
+                  >
                     {' '}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
