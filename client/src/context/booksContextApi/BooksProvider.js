@@ -57,6 +57,8 @@ export default function BooksProvider({ children }) {
       isbn: item.isbn,
       cover_i: item.cover_i,
       reading_status: readingStatus,
+      rating: 10,
+      user: '621684f1ed07c0dd96afb1f8',
       //  user_id
       language: item.language,
     };
@@ -73,7 +75,8 @@ export default function BooksProvider({ children }) {
       isbn: item.isbn,
       cover_i: item.cover_i,
       reading_status: readingStatus,
-      //  user_id
+      rating: 20,
+      user: '621684f1ed07c0dd96afb1f8',
       language: item.language,
     };
     const res = await axios.post('/api/books/create', bookInfoToSend);
