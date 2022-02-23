@@ -14,7 +14,7 @@
 #bookModalContainer {
    max-width: 1166px;
    width: 70vw;
-   max-height:100%;
+   min-height:70%;
     margin: 0 auto;
     z-index: 11;
     opacity: 1;
@@ -45,8 +45,7 @@
 
     #bookModal {
     background-color: #004D4D;
-    max-height: 100%;
-    min-height: 70vh;
+    min-height: 100%;
     max-width: 1215px;
     border: solid 12px #008080;
     border-radius: 50px;
@@ -111,7 +110,7 @@
     max-width: 835px;
     width: 100%;
     max-height: 80vh;
-    min-height: 686px;
+    min-height: 30vh;
     margin-right: 1.5rem;
 
         h1 {
@@ -138,8 +137,7 @@
     .textScroll {
     background-color: rgba(196, 196, 196, 0.450);
     color: #2c2c2c;
-    max-height: 44vh;
-    min-height: 20vh;
+    min-height: 100%;
     overflow: scroll;
 
     }
