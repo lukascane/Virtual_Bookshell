@@ -15,7 +15,7 @@ export default function BooksProvider({ children }) {
 
   const onClickFetchData = async (title, buttonText) => {
     const data = await searchTitleAuthApi(title, buttonText);
-    if(Array.isArray(data)) {
+    if (Array.isArray(data)) {
       setBookInfos(data);
     } else {
       setBookInfos([]);
@@ -97,6 +97,8 @@ export default function BooksProvider({ children }) {
   const checkLogin = () => {
     setLoggedIn(true);
   };
+
+  const deleteBook = async () => {};
 
   // const checkLogout = () => {
   //   setLoggedIn(false);
