@@ -1,36 +1,39 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import BookContext from '../../context/booksContextApi/BookContext';
+import descriptionAxiosInstance from '../../util/descriptionAxiosInstance';
 
-function Description() {
-  const { bookInfos } = useContext(BookContext);
+function Description({ item }) {
   const [description, setDescription] = useState('');
 
-  console.log(bookInfos);
+  console.log(item);
 
-  const listBooks = async () => {
-    const response = await axios.get(`http://localhost:3001/api/books/list`);
-    console.log(response.data);
-  };
+  const fetchData = () => {
+    return (
+      descriptionAxiosInstance
+        .get(`${item}.json`)
+        // .get('/works/OL45883W.json')
+        .then((response) => {
+          const data = response.data;
 
-  const fetchData = async () => {
-    const response = await axios.get(
-      `https://openlibrary.org${bookInfos.key}.json`
+          if (data.description !== undefined) {
+            setDescription(data.description);
+          } else if (data.description === {}) {
+            return setDescription('No text here');
+          } else {
+            return setDescription('No text');
+          }
+        })
+        .catch((err) => {
+          return { error: err };
+        })
     );
-    console.log(response);
-    // setDescription(response.data.description);
+    // );
   };
-
   useEffect(() => {
-    // fetchData();
-    listBooks();
+    fetchData();
   }, []);
-  return (
-    <div>
-      <p>{description}</p>
-      {/* <p>Test</p> */}
-    </div>
-  );
+
+  return <div>{<p>{description}</p>}</div>;
 }
 
 export default Description;
