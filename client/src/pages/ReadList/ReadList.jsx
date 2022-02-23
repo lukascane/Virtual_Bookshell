@@ -4,17 +4,8 @@ import AlertRemovedFromReadList from '../../components/ParagraphInfo/AlertRemove
 import ListReadWrapper from '../../components/Wrapper/ListReadWrapper';
 import AlertContext from '../../context/AlertContext';
 
-function ReadList(item) {
+function ReadList() {
   const { showAlert, currentAlertType } = useContext(AlertContext)
-  console.log(item)
-  const [counter, setCounter] = useState(0)
-  const handleIncrement = () => {
-    setCounter(counter + 1);
-  };
-
-  const handleDecrement = () => {
-    setCounter(counter - 1);
-  };
 
   return (
     <div id="readList" className="container-fluid">
@@ -27,7 +18,7 @@ function ReadList(item) {
 
         <div className="state text-center d-flex justify-content-center align-items-center">
           <h4 className="">
-            READ <span>({counter})</span>
+            READ <span>()</span>
           </h4>
         </div>
         <div className="mt-4 mb-4">

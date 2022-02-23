@@ -20,7 +20,7 @@ function Description({ item }) {
           } else if (data.description === {}) {
             return setDescription('No text here');
           } else {
-            return setDescription('No text');
+            return setDescription('NO DESCRIPTION TEXT: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat consequat arcu sit amet rhoncus. Sed ligula augue, efficitur ut varius a, faucibus vel lacus. Ut congue magna quis massa luctus scelerisque.');
           }
         })
         .catch((err) => {

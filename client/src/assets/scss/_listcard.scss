@@ -36,7 +36,7 @@
         min-height: 200px;
         max-height: 250px;
     }
-    .bttW{
+    .bttW {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -122,11 +122,9 @@
     .textScroll {
     background-color: rgba(196, 196, 196, 0.450);
     color: #2c2c2c;
-    max-height: 200px;
-    min-height: 100px;
+    height: 200px;
     overflow: scroll;
-    // max-width: 70vw;
-    min-width: 300px;
+    width: 100%;
     font-weight: 700;
     }
 

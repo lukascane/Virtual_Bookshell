@@ -45,7 +45,7 @@ export default function ListCardToRead({ item }) {
   return (
     <div id="listCardElement" className="border-bottom mt-4">
       <div className="picBookCont me-4 ms-4">
-        <a>
+        <a onClick={handleOpenModal}>
           {item.cover_i ? (
             <img
               src={`https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`}
@@ -89,7 +89,7 @@ export default function ListCardToRead({ item }) {
 
       <div className="dataBookCont d-flex justify-content-evenly col">
         <div className="bookInfo">
-          <div className="ms-4 mt-4">
+          <div className="ms-4 mt-4" style={{height:'190px'}}>
             <p className="mt-3 bttl">{newTitle}</p>
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
