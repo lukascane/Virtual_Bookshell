@@ -30,7 +30,6 @@ function Description({ item }) {
           return { error: err };
         })
     );
-    // );
   };
   useEffect(() => {
     fetchData();

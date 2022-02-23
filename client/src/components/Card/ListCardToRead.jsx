@@ -89,7 +89,7 @@ export default function ListCardToRead({ item }) {
 
       <div className="dataBookCont d-flex justify-content-evenly col">
         <div className="bookInfo">
-          <div className="ms-4 mt-4" style={{height:'190px'}}>
+          <div className="ms-2 mt-2" style={{height:'190px'}}>
             <p className="mt-3 bttl">{newTitle}</p>
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
