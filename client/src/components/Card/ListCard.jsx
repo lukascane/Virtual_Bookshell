@@ -21,6 +21,7 @@ export default function ListCard({ item }) {
   const { providedDataAlert, showAlert, onClickShowAlert } =
     useContext(AlertContext);
 
+  console.log('item: ', item);
   const handleOpenModal = () => {
     onClickShowModal();
     setModalContent({
@@ -40,7 +41,7 @@ export default function ListCard({ item }) {
 
   const removeBtn = () => {
     onClickShowAlert(0);
-    onClickDeleteBook();
+    onClickDeleteBook(item._id);
   };
 
   const title = item.title;

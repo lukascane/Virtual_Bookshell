@@ -98,20 +98,18 @@ export default function BooksProvider({ children }) {
     setLoggedIn(true);
   };
 
-  const onClickDeleteBook = () => {
+  const onClickDeleteBook = (item) => {
     console.log('remove btn');
-    // try {
-    //   axios
-    //     .delete(
-    //       'http://localhost:3001/api/books/delete/62150a7c88434b3fe56320f7'
-    //     )
-    //     .then((response) => console.log('Delete successful ', response))
-    //     .catch((error) => {
-    //       console.log('There was an error!', error);
-    //     });
-    // } catch (error) {
-    //   console.log('There is an error: ', error);
-    // }
+    try {
+      axios
+        .delete(`http://localhost:3001/api/books/delete/${item}`)
+        .then((response) => console.log('Delete successful ', response))
+        .catch((error) => {
+          console.log('There was an error!', error);
+        });
+    } catch (error) {
+      console.log('There is an error: ', error);
+    }
   };
 
   // const checkLogout = () => {
