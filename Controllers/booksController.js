@@ -47,3 +47,18 @@ exports.searchTitle = async (req, res) => {
     return res.status(400).json({ message: 'Error happened' });
   }
 };
+
+exports.deleteBook = async (req, res) => {
+  const { params } = req;
+
+  try {
+    const deletedBook = await Books.findByIdAndDelete(params.id);
+
+    if (!deletedBook) {
+      res.status(404).json({ message: 'Book not found' });
+    }
+    return res.status(200).json({ message: 'Book deleted' });
+  } catch (error) {
+    return res.status(400).json({ message: 'Something went wrong', error });
+  }
+};

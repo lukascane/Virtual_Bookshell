@@ -9,13 +9,19 @@ import AlertContext from '../../context/AlertContext';
 export default function ListCard({ item }) {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
-  const { sendBookInfo, bookInfos, onClickChangeStatus, readingStatus } =
-    useContext(BookContext);
+  const {
+    sendBookInfo,
+    bookInfos,
+    onClickChangeStatus,
+    readingStatus,
+    onClickDeleteBook,
+  } = useContext(BookContext);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =
     useContext(ModalContext);
   const { providedDataAlert, showAlert, onClickShowAlert } =
     useContext(AlertContext);
 
+  console.log('item: ', item);
   const handleOpenModal = () => {
     onClickShowModal();
     setModalContent({
@@ -33,8 +39,13 @@ export default function ListCard({ item }) {
     onClickChangeStatus();
   };
 
-  const titleToSplit = item.title;
-  const words = titleToSplit.split(' ');
+  const removeBtn = () => {
+    onClickShowAlert(0);
+    onClickDeleteBook(item._id);
+  };
+
+  const title = item.title;
+  const words = title.split(' ');
 
   const newTitle = words.reduce((prev, curr, index) => {
     if (index >= 7) {
@@ -71,7 +82,7 @@ export default function ListCard({ item }) {
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
             <button
-              onClick={() => onClickShowAlert(0)}
+              onClick={removeBtn}
               className="btn btLink rmv d-flex justify-content-between align-items-center"
               style={{ width: '140px' }}
             >
@@ -93,7 +104,7 @@ export default function ListCard({ item }) {
 
       <div className="dataBookCont d-flex justify-content-evenly col">
         <div className="bookInfo">
-          <div className="ms-4 mt-4" style={{height:'190px'}}>
+          <div className="ms-4 mt-4" style={{ height: '190px' }}>
             <p className="mt-3 bttl">
               <b>{newTitle}</b>
             </p>
@@ -101,7 +112,7 @@ export default function ListCard({ item }) {
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
             <button
-              onClick={() => onClickShowAlert(0)}
+              onClick={removeBtn}
               className="btn btLink2 d-flex justify-content-between align-items-center"
               style={{ margin: '0px', width: '170px' }}
             >
