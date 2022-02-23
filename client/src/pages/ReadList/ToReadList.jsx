@@ -1,24 +1,30 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import ListCard from '../../components/Card/ListCard';
 import ListCardToRead from '../../components/Card/ListCardToRead';
 import AlertAddedToReadList from '../../components/ParagraphInfo/AlertAddedToReadList';
 import AlertRemovedFromToReadList from '../../components/ParagraphInfo/AlertRemovedFromToReadList';
 import ListToReadWrapper from '../../components/Wrapper/ListToReadWrapper';
 import AlertContext from '../../context/AlertContext';
+import BookContext from '../../context/booksContextApi/BookContext';
 
 function ToReadList() {
-  const { showAlert, currentAlertType } = useContext(AlertContext)
- 
+  const { showAlert, currentAlertType } = useContext(AlertContext);
+  const { readList } = useContext(BookContext);
+
   return (
     <div id="readList" className="container-fluid">
       <div className="wiewType container-fluid border-bottom">
-      <div className='container'>
-      {showAlert === true && currentAlertType === 2 ?<AlertAddedToReadList /> : null}
-      {showAlert === true && currentAlertType === 3 ? <AlertRemovedFromToReadList /> : null}
-      </div>    
-          <div className="state text-center d-flex justify-content-center align-items-center">
+        <div className="container">
+          {showAlert === true && currentAlertType === 2 ? (
+            <AlertAddedToReadList />
+          ) : null}
+          {showAlert === true && currentAlertType === 3 ? (
+            <AlertRemovedFromToReadList />
+          ) : null}
+        </div>
+        <div className="state text-center d-flex justify-content-center align-items-center">
           <h4 className="">
-            TO READ <span>(16)</span>
+            TO READ <span>{readList.length}</span>
           </h4>
         </div>
         <div className="mt-4 mb-4">
