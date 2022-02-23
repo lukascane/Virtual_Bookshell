@@ -4,8 +4,9 @@ import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 import ModalContext from '../../context/ModalContext';
 import BookContext from '../../context/booksContextApi/BookContext';
 import AlertContext from '../../context/AlertContext';
-import AlertAddedReadList from '../../components/ParagraphInfo/AlertAddedReadList'
+import AlertAddedReadList from '../../components/ParagraphInfo/AlertAddedReadList';
 import AlertAddedToReadList from '../../components/ParagraphInfo/AlertAddedToReadList';
+import Description from '../Description/Description';
 
 export default function BookModal(props) {
   const [buttonText, setButtonText] = useState('SHARE');
@@ -16,7 +17,8 @@ export default function BookModal(props) {
     onClickChangeStatus,
     readingStatus,
   } = useContext(BookContext);
-  const { onClickShowAlert, showAlert, currentAlertType } = useContext(AlertContext);
+  const { onClickShowAlert, showAlert, currentAlertType } =
+    useContext(AlertContext);
   const changeText = (text) => setButtonText(text);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =
     useContext(ModalContext);
@@ -27,20 +29,22 @@ export default function BookModal(props) {
   };
 
   const listToReadBtn = () => {
-    onClickChangeStatus();    
+    onClickChangeStatus();
     sendBookInfoModal(props.content);
     onClickShowAlert(1);
-
   };
-
 
   return (
     <>
       <div id="mask">
-      <div style={{marginTop:'130px'}} className='container'>
-      {showAlert === true && currentAlertType === 1 ? <AlertAddedReadList /> : null }
-      {showAlert === true && currentAlertType === 2 ? <AlertAddedToReadList /> : null}
-      </div>
+        <div style={{ marginTop: '130px' }} className="container">
+          {showAlert === true && currentAlertType === 1 ? (
+            <AlertAddedReadList />
+          ) : null}
+          {showAlert === true && currentAlertType === 2 ? (
+            <AlertAddedToReadList />
+          ) : null}
+        </div>
         <div id="bookModalContainer" className="mb-5 puff-in-center">
           <button
             onClick={props.closeHandler}
@@ -70,11 +74,7 @@ export default function BookModal(props) {
               </div>
 
               <div className="card-body d-flex row justify-content-center align-items-center">
-                <a
-                  href="#"
-                  onClick={listReadBtn}
-                  className="btn btLink m-2"
-                >
+                <a href="#" onClick={listReadBtn} className="btn btLink m-2">
                   read
                 </a>
                 <a
@@ -106,7 +106,10 @@ export default function BookModal(props) {
                     onClick={() => changeText('Facebook')}
                     className="dropdown-item title"
                   >
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank">
+                    <a
+                      href="https://www.facebook.com/sharer/sharer.php?u=example.org"
+                      target="_blank"
+                    >
                       {' '}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +128,11 @@ export default function BookModal(props) {
                     onClick={() => changeText('Twitter')}
                     className="dropdown-item year"
                   >
-                    <a href="https://twitter.com/intent/tweet" id="tweet-quote" target="_blank">
+                    <a
+                      href="https://twitter.com/intent/tweet"
+                      id="tweet-quote"
+                      target="_blank"
+                    >
                       {' '}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -189,7 +196,7 @@ export default function BookModal(props) {
                 className="rounded scrollspy-example mt-3 textScroll p-3 mb-5"
                 tabIndex="0"
               >
-                {/* <p>{props.content.isbn[0]} </p> */}
+                <Description item={props.content.key} />
               </div>
             </div>
           </div>

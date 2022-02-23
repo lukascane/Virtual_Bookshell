@@ -8,6 +8,7 @@ function MiniCard({ item }) {
   const handleOpenModal = () => {
     onClickShowModal();
     setModalContent({
+      key: item.key,
       title: item.title,
       author: item.author[0],
       pages: item.pages,
@@ -48,6 +49,7 @@ function MiniCard({ item }) {
         </a>
       </div> */}
       </a>
+      {/* {props.children} */}
     </div>
   );
 }

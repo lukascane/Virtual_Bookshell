@@ -101,13 +101,21 @@
      }
   }
   @media (max-width: 576px) {
+      .container {
+          margin-bottom: 100px;
+      }
+    .card, .textWrapper {
+        box-shadow: none;
+        margin: -25px 0px 0px 0px;
+        width: 100vw;
+    }
     .textWrapper {
          max-height: 600px;
      }
      .hideImg {
        width: 100vw;
-       min-height: 100vh;
-       margin:100px 0;
+       height: 100vh;
+       margin:-50px 0;
      }
    }
 }
