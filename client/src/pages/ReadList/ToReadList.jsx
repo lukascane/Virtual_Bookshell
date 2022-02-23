@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import ListCard from '../../components/Card/ListCard';
 import ListCardToRead from '../../components/Card/ListCardToRead';
 import AlertAddedToReadList from '../../components/ParagraphInfo/AlertAddedToReadList';
@@ -8,17 +8,25 @@ import AlertContext from '../../context/AlertContext';
 
 function ToReadList() {
   const { showAlert, currentAlertType } = useContext(AlertContext)
- 
+  const [counter, setCounter] = useState(0)
+  const handleIncrement = () => {
+    setCounter(counter + 1);
+  };
+
+  const handleDecrement = () => {
+    setCounter(counter - 1);
+  };
+
   return (
     <div id="readList" className="container-fluid">
       <div className="wiewType container-fluid border-bottom">
       <div className='container'>
-      {showAlert === true && currentAlertType === 2 ?<AlertAddedToReadList /> : null}
+      {showAlert === true && currentAlertType === 2 ? <AlertAddedToReadList /> : null}
       {showAlert === true && currentAlertType === 3 ? <AlertRemovedFromToReadList /> : null}
       </div>    
           <div className="state text-center d-flex justify-content-center align-items-center">
           <h4 className="">
-            TO READ <span>(16)</span>
+            TO READ <span>({counter})</span>
           </h4>
         </div>
         <div className="mt-4 mb-4">
