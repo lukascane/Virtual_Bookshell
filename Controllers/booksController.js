@@ -64,10 +64,12 @@ exports.deleteBook = async (req, res) => {
 };
 
 exports.listBooksByUser = async (req, res) => {
+  const { params } = req;
+
   // BookList.find({ user_id : req.user_id, reading_status=0 })
   try {
     const bookListByUser = await Books.find({
-      user: req.params.user,
+      user: params.user,
     }).populate('user');
 
     return res
