@@ -44,7 +44,6 @@ const bookRoutes = require('./Routes/bookRoutes');
 const reviewRoutes = require('./Routes/reviewRoutes');
 
 //? Routes:
-app.get('/', (req, res) => res.send('Hello World!'));
 app.use('/api/user', userRoute);
 app.use('/api/books', bookRoutes);
 app.use('/api/reviews', reviewRoutes);
