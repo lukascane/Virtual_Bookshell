@@ -1,6 +1,4 @@
 import React, { useContext } from 'react';
-import ListCard from '../../components/Card/ListCard';
-import ListCardToRead from '../../components/Card/ListCardToRead';
 import AlertAddedToReadList from '../../components/ParagraphInfo/AlertAddedToReadList';
 import AlertRemovedFromToReadList from '../../components/ParagraphInfo/AlertRemovedFromToReadList';
 import ListToReadWrapper from '../../components/Wrapper/ListToReadWrapper';

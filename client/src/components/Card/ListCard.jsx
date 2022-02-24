@@ -15,7 +15,7 @@ export default function ListCard({ item }) {
   } = useContext(BookContext);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =
     useContext(ModalContext);
-  const { providedDataAlert, showAlert, onClickShowAlert } =
+  const { onClickShowAlert } =
     useContext(AlertContext);
 
   console.log('item: ', item);
