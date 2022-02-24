@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
 import AlertContext from '../../context/AlertContext'
 import Cat from '../../assets/images/abase.jpg'
@@ -48,13 +48,9 @@ return defaultElement
         </div>
         <div className='d-flex justify-content-between align-items-center mx-5 subC'>
         <div id="profilePicture" className='rounded-circle d-flex justify-content-center align-items-center'>
-
         <a onClick={()=>props.setShowComponent(true)} style={{cursor:'pointer', background: 'whitesmoke'}} className='rounded-circle'>
-
          {switchAvatar()}
-
         </a>
-
         </div>
         <div id='profileData'>
         <div className='texts'>

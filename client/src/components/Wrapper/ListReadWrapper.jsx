@@ -1,15 +1,14 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import ListCard from '../Card/ListCard';
 import BookContext from '../../context/booksContextApi/BookContext';
 
-function ListBooksWrapper(setCounter) {
+function ListBooksWrapper() {
   const { fetchReadBookList, readList } = useContext(BookContext);
   console.log(readList.length)
   useEffect(() => {
     fetchReadBookList();
   }, []);
-/*   setCounter(readList.length)
- */  return (
+      return (
     <div>
       {readList.map((item, index) => (
         <ListCard item={item} id={index}></ListCard>

@@ -1,8 +1,6 @@
 import React, {useContext} from 'react';
 import axiosInstance from '../../util/axiosInstance'
 import BookContext from '../../context/booksContextApi/BookContext';
-import searchAxiosInstance from '../../util/searchAxiosInstance';
-import AlertProfile from '../ParagraphInfo/AlertProfile';
 import AlertContext from '../../context/AlertContext';
 
 export default function EditProfileForm() {

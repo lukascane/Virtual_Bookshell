@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import AlertAddedReadList from '../../components/ParagraphInfo/AlertAddedReadList';
 import AlertRemovedFromReadList from '../../components/ParagraphInfo/AlertRemovedFromReadList';
 import ListReadWrapper from '../../components/Wrapper/ListReadWrapper';

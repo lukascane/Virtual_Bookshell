@@ -43,13 +43,7 @@ function MiniCard({ item }) {
             <sm className="card-text">{item.author}</sm>
           </p>
         </div>
-        {/* <div className="button mb-2">
-        <a href="#" className="btn cardBtn homeBtn btn-sm">
-          OPEN
-        </a>
-      </div> */}
       </a>
-      {/* {props.children} */}
     </div>
   );
 }

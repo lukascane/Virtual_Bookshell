@@ -6,7 +6,7 @@ import BookContext from '../../context/booksContextApi/BookContext';
 
 export default function Navbar() {
   const { logout } = useContext(BookContext);
-  const { showAlert, currentAlertType, onClickShowAlert } =
+  const { onClickShowAlert } =
     useContext(AlertContext);
 
   return (

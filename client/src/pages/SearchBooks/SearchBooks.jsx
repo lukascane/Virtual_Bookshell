@@ -3,14 +3,10 @@ import BookContext from '../../context/booksContextApi/BookContext';
 import SearchForm from '../../components/Form/SearchForm';
 import CardWrapper from '../../components/Wrapper/CardWrapper';
 import MiniCardWrapper from '../../components/Wrapper/MiniCardWrapper';
-import BookModal from '../../components/Modals/BookModal';
 import AlertSearchFailure from '../../components/ParagraphInfo/AlertSearchFailure';
 import AlertContext from '../../context/AlertContext';
 import AlertAddedReadList from '../../components/ParagraphInfo/AlertAddedReadList'
 import AlertAddedToReadList from '../../components/ParagraphInfo/AlertAddedToReadList';
-
-
-
 
 function SearchBooks() {
   const { showAlert, onClickShowAlert, currentAlertType } =
