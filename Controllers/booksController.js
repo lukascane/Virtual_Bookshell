@@ -14,7 +14,7 @@ exports.createBooksCollection = async (req, res) => {
     book.rating = req.body.rating;
     book.reading_status = req.body.reading_status;
     book.pages = req.body.pages;
-    book.user_id = req.body.user_id;
+    book.user = req.body.user;
     book.language = req.body.language;
 
     await book.save();
@@ -60,5 +60,19 @@ exports.deleteBook = async (req, res) => {
     return res.status(200).json({ message: 'Book deleted' });
   } catch (error) {
     return res.status(400).json({ message: 'Something went wrong', error });
+  }
+};
+
+exports.listBooksByUser = async (req, res) => {
+  try {
+    const bookListByUser = await Books.find({ user: req.user._id }).populate(
+      'user'
+    );
+
+    return res
+      .status(200)
+      .json({ message: 'list of books by user', bookListByUser });
+  } catch (error) {
+    return res.status(400).json({ message: 'Error happened', error });
   }
 };
