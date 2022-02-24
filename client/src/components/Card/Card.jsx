@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import BookContext from '../../context/booksContextApi/BookContext';
 import ModalContext from '../../context/ModalContext';
 import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 import AlertContext from '../../context/AlertContext';
 
 function Card({ item }) {
-  const { sendBookInfo, bookInfos, onClickChangeStatus, readingStatus } =
+  const { sendBookInfo, onClickChangeStatus } =
     useContext(BookContext);
   const { onClickShowAlert } = useContext(AlertContext);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =

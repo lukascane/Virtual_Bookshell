@@ -10,10 +10,7 @@ export default function ListCardToRead({ item }) {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
   const {
-    sendBookInfo,
-    bookInfos,
     onClickChangeStatus,
-    readingStatus,
     onClickDeleteBook,
   } = useContext(BookContext);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =
@@ -27,7 +24,6 @@ export default function ListCardToRead({ item }) {
       title: item.title,
       author: item.author[0],
       pages: item.pages,
-      // isbn: item.isbn[0],
       cover_i: item.cover_i,
     });
   };
@@ -100,7 +96,7 @@ export default function ListCardToRead({ item }) {
 
       <div className="dataBookCont d-flex justify-content-evenly col">
         <div className="bookInfo">
-          <div className="ms-4 mt-4" style={{ height: '190px' }}>
+          <div className="ms-2 mt-2" style={{ height: '190px' }}>
             <p className="mt-3 bttl">{newTitle}</p>
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>

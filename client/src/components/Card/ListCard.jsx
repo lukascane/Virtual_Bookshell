@@ -10,11 +10,8 @@ export default function ListCard({ item }) {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
   const {
-    sendBookInfo,
-    bookInfos,
     onClickChangeStatus,
-    readingStatus,
-    onClickDeleteBook,
+    onClickDeleteBook
   } = useContext(BookContext);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =
     useContext(ModalContext);
@@ -29,7 +26,6 @@ export default function ListCard({ item }) {
       title: item.title,
       author: item.author,
       pages: item.pages,
-      // isbn: item.isbn[0],
       cover_i: item.cover_i,
     });
   };
@@ -104,7 +100,7 @@ export default function ListCard({ item }) {
 
       <div className="dataBookCont d-flex justify-content-evenly col">
         <div className="bookInfo">
-          <div className="ms-4 mt-4" style={{ height: '190px' }}>
+          <div className="ms-2 mt-2" style={{ height: '190px' }}>
             <p className="mt-3 bttl">
               <b>{newTitle}</b>
             </p>

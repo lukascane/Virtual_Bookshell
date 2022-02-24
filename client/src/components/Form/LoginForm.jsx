@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import AlertContext from '../../context/AlertContext';
 
 export default function LoginForm() {
-  const { showAlert, onClickShowAlert, currentAlertType } =
+  const { onClickShowAlert } =
     useContext(AlertContext);
   const navigate = useNavigate();
-  const { handleLogin, checkLogin, checkLogout } = useContext(BookContext);
+  const { handleLogin, checkLogin } = useContext(BookContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,7 +25,6 @@ export default function LoginForm() {
       console.log('response', response.data.user);
 
       if (response.status == 200) {
-        //everything went well!
         handleLogin(response.data.user);
         console.log('You are now logged in');
         onClickShowAlert(8);

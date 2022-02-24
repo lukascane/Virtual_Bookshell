@@ -11,16 +11,13 @@ import Description from '../Description/Description';
 export default function BookModal(props) {
   const [buttonText, setButtonText] = useState('SHARE');
   const {
-    sendBookInfo,
     sendBookInfoModal,
-    bookInfos,
-    onClickChangeStatus,
-    readingStatus,
+    onClickChangeStatus
   } = useContext(BookContext);
   const { onClickShowAlert, showAlert, currentAlertType } =
     useContext(AlertContext);
   const changeText = (text) => setButtonText(text);
-  const { onClickShowModal, setModalContent, onClickShowModalReview } =
+  const { onClickShowModalReview } =
     useContext(ModalContext);
 
   const listReadBtn = () => {
@@ -169,7 +166,6 @@ export default function BookModal(props) {
                 </ul>
               </div>
             </div>
-
             <div className="textContainer">
               <div className="textWrap">
                 <br />
@@ -179,9 +175,7 @@ export default function BookModal(props) {
                   Pages: <b>{props.content.pages}</b>
                 </p>
               </div>
-
               <hr />
-
               <div
                 className="silverSect p-1 d-flex justify-content-center align-items-center"
                 style={{ backgroundColor: '#C4C4C4' }}

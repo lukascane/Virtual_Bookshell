@@ -14,9 +14,12 @@ body {
 main {
     min-height: 100vh;
 }
+.alert {
+        height: 59px;
+}
 @media (max-width: 768px) {
         .alert {
-         height: 80px;
+        height: 90px;
         }
  }
 

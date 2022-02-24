@@ -68,7 +68,7 @@ export default function ReviewModal(props) {
               style={{ marginLeft: '-20px' }}
             >
               <a href="#" className="btn btLink m-2">
-                comment/review
+                post review
               </a>
             </div>
 
@@ -87,7 +87,7 @@ export default function ReviewModal(props) {
             style={{ maxWidth: '93%' }}
           >
             <a href="#" className="btn btLink m-2">
-              back
+              back to books
             </a>
           </div>
         </div>

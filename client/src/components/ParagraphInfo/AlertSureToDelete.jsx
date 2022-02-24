@@ -5,7 +5,7 @@ export default function AlertSureToDelete() {
   const {onClickShowAlert} = useContext(AlertContext)
 
   return (
-  <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert" style={{maxHeight: '59px'}}>
+  <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
     <div className='d-flex justify-content-between vw-100 align-items-center col'>
     <strong>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
