@@ -6,7 +6,7 @@ import BookContext from '../../context/booksContextApi/BookContext';
 
 export default function Navbar() {
   const { logout } = useContext(BookContext);
-  const { showAlert, currentAlertType, onClickShowAlert } =
+  const { onClickShowAlert } =
     useContext(AlertContext);
 
   return (
@@ -47,28 +47,28 @@ export default function Navbar() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
               <li className="nav-item">
                 <NavLink to="/searchbooks" exact className="nav-link">
-                  <button className="btn rounded-pill buttons" type="button">
+                  <button className="btn rounded-pill buttons zoom" type="button">
                     books
                   </button>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink to="/toreadlist" exact className="nav-link">
-                  <button className="btn rounded-pill buttons" type="button">
+                  <button className="btn rounded-pill buttons zoom" type="button">
                     to read
                   </button>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink to="/readlist" exact className="nav-link">
-                  <button className="btn rounded-pill buttons" type="button">
+                  <button className="btn rounded-pill buttons zoom" type="button">
                     read
                   </button>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink to="/profile" exact className="nav-link">
-                  <button className="btn rounded-pill buttons" type="button">
+                  <button className="btn rounded-pill buttons zoom" type="button">
                     profile
                   </button>
                 </NavLink>
@@ -83,7 +83,7 @@ export default function Navbar() {
                   exact
                   className="nav-link"
                 >
-                  <button className="btn rounded-pill buttons" type="button">
+                  <button className="btn rounded-pill buttons zoom" type="button">
                     logout
                   </button>
                 </NavLink>

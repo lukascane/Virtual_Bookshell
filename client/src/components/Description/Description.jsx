@@ -1,36 +1,40 @@
-import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
-import BookContext from '../../context/booksContextApi/BookContext';
+import React, { useEffect, useState } from 'react';
+import descriptionAxiosInstance from '../../util/descriptionAxiosInstance';
 
-function Description() {
-  const { bookInfos } = useContext(BookContext);
+function Description({ item }) {
   const [description, setDescription] = useState('');
 
-  console.log(bookInfos);
+  console.log(item);
 
-  const listBooks = async () => {
-    const response = await axios.get(`http://localhost:3001/api/books/list`);
-    console.log(response.data);
-  };
-
-  const fetchData = async () => {
-    const response = await axios.get(
-      `https://openlibrary.org${bookInfos.key}.json`
+  const fetchData = () => {
+    return (
+      descriptionAxiosInstance
+        .get(`${item}.json`)
+        .then((response) => {
+          const data = response.data;
+          console.log(data,'im data')
+          if(data.description !== null){
+            if(typeof data.description === 'object'){
+              setDescription(data.description.value)
+            }else if (data.description) {
+              setDescription(data.description)
+            }else {
+              return setDescription('NO DESCRIPTION TEXT: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat consequat arcu sit amet rhoncus. Sed ligula augue, efficitur ut varius a, faucibus vel lacus. Ut congue magna quis massa luctus scelerisque.')
+            }
+          } else {
+            return setDescription('NO DESCRIPTION TEXT: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat consequat arcu sit amet rhoncus. Sed ligula augue, efficitur ut varius a, faucibus vel lacus. Ut congue magna quis massa luctus scelerisque.')
+          }
+        })
+        .catch((err) => {
+          return { error: err };
+        })
     );
-    console.log(response);
-    // setDescription(response.data.description);
   };
-
   useEffect(() => {
-    // fetchData();
-    listBooks();
+    fetchData();
   }, []);
-  return (
-    <div>
-      <p>{description}</p>
-      {/* <p>Test</p> */}
-    </div>
-  );
+
+  return <div>{<p>{description}</p>}</div>;
 }
 
 export default Description;

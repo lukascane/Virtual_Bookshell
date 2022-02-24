@@ -25,5 +25,13 @@
 - to show bestsellers use edition count from the api
 
 ### For the description we need to use this Api
-  - example: works/OLnumber 
+#### We have different cases for the api objects:
+- some json have description, some not and some have an object as a description
+  - example: works/OLnumber (with description)
   https://openlibrary.org/works/OL45883W.json
+
+  - example: (with an object as a description)
+  https://openlibrary.org/works/OL15662518W.json
+
+  - example: (without a description at all)
+  https://openlibrary.org/works/OL4135057W.json

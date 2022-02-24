@@ -12,14 +12,19 @@
     }
 
     .card, .textWrapper {
-        min-height: 485px;
-        max-height: 555px;
+        min-height: 500px;
+        max-height: 575px;
         width: 100%;
         border: none 0px;
         background-color: whitesmoke;
     }
     .sep {
-        border: solid 3px #2c2c2c;
+        border: solid 4px #2c2c2c;
+    }
+    .card-text {
+        
+       font-weight: 700;
+    
     }
 
     .picWrapper {
@@ -44,7 +49,7 @@
     .textWrapper {
         background-color: whitesmoke;
         box-shadow: rgba(93, 91, 92, 0.4) -5px 5px, rgba(56, 55, 56, 0.3) -10px 10px, rgba(17, 16, 16, 0.2) -15px 15px, rgba(29, 28, 29, 0.1) -20px 20px, rgba(12, 12, 12, 0.05) -25px 25px;
-        height: 50vh;
+        height: 52vh;
         width:430px ;
     }
     .logoMain {
@@ -70,7 +75,7 @@
 
 @media (max-width: 1400px) {
     .textWrapper {
-        height: 59vh;
+        height: 60vh;
     }
  }
  @media (min-width: 992px) {
@@ -101,12 +106,21 @@
      }
   }
   @media (max-width: 576px) {
+      .container {
+          margin-bottom: 30px;
+      }
+    .card, .textWrapper {
+        box-shadow: none;
+        margin: -25px 0px 0px 0px;
+        width: 100vw;
+    }
     .textWrapper {
-         max-height: 600px;
-     }
-     .hideImg {
          max-height: 500px;
      }
+     .hideImg {
+       width: 100vw;
+       height: 100vh;
+       margin:-50px 0;
+     }
    }
-
 }

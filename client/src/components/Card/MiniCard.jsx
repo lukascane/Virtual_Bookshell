@@ -8,6 +8,7 @@ function MiniCard({ item }) {
   const handleOpenModal = () => {
     onClickShowModal();
     setModalContent({
+      key: item.key,
       title: item.title,
       author: item.author[0],
       pages: item.pages,
@@ -17,7 +18,7 @@ function MiniCard({ item }) {
   };
   return (
     <div
-      className="card text-left d-flex justify-content-center align-items-center m-4"
+      className="card text-left d-flex justify-content-center align-items-center m-4 zooms"
       id="miniCard"
     >
       <a onClick={handleOpenModal}>
@@ -42,11 +43,6 @@ function MiniCard({ item }) {
             <sm className="card-text">{item.author}</sm>
           </p>
         </div>
-        {/* <div className="button mb-2">
-        <a href="#" className="btn cardBtn homeBtn btn-sm">
-          OPEN
-        </a>
-      </div> */}
       </a>
     </div>
   );

@@ -5,7 +5,7 @@ import AlertContext from '../../context/AlertContext';
 
 export default function SignUpForm() {
 
-  const {showAlert, onClickShowAlert, currentAlertType } = useContext(AlertContext)
+  const { onClickShowAlert } = useContext(AlertContext)
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {

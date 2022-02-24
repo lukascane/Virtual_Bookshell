@@ -4,22 +4,26 @@ import BookContext from '../../context/booksContextApi/BookContext';
 import ModalContext from '../../context/ModalContext';
 import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 import AlertContext from '../../context/AlertContext';
+import Description from '../Description/Description';
 
 export default function ListCardToRead({ item }) {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
-  const { sendBookInfo, bookInfos, onClickChangeStatus, readingStatus } =
-    useContext(BookContext);
+  const {
+    onClickChangeStatus,
+    onClickDeleteBook,
+  } = useContext(BookContext);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =
     useContext(ModalContext);
   const { onClickShowAlert } = useContext(AlertContext);
+
   const handleOpenModal = () => {
     onClickShowModal();
     setModalContent({
+      key: item.key,
       title: item.title,
       author: item.author[0],
       pages: item.pages,
-      // isbn: item.isbn[0],
       cover_i: item.cover_i,
     });
   };
@@ -27,6 +31,11 @@ export default function ListCardToRead({ item }) {
   const listReadBtn = () => {
     onClickShowAlert(2);
     onClickChangeStatus();
+  };
+
+  const removeBtn = () => {
+    onClickShowAlert(3);
+    onClickDeleteBook(item._id);
   };
 
   const title = item.title;
@@ -43,7 +52,7 @@ export default function ListCardToRead({ item }) {
   return (
     <div id="listCardElement" className="border-bottom mt-4">
       <div className="picBookCont me-4 ms-4">
-        <a>
+        <a onClick={handleOpenModal}>
           {item.cover_i ? (
             <img
               src={`https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`}
@@ -65,7 +74,7 @@ export default function ListCardToRead({ item }) {
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
             <button
-              onClick={() => onClickShowAlert(3)}
+              onClick={removeBtn}
               className="btn btLink rmv d-flex justify-content-between align-items-center"
               style={{ width: '140px' }}
             >
@@ -87,13 +96,13 @@ export default function ListCardToRead({ item }) {
 
       <div className="dataBookCont d-flex justify-content-evenly col">
         <div className="bookInfo">
-          <div className="ms-4 mt-4">
+          <div className="ms-2 mt-2" style={{ height: '190px' }}>
             <p className="mt-3 bttl">{newTitle}</p>
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
             <p>more variable</p>
             <button
-              onClick={() => onClickShowAlert(3)}
+              onClick={removeBtn}
               className="btn btLink2 d-flex justify-content-between align-items-center"
               style={{ margin: '0px', width: '170px' }}
             >
@@ -114,25 +123,7 @@ export default function ListCardToRead({ item }) {
 
         <div className="description">
           <div className="descrTxt textScroll p-3">
-            <p>
-              Change the visual order of specific flex items with a handful of
-              order utilities. We only provide options for making an item first
-              or last, as well as a reset to use the DOM order. As order takes
-              any integer value from 0 to 5, add custom CSS for any additional
-              values needed.Change the visual order of specific flex items with
-              a handful of order utilities. We only provide options for making
-              an item first or last, as well as a reset to use the DOM order. As
-              order takes any integer value from 0 to 5, add custom CSS for any
-              additional values needed.Change the visual order of specific flex
-              items with a handful of order utilities. We only provide options
-              for making an item first or last, as well as a reset to use the
-              DOM order. As order takes any integer value from 0 to 5, add
-              custom CSS for any additional values needed.Change the visual
-              order of specific flex items with a handful of order utilities. We
-              only provide options for making an item first or last, as well as
-              a reset to use the DOM order. As order takes any integer value
-              from 0 to 5, add custom CSS for any additional values needed.
-            </p>
+            <Description item={item.key} />
           </div>
           <div className="silverSect p-1 d-flex justify-content-center align-items-center mb-4">
             <h5 className="mb-0">I Book genre? I</h5>
@@ -164,7 +155,10 @@ export default function ListCardToRead({ item }) {
                   onClick={() => changeText('Facebook')}
                   className="dropdown-item title"
                 >
-                  <a>
+                  <a
+                    href="https://www.facebook.com/sharer/sharer.php?u=example.org"
+                    target="_blank"
+                  >
                     {' '}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +177,11 @@ export default function ListCardToRead({ item }) {
                   onClick={() => changeText('Twitter')}
                   className="dropdown-item year"
                 >
-                  <a>
+                  <a
+                    href="https://twitter.com/intent/tweet"
+                    id="tweet-quote"
+                    target="_blank"
+                  >
                     {' '}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +200,7 @@ export default function ListCardToRead({ item }) {
                   onClick={() => changeText('EMAIL')}
                   className="dropdown-item author"
                 >
-                  <a>
+                  <a href="mailto:">
                     {' '}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

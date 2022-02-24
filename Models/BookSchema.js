@@ -13,7 +13,7 @@ const BookCollectionSchema = new Schema({
   isbn: String,
   cover_i: Number,
   reading_status: Number,
-  user_id: { type: Schema.Types.ObjectId, ref: 'user' },
+  user: { type: Schema.Types.ObjectId, ref: 'user' },
   language: Array,
 });
 

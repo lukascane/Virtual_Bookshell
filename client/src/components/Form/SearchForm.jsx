@@ -8,11 +8,9 @@ export default function SearchForm() {
   const [buttonText, setButtonText] = useState('Title');
   const { onClickFetchData, bookInfos } = useContext(BookContext);
   const changeText = (text) => setButtonText(text);
-  // console.log(bookInfos,'from search form!');
 
   const onChangeSearchInput = (e) => {
     e.preventDefault();
-    console.log('e.target.value console-log', e.target.value);
     return setTitle(e.target.value);
   };
 
@@ -28,7 +26,6 @@ export default function SearchForm() {
             aria-expanded="false"
           >
             {buttonText}
-            {/* Title/Year  */}
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li
@@ -59,7 +56,7 @@ export default function SearchForm() {
         </div>
 
         <input
-          type="text" 
+          type="text"
           onChange={onChangeSearchInput}
           id="inputSearchField"
           className="form-control w-50 mx-3 text-light"
@@ -70,7 +67,7 @@ export default function SearchForm() {
         <button
           type="button"
           className="btn rounded-pill"
-          onClick={(e)=>onClickFetchData(title, buttonText, e)}
+          onClick={(e) => onClickFetchData(title, buttonText, e)}
         >
           search
         </button>
@@ -85,7 +82,6 @@ export default function SearchForm() {
           aria-expanded="false"
         >
           {buttonText}
-          {/* Title/Year  */}
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           <li onClick={() => changeText('Title')} className="dropdown-item">
@@ -99,7 +95,9 @@ export default function SearchForm() {
           </li>
         </ul>
       </div>
-      {bookInfos[0] === undefined ? null : <ParagraphInfo bookInfos={bookInfos}/>}
+      {bookInfos[0] === undefined ? null : (
+        <ParagraphInfo bookInfos={bookInfos} />
+      )}
     </div>
   );
 }
