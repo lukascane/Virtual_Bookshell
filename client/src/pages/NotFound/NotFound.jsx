@@ -12,15 +12,3 @@ function NotFound() {
 }
 
 export default NotFound;
-
-// function NotFound() {
-//   return (
-//     <div id="errorview">
-//       <div className="container" style={{ marginTop: '130px' }}>
-//         <NotFound />
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default NotFound;

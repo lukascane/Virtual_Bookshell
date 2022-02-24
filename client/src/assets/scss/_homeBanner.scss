@@ -19,7 +19,12 @@
         background-color: whitesmoke;
     }
     .sep {
-        border: solid 3px #2c2c2c;
+        border: solid 4px #2c2c2c;
+    }
+    .card-text {
+        
+       font-weight: 700;
+    
     }
 
     .picWrapper {
@@ -102,7 +107,7 @@
   }
   @media (max-width: 576px) {
       .container {
-          margin-bottom: 100px;
+          margin-bottom: 30px;
       }
     .card, .textWrapper {
         box-shadow: none;
@@ -110,7 +115,7 @@
         width: 100vw;
     }
     .textWrapper {
-         max-height: 600px;
+         max-height: 500px;
      }
      .hideImg {
        width: 100vw;

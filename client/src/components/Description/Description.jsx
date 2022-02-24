@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import descriptionAxiosInstance from '../../util/descriptionAxiosInstance';
 
 function Description({ item }) {
@@ -30,7 +29,6 @@ function Description({ item }) {
           return { error: err };
         })
     );
-    // );
   };
   useEffect(() => {
     fetchData();

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import ModalContext from '../../context/ModalContext';
-import { useState, useContext } from 'react';
-import BookContext from '../../context/booksContextApi/BookContext';
+import { useContext } from 'react';
 import BookModal from '../Modals/BookModal';
 import ModalProvider from '../../context/ModalProvider';
 

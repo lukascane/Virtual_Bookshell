@@ -8,7 +8,6 @@ export default function SearchForm() {
   const [buttonText, setButtonText] = useState('Title');
   const { onClickFetchData, bookInfos } = useContext(BookContext);
   const changeText = (text) => setButtonText(text);
-  // console.log(bookInfos,'from search form!');
 
   const onChangeSearchInput = (e) => {
     e.preventDefault();
@@ -27,7 +26,6 @@ export default function SearchForm() {
             aria-expanded="false"
           >
             {buttonText}
-            {/* Title/Year  */}
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li
@@ -84,7 +82,6 @@ export default function SearchForm() {
           aria-expanded="false"
         >
           {buttonText}
-          {/* Title/Year  */}
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           <li onClick={() => changeText('Title')} className="dropdown-item">
