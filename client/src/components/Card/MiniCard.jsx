@@ -16,6 +16,7 @@ function MiniCard({ item }) {
       cover_i: item.cover_i,
     });
   };
+
   return (
     <div
       className="card text-left d-flex justify-content-center align-items-center m-4 zooms"
@@ -40,7 +41,7 @@ function MiniCard({ item }) {
         <div className="p-2 infoLittle">
           <h5 className="card-title">{item.title}</h5>
           <p style={{ fontSize: '14px' }}>
-            <sm className="card-text">{item.author}</sm>
+            <small className="card-text">{item.author}</small>
           </p>
         </div>
       </a>

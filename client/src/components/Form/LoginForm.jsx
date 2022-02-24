@@ -5,24 +5,20 @@ import { useNavigate } from 'react-router-dom';
 import AlertContext from '../../context/AlertContext';
 
 export default function LoginForm() {
-  const { onClickShowAlert } =
-    useContext(AlertContext);
+  const { onClickShowAlert } = useContext(AlertContext);
   const navigate = useNavigate();
   const { handleLogin, checkLogin } = useContext(BookContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Login the user');
     const formData = new FormData(event.target);
 
     const data = {
       username: formData.get('username'),
       password: formData.get('password'),
     };
-    console.log(data);
     try {
       const response = await axios.post('/api/user/login', data);
-      console.log('response', response.data.user);
 
       if (response.status == 200) {
         handleLogin(response.data.user);

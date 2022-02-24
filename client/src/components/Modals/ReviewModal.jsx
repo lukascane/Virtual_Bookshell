@@ -1,14 +1,16 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import CommentReview from './CommentReview';
 import ModalContext from '../../context/ModalContext';
-
 
 export default function ReviewModal(props) {
   const { onClickShowModal, setModalContent } = useContext(ModalContext);
   return (
     <div id="mask">
       <div id="bookModalContainer2" className="mb-5">
-        <button className="closeButton d-flex justify-content-center align-items-center fixed-top" onClick={props.closeHandler}>
+        <button
+          className="closeButton d-flex justify-content-center align-items-center fixed-top"
+          onClick={props.closeHandler}
+        >
           X
         </button>
 

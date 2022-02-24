@@ -1,9 +1,7 @@
 import React, { useState, useContext } from 'react';
-import axiosApi from 'axios';
 import axios from '../../util/axiosInstance';
 import BookContext from './BookContext';
 import searchTitleAuthApi from '../../services/bookApi/searchTitleAuthApi';
-import sendBookInfoApi from '../../services/bookApi/sendBookInfoApi';
 
 export default function BooksProvider({ children }) {
   const [readingStatus, setReadingStatus] = useState(0);
@@ -23,20 +21,13 @@ export default function BooksProvider({ children }) {
     return bookInfos;
   };
 
-  const onClickChangeStatus = () => {
-    if (readingStatus === 0) {
-      setReadingStatus(1);
-    } else if (readingStatus === 1) {
-      setReadingStatus(0);
-    }
-  };
-
   const onClickToRead = () => {
-    setReadingStatus(0);
+    setReadingStatus(1);
+    console.log();
   };
 
   const onClickRead = () => {
-    setReadingStatus(1);
+    setReadingStatus(0);
   };
 
   // handle user /log in function
@@ -54,8 +45,6 @@ export default function BooksProvider({ children }) {
     setLoggedIn(false);
   };
 
-  // console.log(user);
-
   const sendBookInfo = async (item) => {
     const bookInfoToSend = {
       key: item.key,
@@ -69,7 +58,6 @@ export default function BooksProvider({ children }) {
       language: item.language,
     };
     const res = await axios.post('/api/books/create', bookInfoToSend);
-    console.log(res.data);
   };
 
   const sendBookInfoModal = async (item) => {
@@ -85,24 +73,18 @@ export default function BooksProvider({ children }) {
       language: item.language,
     };
     const res = await axios.post('/api/books/create', bookInfoToSend);
-    console.log(res.data);
   };
 
   const fetchReadBookList = async () => {
-    // const response = await axios.get(`/api/books/listbyuser/${user._id}`);
     const response = await axios.get('/api/books/listbyuser');
-    console.log(response.data.bookListByUser);
     setListBooks(response.data.bookListByUser);
-    console.log('ListBooks', listBooks);
     const result = listBooks.filter((element) => element.reading_status === 1);
     setReadList(result);
   };
 
   const fetchToReadList = async () => {
     const response = await axios.get('/api/books/listbyuser');
-    console.log(response.data.bookListByUser);
     setListBooks(response.data.bookListByUser);
-    console.log('ListBooks', listBooks);
     const result = listBooks.filter((element) => element.reading_status === 0);
     setReadList(result);
   };
@@ -112,45 +94,16 @@ export default function BooksProvider({ children }) {
   };
 
   const onClickDeleteBook = (item) => {
-    console.log('remove btn');
     try {
       axios
         .delete(`http://localhost:3001/api/books/delete/${item}`)
-        .then((response) => console.log('Delete successful ', response))
+        .then((response) => console.log())
         .catch((error) => {
           console.log('There was an error!', error);
         });
     } catch (error) {
       console.log('There is an error: ', error);
     }
-  };
-
-  // const checkLogout = () => {
-  //   setLoggedIn(false);
-  // };
-  // const newData = onClickFetchData();
-  // console.log(newData);
-
-  const providedData = {
-    onClickFetchData,
-    bookInfos,
-    sendBookInfo,
-    handleLogin,
-    user,
-    checkLogin,
-    // checkLogout,
-    loggedIn,
-    logout,
-    onClickChangeStatus,
-    readingStatus,
-    sendBookInfoModal,
-    fetchReadBookList,
-    listBooks,
-    readList,
-    fetchToReadList,
-    onClickDeleteBook,
-    onClickRead,
-    onClickToRead,
   };
 
   return (
@@ -162,10 +115,8 @@ export default function BooksProvider({ children }) {
         handleLogin,
         user,
         checkLogin,
-        // checkLogout,
         loggedIn,
         logout,
-        onClickChangeStatus,
         readingStatus,
         sendBookInfoModal,
         fetchReadBookList,

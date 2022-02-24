@@ -10,15 +10,11 @@ import Description from '../Description/Description';
 
 export default function BookModal(props) {
   const [buttonText, setButtonText] = useState('SHARE');
-  const {
-    sendBookInfoModal,
-    onClickChangeStatus
-  } = useContext(BookContext);
+  const { sendBookInfoModal, onClickChangeStatus } = useContext(BookContext);
   const { onClickShowAlert, showAlert, currentAlertType } =
     useContext(AlertContext);
   const changeText = (text) => setButtonText(text);
-  const { onClickShowModalReview } =
-    useContext(ModalContext);
+  const { onClickShowModalReview } = useContext(ModalContext);
 
   const listReadBtn = () => {
     onClickChangeStatus();

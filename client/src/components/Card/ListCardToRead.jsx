@@ -9,10 +9,7 @@ import Description from '../Description/Description';
 export default function ListCardToRead({ item }) {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
-  const {
-    onClickChangeStatus,
-    onClickDeleteBook,
-  } = useContext(BookContext);
+  const { onClickRead, onClickDeleteBook } = useContext(BookContext);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =
     useContext(ModalContext);
   const { onClickShowAlert } = useContext(AlertContext);
@@ -29,8 +26,8 @@ export default function ListCardToRead({ item }) {
   };
 
   const listReadBtn = () => {
+    onClickRead();
     onClickShowAlert(2);
-    onClickChangeStatus();
   };
 
   const removeBtn = () => {

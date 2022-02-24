@@ -5,7 +5,7 @@ import CardWrapper from '../../components/Wrapper/CardWrapper';
 import MiniCardWrapper from '../../components/Wrapper/MiniCardWrapper';
 import AlertSearchFailure from '../../components/ParagraphInfo/AlertSearchFailure';
 import AlertContext from '../../context/AlertContext';
-import AlertAddedReadList from '../../components/ParagraphInfo/AlertAddedReadList'
+import AlertAddedReadList from '../../components/ParagraphInfo/AlertAddedReadList';
 import AlertAddedToReadList from '../../components/ParagraphInfo/AlertAddedToReadList';
 
 function SearchBooks() {
@@ -19,24 +19,28 @@ function SearchBooks() {
   }, []);
 
   useEffect(() => {
-    if(!bookInfos.length && !firstLoad) {
+    if (!bookInfos.length && !firstLoad) {
       onClickShowAlert(16);
     }
 
-    if(firstLoad) {
-      setFirstLoad(false)
+    if (firstLoad) {
+      setFirstLoad(false);
     }
   }, [bookInfos]);
 
   return (
     <div>
-    <div style={{marginTop:'130px'}} className='container'>
-      {showAlert && currentAlertType === 16 ? <AlertSearchFailure /> : null }
-      {showAlert === true && currentAlertType === 1 ?  <AlertAddedReadList /> : null }
-      {showAlert === true && currentAlertType === 2 ?<AlertAddedToReadList /> : null}
-    </div>
+      <div style={{ marginTop: '130px' }} className="container">
+        {showAlert && currentAlertType === 16 ? <AlertSearchFailure /> : null}
+        {showAlert === true && currentAlertType === 1 ? (
+          <AlertAddedReadList />
+        ) : null}
+        {showAlert === true && currentAlertType === 2 ? (
+          <AlertAddedToReadList />
+        ) : null}
+      </div>
       <SearchForm />
-      <CardWrapper /> 
+      <CardWrapper />
       <MiniCardWrapper />
     </div>
   );
