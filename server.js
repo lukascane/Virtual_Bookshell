@@ -5,15 +5,14 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
+const path = require('path');
 
 dotenv.config();
 app.set('port', process.env.PORT || 4000);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(
-  cors({credentials:true, origin:true})
-);
+app.use(cors({ credentials: true, origin: true }));
 
 //* read the cookie and add it to the request object under the prop "cookies"
 app.use(cookieParser());
@@ -45,16 +44,14 @@ const bookRoutes = require('./Routes/bookRoutes');
 const reviewRoutes = require('./Routes/reviewRoutes');
 
 //? Routes:
-app.get('/', (req, res) => res.send('Hello World!'));
 app.use('/api/user', userRoute);
 app.use('/api/books', bookRoutes);
 app.use('/api/reviews', reviewRoutes);
 
-
 //************************** */
-app.all('*', (req, res) => {
-  res.status(500);
-  res.send('Invalid path');
+app.use(express.static(path.join(__dirname, 'client/build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 app.listen(app.get('port'), () => {
