@@ -9,14 +9,11 @@ import AlertContext from '../../context/AlertContext';
 export default function ListCard({ item }) {
   const [buttonText, setButtonText] = useState('SHARE');
   const changeText = (text) => setButtonText(text);
-  const {
-    onClickChangeStatus,
-    onClickDeleteBook
-  } = useContext(BookContext);
+  const { onClickChangeStatus, onClickToRead, onClickDeleteBook } =
+    useContext(BookContext);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =
     useContext(ModalContext);
-  const { onClickShowAlert } =
-    useContext(AlertContext);
+  const { onClickShowAlert } = useContext(AlertContext);
 
   console.log('item: ', item);
   const handleOpenModal = () => {
@@ -32,7 +29,7 @@ export default function ListCard({ item }) {
 
   const listToReadBtn = () => {
     onClickShowAlert(1);
-    onClickChangeStatus();
+    onClickToRead();
   };
 
   const removeBtn = () => {

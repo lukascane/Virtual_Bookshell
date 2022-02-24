@@ -31,6 +31,14 @@ export default function BooksProvider({ children }) {
     }
   };
 
+  const onClickToRead = () => {
+    setReadingStatus(0);
+  };
+
+  const onClickRead = () => {
+    setReadingStatus(1);
+  };
+
   // handle user /log in function
   const handleLogin = (user) => {
     if (user) {
@@ -86,7 +94,7 @@ export default function BooksProvider({ children }) {
     console.log(response.data.bookListByUser);
     setListBooks(response.data.bookListByUser);
     console.log('ListBooks', listBooks);
-    const result = listBooks.filter((element) => element.reading_status === 0);
+    const result = listBooks.filter((element) => element.reading_status === 1);
     setReadList(result);
   };
 
@@ -95,7 +103,7 @@ export default function BooksProvider({ children }) {
     console.log(response.data.bookListByUser);
     setListBooks(response.data.bookListByUser);
     console.log('ListBooks', listBooks);
-    const result = listBooks.filter((element) => element.reading_status === 1);
+    const result = listBooks.filter((element) => element.reading_status === 0);
     setReadList(result);
   };
 
@@ -141,6 +149,8 @@ export default function BooksProvider({ children }) {
     readList,
     fetchToReadList,
     onClickDeleteBook,
+    onClickRead,
+    onClickToRead,
   };
 
   return (
@@ -163,6 +173,8 @@ export default function BooksProvider({ children }) {
         readList,
         fetchToReadList,
         onClickDeleteBook,
+        onClickRead,
+        onClickToRead,
       }}
     >
       {children}
