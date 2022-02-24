@@ -82,34 +82,22 @@ export default function BooksProvider({ children }) {
 
   const fetchReadBookList = async () => {
     // const response = await axios.get(`/api/books/listbyuser/${user._id}`);
-    const response = await axios.get('/api/books/list');
-    setListBooks(response.data.books);
+    const response = await axios.get('/api/books/listbyuser');
+    console.log(response.data.bookListByUser);
+    setListBooks(response.data.bookListByUser);
+    console.log('ListBooks', listBooks);
     const result = listBooks.filter((element) => element.reading_status === 0);
     setReadList(result);
   };
 
-  // const fetchReadBookList = async () => {
-  //   const userId = user._id;
-  //   const response = await axios.get(`/api/books/listbyuser/${userId}`);
-  //   setListBooks(response.data.books);
-  //   const result = listBooks.filter((element) => element.reading_status === 0);
-  //   setReadList(result);
-  // };
-
   const fetchToReadList = async () => {
-    const response = await axios.get('/api/books/list');
-    setListBooks(response.data.books);
+    const response = await axios.get('/api/books/listbyuser');
+    console.log(response.data.bookListByUser);
+    setListBooks(response.data.bookListByUser);
+    console.log('ListBooks', listBooks);
     const result = listBooks.filter((element) => element.reading_status === 1);
     setReadList(result);
   };
-
-  // const fetchToReadList = async () => {
-  //   const userId = user._id;
-  //   const response = await axios.get(`/api/books/listbyuser/${userId}`);
-  //   setListBooks(response.data.books);
-  //   const result = listBooks.filter((element) => element.reading_status === 1);
-  //   setReadList(result);
-  // };
 
   const checkLogin = () => {
     setLoggedIn(true);
