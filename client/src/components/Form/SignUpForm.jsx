@@ -32,7 +32,7 @@ export default function SignUpForm() {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="mb-5">
       <div
         type="text"
         id="login"

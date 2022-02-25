@@ -14,6 +14,7 @@ function MiniCard({ item }) {
       pages: item.pages,
       isbn: item.isbn[0],
       cover_i: item.cover_i,
+      language: item.language[0],
     });
   };
 

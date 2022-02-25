@@ -22,6 +22,7 @@ export default function ListCardToRead({ item }) {
       author: item.author[0],
       pages: item.pages,
       cover_i: item.cover_i,
+      language: item.language[0],
     });
   };
 
@@ -69,7 +70,6 @@ export default function ListCardToRead({ item }) {
             <p className="mt-3 bttl">{newTitle}</p>
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
-            <p>more variable</p>
             <button
               onClick={removeBtn}
               className="btn btLink rmv d-flex justify-content-between align-items-center"
@@ -97,7 +97,6 @@ export default function ListCardToRead({ item }) {
             <p className="mt-3 bttl">{newTitle}</p>
             <p>{item.author}</p>
             <p>Pages: {item.pages}</p>
-            <p>more variable</p>
             <button
               onClick={removeBtn}
               className="btn btLink2 d-flex justify-content-between align-items-center"
@@ -123,7 +122,7 @@ export default function ListCardToRead({ item }) {
             <Description item={item.key} />
           </div>
           <div className="silverSect p-1 d-flex justify-content-center align-items-center mb-4">
-            <h5 className="mb-0">I Book genre? I</h5>
+            <h5 className="mb-0">I Language: {item.language[0]} I</h5>
           </div>
         </div>
 

@@ -30,6 +30,7 @@ export default function BooksProvider({ children }) {
   //* Read is 1
   const onClickRead = (item) => {
     setReadingStatus(item);
+    return readingStatus;
   };
 
   // handle user /log in function
@@ -128,6 +129,7 @@ export default function BooksProvider({ children }) {
         onClickDeleteBook,
         onClickRead,
         onClickToRead,
+        setReadingStatus,
       }}
     >
       {children}

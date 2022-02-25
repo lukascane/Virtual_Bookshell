@@ -5,7 +5,8 @@ import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 import AlertContext from '../../context/AlertContext';
 
 function Card({ item }) {
-  const { sendBookInfo, onClickRead, onClickToRead } = useContext(BookContext);
+  const { sendBookInfo, onClickRead, onClickToRead, setReadingStatus } =
+    useContext(BookContext);
   const { onClickShowAlert } = useContext(AlertContext);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =
     useContext(ModalContext);
@@ -19,11 +20,13 @@ function Card({ item }) {
       pages: item.pages,
       isbn: item.isbn,
       cover_i: item.cover_i,
+      language: item.language[0],
     });
   };
 
   const listReadBtn = () => {
-    onClickRead(1);
+    setReadingStatus(1);
+    // onClickRead(1);
     onClickShowAlert(2);
     sendBookInfo(item);
   };
