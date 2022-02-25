@@ -23,13 +23,13 @@ function Card({ item }) {
   };
 
   const listReadBtn = () => {
-    onClickRead();
+    onClickRead(1);
     onClickShowAlert(2);
     sendBookInfo(item);
   };
 
   const listToReadBtn = () => {
-    onClickToRead();
+    onClickToRead(0);
     onClickShowAlert(1);
   };
 

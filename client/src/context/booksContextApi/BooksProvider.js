@@ -21,13 +21,15 @@ export default function BooksProvider({ children }) {
     return bookInfos;
   };
 
-  const onClickToRead = () => {
-    setReadingStatus(1);
-    console.log();
+  //* To read is 0
+  const onClickToRead = (item) => {
+    setReadingStatus(item);
+    console.log('Readingstatus ', readingStatus);
   };
 
-  const onClickRead = () => {
-    setReadingStatus(0);
+  //* Read is 1
+  const onClickRead = (item) => {
+    setReadingStatus(item);
   };
 
   // handle user /log in function
