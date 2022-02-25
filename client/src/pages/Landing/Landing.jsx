@@ -1,11 +1,11 @@
 import React from 'react';
-import HomeBanner from '../../components/HomeBanner/HomeBanner'
+import HomeBanner from '../../components/HomeBanner/HomeBanner';
 
 function Landing() {
   return (
-  <div id='landing' className='scale-in-center'>
-    <HomeBanner />
-  </div>
+    <div id="landing" className="scale-in-center">
+      <HomeBanner />
+    </div>
   );
 }
 

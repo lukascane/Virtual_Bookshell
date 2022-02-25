@@ -10,8 +10,6 @@ import SearchBooks from '../pages/SearchBooks/SearchBooks';
 import ToReadList from '../pages/ReadList/ToReadList';
 import ReadList from '../pages/ReadList/ReadList';
 import NotFound from '../pages/NotFound/NotFound';
-import NavBarLoggedIn from '../components/Navbar/NavBarLoggedIn';
-import ModalWrapper from '../components/Wrapper/ModalWrapper';
 import ModalProvider from '../context/ModalProvider';
 import AlertProvider from '../context/AlertProvider';
 import NavbarWrapper from '../components/Wrapper/NavbarWrapper';
@@ -20,7 +18,7 @@ function MainRouter() {
   return (
     <BrowserRouter>
       <BooksProvider>
-          <AlertProvider>        
+        <AlertProvider>
           <ModalProvider>
             <NavbarWrapper />
             <main>
@@ -36,8 +34,8 @@ function MainRouter() {
               </Routes>
             </main>
             <Footer />
-            </ModalProvider>
-          </AlertProvider>
+          </ModalProvider>
+        </AlertProvider>
       </BooksProvider>
     </BrowserRouter>
   );

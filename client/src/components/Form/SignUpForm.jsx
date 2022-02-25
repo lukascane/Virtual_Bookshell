@@ -1,16 +1,14 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import axios from '../../util/axiosInstance';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import AlertContext from '../../context/AlertContext';
 
 export default function SignUpForm() {
-
-  const { onClickShowAlert } = useContext(AlertContext)
+  const { onClickShowAlert } = useContext(AlertContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Submit the form');
     const formData = new FormData(event.target);
     const data = {
       username: formData.get('username'), //get the data from the input with name username
@@ -19,25 +17,22 @@ export default function SignUpForm() {
       email: formData.get('email'), //...
       password: formData.get('password'),
     };
-    console.log(data.password, 'im the pass');
-    if (data.password.length < 8){
-      return onClickShowAlert(14)
+    if (data.password.length < 8) {
+      return onClickShowAlert(14);
     }
-    console.log(data);
     try {
       const response = await axios.post('/api/user/register', data);
       if (response.status === 200) {
-        console.log('user was created');
-        onClickShowAlert(10)
-        navigate("/login");
+        onClickShowAlert(10);
+        navigate('/login');
       }
     } catch (error) {
       console.log('The error is: ', error);
-      return onClickShowAlert(11)
+      return onClickShowAlert(11);
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="mb-5">
       <div
         type="text"
         id="login"

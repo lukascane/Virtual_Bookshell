@@ -4,14 +4,15 @@ import BookContext from '../../context/booksContextApi/BookContext';
 
 function ListBooksWrapper() {
   const { fetchReadBookList, readList } = useContext(BookContext);
-  console.log(readList.length)
+
   useEffect(() => {
     fetchReadBookList();
   }, []);
-      return (
+
+  return (
     <div>
       {readList.map((item, index) => (
-        <ListCard item={item} id={index}></ListCard>
+        <ListCard item={item} key={index}></ListCard>
       ))}
     </div>
   );

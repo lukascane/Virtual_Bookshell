@@ -5,7 +5,7 @@ import PurpleBook from '../../assets/images/bookDarkMagenta.png';
 import AlertContext from '../../context/AlertContext';
 
 function Card({ item }) {
-  const { sendBookInfo, onClickChangeStatus } =
+  const { sendBookInfo, onClickRead, onClickToRead, setReadingStatus } =
     useContext(BookContext);
   const { onClickShowAlert } = useContext(AlertContext);
   const { onClickShowModal, setModalContent, onClickShowModalReview } =
@@ -20,17 +20,19 @@ function Card({ item }) {
       pages: item.pages,
       isbn: item.isbn,
       cover_i: item.cover_i,
+      language: item.language[0],
     });
   };
 
   const listReadBtn = () => {
-    onClickChangeStatus();
+    setReadingStatus(1);
+    // onClickRead(1);
     onClickShowAlert(2);
     sendBookInfo(item);
   };
 
   const listToReadBtn = () => {
-    onClickChangeStatus();
+    onClickToRead(0);
     onClickShowAlert(1);
   };
 
@@ -82,7 +84,9 @@ function Card({ item }) {
               >
                 Review
               </a>
-              <a className="btn cardBtn homeBtn btn-sm" onClick={listToReadBtn}>to read</a>
+              <a className="btn cardBtn homeBtn btn-sm" onClick={listToReadBtn}>
+                to read
+              </a>
             </div>
           </div>
         </div>
