@@ -14,7 +14,7 @@ function ListBooksWrapper() {
   return (
     <div>
       {readList.map((item, index) => (
-        <ListCardToRead item={item} id={index}></ListCardToRead>
+        <ListCardToRead item={item} key={index}></ListCardToRead>
       ))}
     </div>
   );

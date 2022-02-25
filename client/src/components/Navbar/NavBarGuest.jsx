@@ -3,14 +3,17 @@ import { NavLink } from 'react-router-dom';
 import let2 from '../../assets/images/lettring2.png';
 
 export default function Navbar() {
-
   return (
     <div id="navB">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid d-flex justify-content-between">
-          <div className='reductionContainer'>
-          <a href='/'>
-            <img src={let2} alt="logo-brand" className="logoImg navbar-brand" />
+          <div className="reductionContainer">
+            <a href="/">
+              <img
+                src={let2}
+                alt="logo-brand"
+                className="logoImg navbar-brand"
+              />
             </a>
             <button
               className="navbar-toggler togg"
@@ -41,22 +44,31 @@ export default function Navbar() {
           >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
               <li className="nav-item">
-                <NavLink to="/" exact className="nav-link">
-                  <button className="btn rounded-pill buttons zoom" type="button">
+                <NavLink to="/" className="nav-link">
+                  <button
+                    className="btn rounded-pill buttons zoom"
+                    type="button"
+                  >
                     demo
                   </button>
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/registration" exact className="nav-link">
-                  <button className="btn rounded-pill buttons zoom" type="button">
+                <NavLink to="/registration" className="nav-link">
+                  <button
+                    className="btn rounded-pill buttons zoom"
+                    type="button"
+                  >
                     sign up
                   </button>
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/login" exact className="nav-link">
-                  <button className="btn rounded-pill buttons zoom" type="button">
+                <NavLink to="/login" className="nav-link">
+                  <button
+                    className="btn rounded-pill buttons zoom"
+                    type="button"
+                  >
                     login
                   </button>
                 </NavLink>

@@ -10,23 +10,21 @@ import Description from '../Description/Description';
 
 export default function BookModal(props) {
   const [buttonText, setButtonText] = useState('SHARE');
-  const {
-    sendBookInfoModal,
-    onClickChangeStatus
-  } = useContext(BookContext);
+  const { sendBookInfoModal, onClickRead, onClickToRead } =
+    useContext(BookContext);
   const { onClickShowAlert, showAlert, currentAlertType } =
     useContext(AlertContext);
   const changeText = (text) => setButtonText(text);
-  const { onClickShowModalReview } =
-    useContext(ModalContext);
+  const { onClickShowModalReview } = useContext(ModalContext);
 
   const listReadBtn = () => {
-    onClickChangeStatus();
+    onClickRead(1);
+    sendBookInfoModal(props.content);
     onClickShowAlert(2);
   };
 
   const listToReadBtn = () => {
-    onClickChangeStatus();
+    onClickToRead(0);
     sendBookInfoModal(props.content);
     onClickShowAlert(1);
   };
@@ -180,7 +178,7 @@ export default function BookModal(props) {
                 className="silverSect p-1 d-flex justify-content-center align-items-center"
                 style={{ backgroundColor: '#C4C4C4' }}
               >
-                <h5 className="mb-0">I Book genre? I</h5>
+                <h5 className="mb-0">I Language: {props.content.language} I</h5>
               </div>
 
               <div

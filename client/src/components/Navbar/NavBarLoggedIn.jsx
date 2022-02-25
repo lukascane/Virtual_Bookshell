@@ -6,16 +6,19 @@ import BookContext from '../../context/booksContextApi/BookContext';
 
 export default function Navbar() {
   const { logout } = useContext(BookContext);
-  const { onClickShowAlert } =
-    useContext(AlertContext);
+  const { onClickShowAlert } = useContext(AlertContext);
 
   return (
     <div id="navB">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid d-flex justify-content-between">
-          <div className='reductionContainer'>
-            <a href='/'>
-            <img src={let2} alt="logo-brand" className="logoImg navbar-brand" />
+          <div className="reductionContainer">
+            <a href="/">
+              <img
+                src={let2}
+                alt="logo-brand"
+                className="logoImg navbar-brand"
+              />
             </a>
             <button
               className="navbar-toggler togg"
@@ -46,29 +49,41 @@ export default function Navbar() {
           >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
               <li className="nav-item">
-                <NavLink to="/searchbooks" exact className="nav-link">
-                  <button className="btn rounded-pill buttons zoom" type="button">
+                <NavLink to="/searchbooks" className="nav-link">
+                  <button
+                    className="btn rounded-pill buttons zoom"
+                    type="button"
+                  >
                     books
                   </button>
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/toreadlist" exact className="nav-link">
-                  <button className="btn rounded-pill buttons zoom" type="button">
+                <NavLink to="/toreadlist" className="nav-link">
+                  <button
+                    className="btn rounded-pill buttons zoom"
+                    type="button"
+                  >
                     to read
                   </button>
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/readlist" exact className="nav-link">
-                  <button className="btn rounded-pill buttons zoom" type="button">
+                <NavLink to="/readlist" className="nav-link">
+                  <button
+                    className="btn rounded-pill buttons zoom"
+                    type="button"
+                  >
                     read
                   </button>
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/profile" exact className="nav-link">
-                  <button className="btn rounded-pill buttons zoom" type="button">
+                <NavLink to="/profile" className="nav-link">
+                  <button
+                    className="btn rounded-pill buttons zoom"
+                    type="button"
+                  >
                     profile
                   </button>
                 </NavLink>
@@ -80,10 +95,12 @@ export default function Navbar() {
                     onClickShowAlert(9);
                   }}
                   to="/login"
-                  exact
                   className="nav-link"
                 >
-                  <button className="btn rounded-pill buttons zoom" type="button">
+                  <button
+                    className="btn rounded-pill buttons zoom"
+                    type="button"
+                  >
                     logout
                   </button>
                 </NavLink>

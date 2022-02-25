@@ -6,8 +6,7 @@ import AlertContext from '../../context/AlertContext';
 import AlertRegisterSucces from '../../components/ParagraphInfo/AlertRegisterSuccess';
 
 function Login() {
-  const { showAlert, currentAlertType } =
-    useContext(AlertContext);
+  const { showAlert, currentAlertType } = useContext(AlertContext);
   return (
     <div id="loginview" style={{ marginTop: '130px' }}>
       <div className="container">

@@ -35,12 +35,6 @@ export default function SearchForm() {
               Title
             </li>
             <li
-              onClick={() => changeText('Year')}
-              className="dropdown-item year"
-            >
-              Year
-            </li>
-            <li
               onClick={() => changeText('Author')}
               className="dropdown-item author"
             >
